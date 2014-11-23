@@ -1,0 +1,39 @@
+﻿<div data-bind="visible: visible">
+    <div class="search-area col-md-2 title-fix">
+        @Html.Partial("Controls/EditActionsBlock")
+    </div>
+    <div data-bind="readonly: readonly" class="table-area col-md-10 title-fix">
+        <h3>
+            <i class="fa fa-edit"></i>
+            <span data-bind="text: title" class="title-span"></span>
+        </h3>
+        <br />
+        <!-- ko with: fields -->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- ko with: Name -->
+                @Html.Partial("Controls/Fields/EditTextField")
+                <!-- /ko -->
+            </div>
+        </div>
+        <!-- /ko -->
+        <!-- ko foreach: permissions -->
+        <div class="row">
+            <div class="col-md-3">
+                <h4 data-bind="text: Name"></h4>
+            </div>
+            <div class="col-md-9">
+                <div class="checkbox-list">
+                    <!-- ko foreach: Permissions -->
+                    <label class="checkbox-inline">
+                        <input data-bind="checked: Checked, value: Code, event: { change: $parents[1].checkedItem.bind($data,$parent) }"
+                               type="checkbox" />
+                        <span data-bind="text: AccessTypeName"></span>
+                    </label>
+                    <!-- /ko -->
+                </div>
+            </div>
+        </div>
+        <!-- /ko -->
+    </div>
+</div>

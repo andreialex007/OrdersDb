@@ -1,0 +1,197 @@
+﻿<div class="title-fix category-page" data-bind="visible: visible">
+    <div class="row">
+        <div class="col-md-3 sidebar-left">
+            <div class="side-bar-inner">
+                <div>
+                    <h3>
+                        <i class="fa fa-folder-open-o fa-2x"></i>&nbsp;&nbsp; <span>Категории</span>
+
+                    </h3>
+                    <!-- ko with: tree -->
+                    <a data-bind="click: add" href="#" class="btn btn-xs green add-to-tree">
+                        <i class="fa fa-plus"></i> Add
+                    </a>
+                    <!-- /ko -->
+                </div>
+                <div class="category-search-fix">
+                    <div class="form-group">
+                        <div class="input-icon right">
+                            <i class="fa fa-search"></i>
+                            <input type="text" class="form-control" placeholder="Поиск категории">
+                        </div>
+                    </div>
+                </div>
+                <div style="height: 100%; padding-bottom: 41px;position: relative;">
+                    <!-- ko with: tree -->
+                    @Html.Partial("Pages/Categories/Tree")
+                    <!-- /ko -->
+
+                    <div style="position: absolute; top: 0px;" data-bind="visible: categoriesLoading" class="loading-overlay col-md-offset-5">
+                        <div class="loading-indicator"><i class="fa fa-download"></i> Загрузка...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="padding-bottom: 10px;" class="col-md-9 table-area col-md-offset-3">
+            <div style="height: 100%;" class="portlet light bg-inverse">
+                <div class="portlet-title">
+                    <div class="caption font-red-sunglo">
+                        <i class="fa fa-file"></i>
+                        <!-- ko with: descriptionTab -->
+                        <!-- ko with: name -->
+                        <span data-bind="text: value" class="caption-subject bold uppercase"> </span>
+                        <!-- /ko -->
+                        <!-- /ko -->
+                    </div>
+                    <div class="actions">
+                        <div class="btn-group btn-group-devided" data-toggle="buttons">
+                            <!-- ko with: descriptionTab -->
+                            <label data-bind="css: { 'active': visible }, click: $parent.tabclick" class="btn btn-circle btn-transparent grey-salsa btn-sm">
+                                <input type="radio" name="options" class="toggle" id="option1">Описание
+                            </label>
+                            <!-- /ko -->
+                            <!-- ko with: imageTab -->
+                            <label data-bind="css: { 'active': visible }, click: $parent.tabclick" class="btn btn-circle btn-transparent grey-salsa btn-sm">
+                                <input type="radio" name="options" class="toggle" id="option2">Изображение
+                            </label>
+                            <!-- /ko -->
+                            <!-- ko with: informationTab -->
+                            <label data-bind="css: { 'active': visible }, click: $parent.tabclick" class="btn btn-circle btn-transparent grey-salsa btn-sm">
+                                <input type="radio" name="options" class="toggle" id="option2">Информация
+                            </label>
+                            <!-- /ko -->
+                        </div>
+                    </div>
+                </div>
+                <div style="position: relative;" class="portlet-body">
+                    <div style="width: 100%; height: 100%;">
+                        <!-- ko with: descriptionTab -->
+                        <div data-bind="visible: visible" class="tab-item" style="position: relative; padding-bottom: 60px">
+                            <div style="width: 100%; height: 100%;  overflow-y: auto;" class="tab-item-content">
+                                <h4 class="form-section">Название категории</h4>
+                                <!-- ko with: name -->
+                                <div class="form-group">
+                                    <input data-bind="value: value, valueUpdate: 'afterkeydown', attr: { placeholder: placeholder }, event : { keyup: change }" type="text" id="firstName" class="form-control" placeholder="Chee Kin">
+                                    <span data-bind="text: errorsText" class="help-block hidden-if-no-error">
+                                    </span>
+                                </div>
+                                <!-- /ko -->
+                                <h4 class="form-section">Описание категории</h4>
+                                <!-- ko with: description -->
+                                @Html.Partial("Controls/Fields/TextAreaField")
+                                <!-- /ko -->
+                            </div>
+                            <div style="position: absolute; bottom: 0;right: 0; left: 0;height: 60px;" class="saving-controls">
+                                <div class="form">
+                                    <div class="form-actions">
+                                        <button data-bind="click: save" type="submit" class="btn blue"><i class="fa fa-save"></i> Сохранить</button>
+                                        <button data-bind="click: reset" type="button" class="btn default"><i class="fa fa-reply"></i> Очистить</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /ko -->
+                        <!-- ko with: imageTab -->
+                        <div data-bind="visible: visible" class="tab-item" style="position: relative; padding-bottom: 60px">
+                            <div style="width: 100%; height: 100%;  overflow-y: auto;" class="tab-item-content">
+                                <h4 class="form-section">Полное изображение</h4>
+                                <div>
+                                    <!-- ko if: hasImage -->
+                                    <img data-bind="attr: { src: imageurlFull }" style="width: 200px;" src="" alt="" />
+                                    <!-- /ko -->
+                                    <!-- ko ifnot: hasImage -->
+                                    <img src="@Url.Content("~/Images/default_product.png")" style="width: 200px;" alt="" />
+                                    <!-- /ko -->
+                                </div>
+                                <h4 class="form-section">Превью</h4>
+                                <div>
+                                    <!-- ko if: hasImage -->
+                                    <img data-bind="attr: { src: imageurlPreview }" style="width: 100px;" src="" alt="" />
+                                    <!-- /ko -->
+                                    <!-- ko ifnot: hasImage -->
+                                    <img src="@Url.Content("~/Images/default_product.png")" style="width: 100px;" alt="" />
+                                    <!-- /ko -->
+                                </div>
+                            </div>
+                            <div style="" class="saving-controls">
+                                <div class="form">
+                                    <div class="form-actions">
+                                        <input class="fileupload-input" data-bind="fileUpload { options : { dataType: 'json', done: done }, fileuploadsubmit: beforeupload }" type="file" name="file" data-url="/Categories/UploadImage">
+                                        <button data-bind="click: upload" type="submit" class="btn green"><i class="fa fa-upload"></i> Загрузить</button>
+                                        <button data-bind="click: remove" type="button" class="btn red"><i class="fa fa-remove"></i> Удалить</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /ko -->
+                        <!-- ko with: informationTab -->
+                        <div data-bind="visible: visible" class="tab-item">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-2">Дата создания:</label>
+                                                <div class="col-md-10">
+                                                    <p data-bind="text: creationDate" class="form-control-static"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-2">Дата изменения:</label>
+                                                <div class="col-md-10">
+                                                    <p data-bind="text: modificationDate" class="form-control-static"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-2">Количество товаров:</label>
+                                                <div class="col-md-10">
+                                                    <p data-bind="text: productsAmount" class="form-control-static"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-2">Количество категорий:</label>
+                                                <div class="col-md-10">
+                                                    <p data-bind="text: categoriesAmount" class="form-control-static"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

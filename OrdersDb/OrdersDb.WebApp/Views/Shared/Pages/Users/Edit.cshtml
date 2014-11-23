@@ -1,0 +1,54 @@
+﻿<div data-bind="visible: visible">
+    <div class="search-area col-md-2 title-fix">
+        @Html.Partial("Controls/EditActionsBlock")
+    </div>
+    <div class="table-area col-md-10 title-fix">
+        <h3>
+            <i class="fa fa-edit"></i>
+            <span data-bind="text: title" class="title-span"></span>
+        </h3>
+        <br />
+        <!-- ko with: fields -->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- ko with: Name -->
+                @Html.Partial("Controls/Fields/EditTextField")
+                <!-- /ko -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- ko with: Email -->
+                @Html.Partial("Controls/Fields/EditTextField")
+                <!-- /ko -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- ko with: Password -->
+                <div data-bind="css: { 'has-error': hasErrors }" class="form-group">
+                    <label data-bind="text: title" class="control-label"></label>
+                    <input data-bind="value: value, valueUpdate: 'afterkeydown', attr: { placeholder: placeholder }, inputMask: mask, event : { keyup: change }" type="password" class="form-control">
+                    <span data-bind="text: errorsText" class="help-block hidden-if-no-error">
+                    </span>
+                </div>
+                <!-- /ko -->
+            </div>
+        </div>
+        <!-- /ko -->
+
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Роли</h4>
+                <div class="checkbox-list">
+                    <!-- ko foreach: Roles -->
+                    <label>
+                        <input type="checkbox" data-bind="checked: IsSelected" />
+                        <span data-bind="text: Name"></span>
+                    </label>
+                    <!-- /ko -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

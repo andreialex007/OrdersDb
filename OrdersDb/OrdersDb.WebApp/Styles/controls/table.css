@@ -1,0 +1,126 @@
+﻿.table-control {
+  position: absolute;
+  top: 37px;
+  right: 28px;
+  left: 16px;
+  bottom: 22px;
+  padding-bottom: 45px;
+}
+.table-control .loading-overlay {
+  position: absolute;
+  top: 65px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+.table-control .loading-overlay .loading-indicator {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+.table-control tr.checked-row td {
+  background-color: burlywood !important;
+}
+.table-control td.check {
+  width: 39px;
+  cursor: auto;
+}
+.table-control td.check input[type='checkbox'] {
+  margin-left: 4px;
+}
+.table-control .head-wrapper {
+  overflow-y: auto;
+  position: relative;
+}
+.table-control .scroll-wrapper {
+  position: relative;
+  overflow-y: auto;
+  height: 100%;
+}
+.table-control .table-body {
+  position: absolute;
+}
+.table-control .table-head {
+  border-right: none;
+  background-color: gray;
+  color: white;
+  border-bottom: none;
+}
+.table-control .table-head td {
+  border-bottom: none;
+}
+.table-control .table-head .actions {
+  border-right: none;
+}
+.table-control .table-head .check {
+  cursor: default !important;
+}
+.table-control .table-head input[type='checkbox'] {
+  cursor: pointer;
+}
+.table-control .table-head .scroll-fix {
+  width: 0px;
+}
+.table-control .data-table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  white-space: nowrap;
+  width: 100%;
+  margin-bottom: 0px;
+}
+.table-control .data-table .actions {
+  width: 140px;
+  cursor: auto;
+}
+.table-control .data-table tr .actions a {
+  visibility: hidden;
+}
+.table-control .data-table tr:hover .actions a {
+  visibility: visible;
+}
+.table-control .data-table td {
+  overflow: hidden;
+}
+.table-control .data-table thead td,
+.table-control .data-table thead th {
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  padding-right: 23px;
+}
+.table-control .data-table thead .cell i {
+  position: absolute;
+  right: 9px;
+  top: 0;
+  line-height: 33px;
+  display: none;
+}
+.table-control .data-table thead .cell span {
+  overflow: hidden;
+  width: 100%;
+  display: block;
+}
+.table-control .data-table thead td:hover,
+.table-control .data-table thead th:hover {
+  opacity: 0.8;
+}
+.table-control .data-table thead .sort {
+  background-color: #979494;
+}
+.table-control .data-table thead .sort i {
+  display: block;
+}
+.table-control .data-table tbody tr:nth-child(odd) td.sort {
+  background-color: #f2f2ed;
+}
+.table-control .data-table tbody tr:nth-child(even) td.sort {
+  background-color: #fcfcf2;
+}
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {
+  background-color: #e9eef6 !important;
+}
+.table-control tr.checked-row:hover td {
+  background-color: #c59d69 !important;
+}
+/*# sourceMappingURL=table.css.map */

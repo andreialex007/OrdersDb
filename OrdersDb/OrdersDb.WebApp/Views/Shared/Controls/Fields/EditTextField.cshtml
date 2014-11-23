@@ -1,0 +1,7 @@
+﻿
+<div data-bind="css: { 'has-error': hasErrors }" class="form-group">
+    <label data-bind="text: title" class="control-label"></label>
+    <input data-bind="value: value, valueUpdate: 'afterkeydown', attr: { placeholder: placeholder }, inputMask: mask, event : { keyup: change }" type="text" class="form-control">
+    <span data-bind="text: errorsText" class="help-block hidden-if-no-error">
+    </span>
+</div>

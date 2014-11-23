@@ -1,0 +1,93 @@
+﻿<div data-bind="visible: visible">
+    <div class="search-area col-md-2 title-fix">
+        @Html.Partial("Controls/EditActionsBlock")
+    </div>
+    <div class="table-area col-md-10 title-fix">
+        <h3>
+            <i class="fa fa-edit"></i>
+            <span data-bind="text: title" class="title-span"></span>
+        </h3>
+        <br />
+        <!-- ko with: fields -->
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Основные данные</h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <!-- ko with: Name -->
+                @Html.Partial("Controls/Fields/EditTextField")
+                <!-- /ko -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- ko with: FullName -->
+                @Html.Partial("Controls/Fields/EditTextField")
+                <!-- /ko -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- ko with: INN -->
+                @Html.Partial("Controls/Fields/EditTextField")
+                <!-- /ko -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- ko with: OGRN -->
+                @Html.Partial("Controls/Fields/EditTextField")
+                <!-- /ko -->
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Местонахождение</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <!-- ko with: Country -->
+                @Html.Partial("Controls/Fields/Dropdown")
+                <!-- /ko -->
+            </div>
+            <div class="col-md-4">
+                <!-- ko with: Region -->
+                @Html.Partial("Controls/Fields/Dropdown")
+                <!-- /ko -->
+            </div>
+            <div class="col-md-4">
+                <!-- ko with: City -->
+                @Html.Partial("Controls/Fields/Dropdown")
+                <!-- /ko -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- ko with: Street -->
+                @Html.Partial("Controls/Fields/Dropdown")
+                <!-- /ko -->
+            </div>
+            <div class="col-md-2">
+                <!-- ko with: Number -->
+                @Html.Partial("Controls/Fields/EditTextField")
+                <!-- /ko -->
+            </div>
+            <div class="col-md-2">
+                <!-- ko with: Building -->
+                @Html.Partial("Controls/Fields/EditTextField")
+                <!-- /ko -->
+            </div>
+            <div class="col-md-2">
+                <!-- ko with: PostalCode -->
+                @Html.Partial("Controls/Fields/EditTextField")
+                <!-- /ko -->
+            </div>
+        </div>
+        <!-- /ko -->
+    </div>
+</div>

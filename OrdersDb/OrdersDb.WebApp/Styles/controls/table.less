@@ -1,0 +1,173 @@
+﻿
+.table-control {
+    position: absolute;
+    top: 37px;
+    right: 28px;
+    left: 16px;
+    bottom: 22px;
+    padding-bottom: 45px;
+
+
+
+    .loading-overlay {
+        position: absolute;
+        top: 65px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+
+        .loading-indicator {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+        }
+    }
+
+    tr.checked-row td {
+        background-color: burlywood !important;
+    }
+
+    td.check {
+        width: 39px;
+        cursor: auto;
+
+        input[type='checkbox'] {
+            margin-left: 4px;
+        }
+    }
+
+    .head-wrapper {
+        overflow-y: auto;
+        position: relative;
+    }
+
+    .scroll-wrapper {
+        position: relative;
+        overflow-y: auto;
+        height: 100%;
+    }
+
+    .table-body {
+        position: absolute;
+    }
+
+    .table-head {
+        border-right: none;
+        background-color: gray;
+        color: white;
+        border-bottom: none;
+
+        td {
+            border-bottom: none;
+        }
+
+        .actions {
+            border-right: none;
+        }
+
+        .check {
+            cursor: default !important;
+        }
+
+        input[type='checkbox'] {
+            cursor: pointer;
+        }
+
+        .scroll-fix {
+            width: 0px;
+        }
+    }
+
+
+    .data-table {
+        border-collapse: collapse;
+        table-layout: fixed;
+        white-space: nowrap;
+        width: 100%;
+        margin-bottom: 0px;
+
+        .actions {
+            width: 140px;
+            cursor: auto;
+        }
+
+        tr .actions a {
+            visibility: hidden;
+        }
+
+        tr:hover .actions a {
+            visibility: visible;
+        }
+
+
+        td {
+            overflow: hidden;
+        }
+
+        thead {
+
+            td, th {
+                font-weight: bold;
+                cursor: pointer;
+                position: relative;
+                padding-right: 23px;
+            }
+
+            .cell {
+
+                i {
+                    position: absolute;
+                    right: 9px;
+                    top: 0;
+                    line-height: 33px;
+                    display: none;
+                }
+
+                span {
+                    overflow: hidden;
+                    width: 100%;
+                    display: block;
+                }
+            }
+
+            td:hover, th:hover {
+                opacity: 0.8;
+            }
+
+            .sort {
+                background-color: #979494;
+
+                i {
+                    display: block;
+                }
+            }
+        }
+
+        tbody {
+
+            tr:nth-child(odd) {
+
+                td.sort {
+                    background-color: #f2f2ed;
+                }
+            }
+
+
+            tr:nth-child(even) {
+                td.sort {
+                    background-color: #fcfcf2;
+                }
+            }
+        }
+    }
+}
+
+
+
+.table-hover > tbody > tr:hover > td, .table-hover > tbody > tr:hover > th {
+    background-color: #e9eef6 !important;
+}
+
+.table-control tr.checked-row:hover td {
+    background-color: rgb(197, 157, 105) !important;
+}

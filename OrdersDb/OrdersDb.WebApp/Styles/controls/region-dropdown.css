@@ -1,0 +1,56 @@
+﻿@media (min-width: 992px) {
+  .select-dropdown .drop-area {
+    width: 100%;
+    position: relative;
+    z-index: 99999;
+    background-color: black;
+  }
+  .select-dropdown .drop-area .drop-area-inner {
+    width: 100%;
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    top: 0;
+  }
+  .select-dropdown .drop-area .drop-area-inner .region-cell {
+    width: 61%;
+  }
+}
+.select-dropdown .result-block {
+  width: 100%;
+  display: table;
+  height: 34px;
+}
+.select-dropdown .result-block .input-wrapper {
+  width: 100%;
+  display: table-cell;
+  opacity: 0.5;
+  vertical-align: top;
+}
+.select-dropdown .result-block .drop-button-wrapper {
+  background-color: blue;
+  display: table-cell;
+  float: right;
+  height: 34px;
+}
+.select-dropdown .drop-area .drop-area-inner {
+  padding: 6px;
+  background-color: #cfcdd3;
+}
+.select-dropdown .drop-area .drop-area-inner .country-cell {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.select-dropdown .drop-area .drop-area-inner .region-cell {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.select-dropdown .drop-area .drop-area-inner .accept-cell {
+  padding-left: 3px;
+  padding-right: 3px;
+  width: 5.5%;
+}
+.select-dropdown .drop-area .drop-area-inner .accept-cell a {
+  width: 100%;
+}
+/*# sourceMappingURL=region-dropdown.css.map */

@@ -1,0 +1,52 @@
+﻿<div data-bind="visible: visible">
+    <div class="search-area col-md-2 title-fix">
+        @Html.Partial("Controls/EditActionsBlock")
+    </div>
+    <div class="table-area col-md-10 title-fix">
+        <h3>
+            <i class="fa fa-edit"></i>
+            <span data-bind="text: title" class="title-span"></span>
+        </h3>
+        <br />
+        <!-- ko with: fields -->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- ko with: Name -->
+                @Html.Partial("Controls/Fields/EditTextField")
+                <!-- /ko -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- ko with: RussianName -->
+                @Html.Partial("Controls/Fields/EditTextField")
+                <!-- /ko -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- ko with: Code -->
+                @Html.Partial("Controls/Fields/EditTextField")
+                <!-- /ko -->
+            </div>
+        </div>
+        <!-- /ko -->
+
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Флаг страны</h4>
+                <img data-bind="attr: { src: flagImage }" alt="" style="width: 100px; padding: 12px;" />
+                <div style="position: relative;">
+                    <input class="upload-flag-input flag-file-input" data-bind="event: { change: flagSelected }" type="file" />
+                    <a href="javascript:;" class="btn btn-success">
+                        <i class="fa fa-upload"></i>
+                        Upload flag
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>

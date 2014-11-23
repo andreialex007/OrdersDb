@@ -1,0 +1,48 @@
+﻿<div class="table-control">
+    <div class="head-wrapper shadow">
+        <table class="table table-striped table-bordered table-hover data-table table-head ">
+            <thead>
+                <tr>
+                    <td class="check">
+                        <input data-bind="checked: allChecked" type="checkbox" />
+                    </td>
+                    <!-- ko foreach: columns -->
+                    <td class="cell" data-bind="style: { width: width }, attr: { title: name }, css: { 'sort': isSort }, click: $parent.click">
+                        <span data-bind="html: name, attr: { title: name }"></span>
+                        <i data-bind="css:{ 'fa-sort-asc': $parent.isDesc, 'fa-sort-desc': !$parent.isDesc() }" class="fa"></i>
+                    </td>
+                    <!-- /ko -->
+                    <td class="actions">Операции</td>
+                    <td class="scroll-fix"></td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div data-bind="visible: !isLoading(), scroll: scroll" class="scroll-wrapper">
+        <table class="table table-striped table-bordered table-hover data-table table-body ">
+            <tbody>
+                <!-- ko foreach: rows -->
+                <tr data-bind="css:{ 'checked-row': isChecked }">
+                    <td class="check">
+                        <input data-bind="checked: isChecked" type="checkbox" />
+                    </td>
+                    <!-- ko foreach: cells -->
+                    <td class="cell" data-bind="style: { width: column.width }, attr: { title: value }, css: { 'sort': column.isSort }"><span data-bind="text: value"></span></td>
+                    <!-- /ko -->
+                    <td class="actions">
+                        <a data-bind="click: $parents[0].edit" data-access="update" href="javascript:;" class="btn btn-success btn-xs " title="Изменить">
+                            <i class="fa fa-edit"></i> Изм.
+                        </a>
+                        <a data-bind="click: $parents[0].delete" data-access="delete" href="javascript:;" class="btn btn-danger btn-xs " title="Удалить">
+                            <i class="fa fa-times"></i> Удал.
+                        </a>
+                    </td>
+                </tr>
+                <!-- /ko -->
+            </tbody>
+        </table>
+    </div>
+    <div data-bind="visible: isLoading" class="loading-overlay">
+        <div class="loading-indicator"><i class="fa fa-download"></i> Загрузка...</div>
+    </div>
+</div>

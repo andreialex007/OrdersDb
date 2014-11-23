@@ -1,0 +1,77 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersDb.Domain", "OrdersDb.Domain\OrdersDb.Domain.csproj", "{6E421705-137E-41FF-A121-7E4184193278}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersDb.Data", "OrdersDb.Data\OrdersDb.Data.csproj", "{ADB62BDA-FBBB-45C2-8BAF-9E6FD13FA1D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersDb.WebApp", "OrdersDb.WebApp\OrdersDb.WebApp.csproj", "{8558C710-1B4A-4677-BC72-D8E0367ED3F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9036EB8E-2EBC-4027-8618-C32E6EB06B7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersDb.Domain.Tests", "Tests\OrdersDb.Domain.Tests\OrdersDb.Domain.Tests.csproj", "{E02C1CE1-119D-49CD-BE1A-3699FC2D8DB5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{43D91E07-841B-473A-8245-6826993AF03E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildGenerator", "Utils\BuildGenerator\BuildGenerator.csproj", "{B03959DC-BB82-4FA6-809A-8DFE8957CF3D}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://notebook-pc:8080/tfs/development
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = OrdersDb.Data\\OrdersDb.Data.csproj
+		SccProjectName1 = OrdersDb.Data
+		SccLocalPath1 = OrdersDb.Data
+		SccProjectUniqueName2 = OrdersDb.Domain\\OrdersDb.Domain.csproj
+		SccProjectName2 = OrdersDb.Domain
+		SccLocalPath2 = OrdersDb.Domain
+		SccProjectUniqueName3 = OrdersDb.WebApp\\OrdersDb.WebApp.csproj
+		SccProjectName3 = OrdersDb.WebApp
+		SccLocalPath3 = OrdersDb.WebApp
+		SccProjectUniqueName4 = Tests\\OrdersDb.Domain.Tests\\OrdersDb.Domain.Tests.csproj
+		SccProjectTopLevelParentUniqueName4 = OrdersDb.sln
+		SccProjectName4 = Tests/OrdersDb.Domain.Tests
+		SccLocalPath4 = Tests\\OrdersDb.Domain.Tests
+		SccProjectUniqueName5 = Utils\\BuildGenerator\\BuildGenerator.csproj
+		SccProjectTopLevelParentUniqueName5 = OrdersDb.sln
+		SccProjectName5 = Utils/BuildGenerator
+		SccLocalPath5 = Utils\\BuildGenerator
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E421705-137E-41FF-A121-7E4184193278}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E421705-137E-41FF-A121-7E4184193278}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E421705-137E-41FF-A121-7E4184193278}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E421705-137E-41FF-A121-7E4184193278}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADB62BDA-FBBB-45C2-8BAF-9E6FD13FA1D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADB62BDA-FBBB-45C2-8BAF-9E6FD13FA1D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADB62BDA-FBBB-45C2-8BAF-9E6FD13FA1D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADB62BDA-FBBB-45C2-8BAF-9E6FD13FA1D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8558C710-1B4A-4677-BC72-D8E0367ED3F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8558C710-1B4A-4677-BC72-D8E0367ED3F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8558C710-1B4A-4677-BC72-D8E0367ED3F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8558C710-1B4A-4677-BC72-D8E0367ED3F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E02C1CE1-119D-49CD-BE1A-3699FC2D8DB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E02C1CE1-119D-49CD-BE1A-3699FC2D8DB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E02C1CE1-119D-49CD-BE1A-3699FC2D8DB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E02C1CE1-119D-49CD-BE1A-3699FC2D8DB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B03959DC-BB82-4FA6-809A-8DFE8957CF3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B03959DC-BB82-4FA6-809A-8DFE8957CF3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B03959DC-BB82-4FA6-809A-8DFE8957CF3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B03959DC-BB82-4FA6-809A-8DFE8957CF3D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E02C1CE1-119D-49CD-BE1A-3699FC2D8DB5} = {9036EB8E-2EBC-4027-8618-C32E6EB06B7C}
+		{B03959DC-BB82-4FA6-809A-8DFE8957CF3D} = {43D91E07-841B-473A-8245-6826993AF03E}
+	EndGlobalSection
+EndGlobal

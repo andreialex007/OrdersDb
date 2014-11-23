@@ -1,0 +1,108 @@
+﻿ul.tree, ul.tree ul {
+    list-style-type: none;
+}
+
+.tree {
+    padding-left: 20px;
+    position: relative;
+
+    li {
+        cursor: pointer;
+    }
+
+    li div.selected {
+        background-color: burlywood;
+        margin-right: 3px;
+    }
+
+    ul {
+        padding-left: 15px;
+    }
+
+    .name {
+        cursor: pointer;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+
+
+    .item {
+        padding: 4px;
+        height: 22px;
+        position: relative;
+
+        .item-innner {
+            position: absolute;
+            left: 0px;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+
+        .actions {
+            display: none;
+
+            .fa-remove {
+                color: brown;
+            }
+
+            .fa-plus {
+                color: green;
+            }
+
+            .fa {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .selector {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        height: 22px;
+        margin-top: -24px;
+    }
+
+    .selected-item {
+        .actions {
+            display: inline !important;
+
+            .fa {
+                // color: white !important;
+            }
+
+            .fa-remove {
+                color: forestgreen;
+            }
+
+            .fa-plus {
+                color: brown;
+            }
+        }
+    }
+
+    .actions-visible {
+        .actions {
+            display: inline !important;
+        }
+    }
+
+    .selected {
+        .actions {
+            display: inline !important;
+        }
+    }
+
+    .tree-item-hovered {
+        background-color: ghostwhite;
+        cursor: pointer;
+        margin-right: 3px;
+    }
+}

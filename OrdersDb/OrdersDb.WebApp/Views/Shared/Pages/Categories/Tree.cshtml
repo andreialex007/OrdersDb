@@ -1,0 +1,39 @@
+﻿<div class="tree-wrapper">
+    <ul class="tree">
+        <!-- ko foreach: nodes -->
+        <!-- ko template: { name: 'tree-item', data: $data } -->
+        <!-- /ko -->
+        <!-- /ko -->
+
+    </ul>
+</div>
+
+
+<script type="text/html" id="tree-item">
+    <li>
+        <div data-bind="click: select, event: { mouseenter : mouseEnter, mouseleave: mouseLeave },css: { 'actions-visible':selected }" class="item">
+            <div class="item-innner">
+                <i data-bind="css: { 'fa-folder-open': isOpen, 'fa-folder': !isOpen() }, click: toggle" class="fa fa-folder-open"></i>
+                <span class="item-content">
+                    <span class="name" data-bind="event : { dblclick: toggle }">
+                        <span data-bind="text: name"></span>&nbsp;
+                        [<span data-bind="text: childrenAmount">0</span>]
+                    </span>
+                    <span class="actions">
+                        <span data-bind="click: add" title="Добавить категорию"><i class="fa fa-plus"></i></span>
+                        <span data-bind="click: $parents[1].remove" title="Удалить категорию"><i class="fa fa-remove"></i></span>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="selector" data-bind="css: { 'selected':selected, 'tree-item-hovered': hovered },click: select,event: { mouseenter : mouseEnter, mouseleave: mouseLeave }"></div>
+        <div data-bind="fadeVisible: isOpen">
+            <ul>
+                <!-- ko foreach: children -->
+                <!-- ko template: { name: 'tree-item', data: $data } -->
+                <!-- /ko -->
+                <!-- /ko -->
+            </ul>
+        </div>
+    </li>
+</script>

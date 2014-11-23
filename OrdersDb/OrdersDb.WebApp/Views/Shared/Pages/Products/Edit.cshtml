@@ -1,0 +1,49 @@
+﻿<div data-bind="visible: visible">
+    <div class="search-area col-md-2 title-fix">
+        @Html.Partial("Controls/EditActionsBlock")
+    </div>
+    <div class="table-area col-md-10 title-fix">
+        <h3>
+            <i class="fa fa-edit"></i>
+            <span data-bind="text: title" class="title-span"></span>
+        </h3>
+        <br />
+        <!-- ko with: fields -->
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Данные продукта</h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <!-- ko with: Name -->
+                @Html.Partial("Controls/Fields/EditTextField")
+                <!-- /ko -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 ">
+                <!-- ko with: Category -->
+                @Html.Partial("Controls/Fields/DropdownSelect2")
+                <!-- /ko -->
+            </div>
+            <div class="col-md-3">
+                <!-- ko with: BuyPrice -->
+                @Html.Partial("Controls/Fields/Spinner")
+                <!-- /ko -->
+            </div>
+            <div class="col-md-3">
+                <!-- ko with: SellPrice -->
+                @Html.Partial("Controls/Fields/Spinner")
+                <!-- /ko -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label><input type="checkbox" data-bind="checked: IsService" />&nbsp;Является услугой</label>
+            </div>
+        </div>
+        <!-- /ko -->
+    </div>
+</div>

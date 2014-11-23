@@ -1,0 +1,80 @@
+﻿ul.tree,
+ul.tree ul {
+  list-style-type: none;
+}
+.tree {
+  padding-left: 20px;
+  position: relative;
+}
+.tree li {
+  cursor: pointer;
+}
+.tree li div.selected {
+  background-color: burlywood;
+  margin-right: 3px;
+}
+.tree ul {
+  padding-left: 15px;
+}
+.tree .name {
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.tree .item {
+  padding: 4px;
+  height: 22px;
+  position: relative;
+}
+.tree .item .item-innner {
+  position: absolute;
+  left: 0px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.tree .item .actions {
+  display: none;
+}
+.tree .item .actions .fa-remove {
+  color: brown;
+}
+.tree .item .actions .fa-plus {
+  color: green;
+}
+.tree .item .actions .fa {
+  cursor: pointer;
+}
+.tree .selector {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  height: 22px;
+  margin-top: -24px;
+}
+.tree .selected-item .actions {
+  display: inline !important;
+}
+.tree .selected-item .actions .fa-remove {
+  color: forestgreen;
+}
+.tree .selected-item .actions .fa-plus {
+  color: brown;
+}
+.tree .actions-visible .actions {
+  display: inline !important;
+}
+.tree .selected .actions {
+  display: inline !important;
+}
+.tree .tree-item-hovered {
+  background-color: ghostwhite;
+  cursor: pointer;
+  margin-right: 3px;
+}
+/*# sourceMappingURL=tree.css.map */

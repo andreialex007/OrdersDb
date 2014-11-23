@@ -1,0 +1,23 @@
+﻿{
+    "baseUrl": "../",
+    "name": "Scripts/app.config",
+    "include": [
+        "Scripts/libs/require"
+    ],
+    "exclude": [
+
+    ],
+    "optimize": "uglify2",
+    "preserveLicenseComments": false,
+    "paths": {
+        "jquery": "Metronic/global/plugins/jquery-1.11.0.min",
+        "knockout": "Scripts/libs/knockout-3.1.0",
+        "knockout.mapping": "Scripts/libs/knockout.mapping",
+        "sammy": "Scripts/libs/sammy",
+        "jquery.ui.widget": "Scripts/libs/jquery.ui.widget"
+    },
+    "out": "../_build/build.js",
+    "insertRequire": [
+        "Scripts/app.config"
+    ]
+}

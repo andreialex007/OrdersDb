@@ -1,0 +1,27 @@
+﻿@using OrdersDb.WebApp.Code.Helpers
+@{
+    ViewBag.Title = "Система организации заказов";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var pagesDirectories = new DirectoryInfo(Server.MapPath(@"~\Views\Shared\Pages\")).GetDirectories().Select(x => x.Name).ToList();
+}
+
+<!-- ko with: pages -->
+@foreach (var item in pagesDirectories)
+{
+    <div data-pagename="@item.ToLower()">
+
+        <!--  Страницы со списком -->
+        <!-- ko with: @Html.Raw(string.Format("{0}list", item.ToLower())) -->
+        @Html.PartialIfExists(string.Format("Pages/{0}/List", item))
+        <!-- /ko -->
+        <!--  Формы редактирования -->
+        <!-- ko with: @Html.Raw(string.Format("{0}edit", item.ToLower())) -->
+        @Html.PartialIfExists(string.Format("Pages/{0}/Edit", item))
+        <!-- /ko -->
+        <!--  Формы создания -->
+        <!-- ko with: @Html.Raw(string.Format("{0}new", item.ToLower())) -->
+        @Html.PartialIfExists(string.Format("Pages/{0}/Edit", item))
+        <!-- /ko -->
+    </div>
+}
+<!-- /ko -->

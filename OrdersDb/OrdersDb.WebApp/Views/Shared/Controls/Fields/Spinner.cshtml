@@ -1,0 +1,13 @@
+﻿
+<div data-bind="css: { 'has-error': hasErrors }" class="form-group ko-spinner">
+    <label data-bind="text: title" class="control-label"></label>
+    <input data-bind="value: value, event: { change: changed }, numeric: {}" type="text" class="form-control">
+    <span data-bind="text: errorsText" class="help-block hidden-if-no-error">
+    </span>
+    <div data-bind="clickHold: up" class="up btn btn-info">
+        <i class="fa fa-sort-asc"></i>
+    </div>
+    <div data-bind="clickHold: down" class="down btn btn-info">
+        <i class="fa fa-sort-desc"></i>
+    </div>
+</div>

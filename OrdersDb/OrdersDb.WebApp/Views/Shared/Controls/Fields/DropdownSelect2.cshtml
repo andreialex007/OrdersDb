@@ -1,0 +1,6 @@
+﻿<div data-bind="css: { 'has-error': hasErrors }" class="form-group">
+    <label data-bind="text: title" class="control-label"></label>
+    <select data-bind="options: avaliableValues, optionsText: 'Text', optionsValue: 'Value', value: value, optionsCaption: placeholder, event: { change :change }, select2: { options: avaliableValues }" class="bs-select form-control"></select>
+    <span data-bind="text: errorsText" class="help-block hidden-if-no-error">
+    </span>
+</div>
