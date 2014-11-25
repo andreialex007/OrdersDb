@@ -10,7 +10,7 @@
 
 
 <script type="text/html" id="tree-item">
-    <li>
+    <li data-bind="visible: isvisible">
         <div data-bind="click: select, event: { mouseenter : mouseEnter, mouseleave: mouseLeave },css: { 'actions-visible':selected }" class="item">
             <div class="item-innner">
                 <i data-bind="css: { 'fa-folder-open': isOpen, 'fa-folder': !isOpen() }, click: toggle" class="fa fa-folder-open"></i>

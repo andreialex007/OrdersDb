@@ -15,6 +15,9 @@
         self.title("Список категорий");
 
         self.categoriesLoading = ko.observable(false);
+        self.searchText = ko.observable("");
+
+
         self.tree = new tree();
         self.previouslyOpenedTabIndex = 0;
         self.descriptionTab = new descriptionTab(self);
@@ -29,6 +32,11 @@
                 self.tabclick(self.tabs[self.previouslyOpenedTabIndex]);
             });
         };
+
+        self.searchTextThrottled = ko.computed(self.searchText).extend({ throttle: 400 });
+        self.searchTextThrottled.subscribe(function (value) {
+            self.tree.textFilter(value);
+        });
 
         var loadBase = self.load;
         self.load = function () {
@@ -45,7 +53,7 @@
                     var nodes = $.map(json.List, function (element, index) {
                         return new node(self.tree, element.Id, element.Name, [], element.CategoriesAmount);
                     });
-                    self.tree.nodes.removeAll();
+                    self.tree.removeAllNodes();
                     self.tree.nodes(nodes);
                     self.categoriesLoading(false);
                 }

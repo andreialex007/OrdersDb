@@ -9,6 +9,7 @@
         self.name = ko.observable(name);
         self.isOpen = ko.observable(false);
         self.hovered = ko.observable(false);
+        self.isvisible = ko.observable(true);
         self.selected = ko.observable(false);
         self.childrenAmount = ko.observable(childrenAmount || 0);
         self.toggle = function () {
