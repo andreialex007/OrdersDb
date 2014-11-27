@@ -17,6 +17,8 @@
         self.fields.LastName = new textField("Фамилия", "", "Фамилия (обязательно)");
         self.fields.Patronymic = new textField("Отчество", "", "Отчество");
         self.fields.Position = new dropdown("Профессия", 0, [], "Выберите профессию из выпадающего списка");
+        self.fields.Email = new textField("Email", "", "Email (обязательно)");
+        self.fields.SNILS = new textField("SNILS", "", "SNILS (обязательно)");
 
 
 
@@ -33,6 +35,8 @@
             self.fields.FirstName.value(json.FirstName);
             self.fields.LastName.value(json.LastName);
             self.fields.Patronymic.value(json.Patronymic);
+            self.fields.Email.value(json.Email);
+            self.fields.SNILS.value(json.SNILS);
         };
 
         self.toJSON = function () {
@@ -44,6 +48,9 @@
             json.FirstName = self.fields.FirstName.value();
             json.LastName = self.fields.LastName.value();
             json.Patronymic = self.fields.Patronymic.value();
+
+            json.Email = self.fields.Email.value();
+            json.SNILS = self.fields.SNILS.value();
 
             return json;
         };

@@ -22,14 +22,14 @@
             new column("LastName", "Фамилия"),
             new column("Patronymic", "Отчество"),
             new column("Email", "Email"),
-            new column("PositionName", "Должность"),
+            new column("Position.Name", "Должность"),
             new column("SNILS", "СНИЛС")
         ]));
 
         self.firstName = new textField("Имя", "", "Введите как минимум 3 символа");
         self.lastName = new textField("Фамилия", "", "Введите как минимум 3 символа");
         self.patronymic = new textField("Отчество", "", "Введите как минимум 3 символа");
-        self.email = new textField("Email", "", "Введите email");
+        self.email = new textField("Email", "", "Введите email (минимум 3 символа)");
         self.positionName = new textField("Название должности", "", "Введите как минимум 3 символа");
         self.snils = new textField("СНИЛС", "", "Введите как минимум 3 символа");
 

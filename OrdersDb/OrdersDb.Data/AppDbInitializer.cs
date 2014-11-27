@@ -90,7 +90,7 @@ namespace OrdersDb.Data
             var generator = new RandomGenerator();
             var houses = Builder<House>.CreateListOfSize(200).All()
                 .With(x => x.Number = generator.Next(0, 1000))
-                .With(x => x.Building = generator.Phrase(1))
+                .With(x => x.Building = generator.Phrase(7))
                 .With(x => x.PostalCode = generator.Next(100000, 999999).ToString())
                 .With(x => x.StreetId = streets.Random().Id)
                 .Build();

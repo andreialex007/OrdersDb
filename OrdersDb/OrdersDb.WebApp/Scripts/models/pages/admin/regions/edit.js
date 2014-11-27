@@ -22,10 +22,12 @@
         self.toJSON = function () {
             var json = { Id: self.Id() };
             json.Name = self.fields.Name.value();
-            json.CountryId = self.fields.Country.value();
-            json.Country = {
-                Id: self.fields.Country.value()
-            };
+            var countryId = self.fields.Country.value();
+            json.CountryId = countryId;
+            json.Country = countryId ? {
+                Id: countryId
+            } : null;
+
             return json;
         };
 

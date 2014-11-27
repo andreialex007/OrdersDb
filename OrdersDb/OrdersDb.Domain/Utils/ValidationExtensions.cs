@@ -53,7 +53,7 @@ namespace OrdersDb.Domain.Utils
             //Собираем все ошибки для кажого аттрибута
             var validationContext = new ValidationContext(entityBase, null, null);
             var errors = new List<ValidationResult>();
-            Validator.TryValidateObject(entityBase, validationContext, errors);
+            Validator.TryValidateObject(entityBase, validationContext, errors, true);
             return errors.SelectMany(x => x.MemberNames.Select(m => new DbValidationError(m, x.ErrorMessage)));
         }
 

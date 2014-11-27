@@ -1,4 +1,6 @@
-﻿using OrdersDb.Domain.Services.Geography.Hose;
+﻿using System.ComponentModel.DataAnnotations;
+using DataAnnotationsExtensions;
+using OrdersDb.Domain.Services.Geography.Hose;
 using OrdersDb.Domain.Services._Common.Entities;
 
 namespace OrdersDb.Domain.Services.Staff.Employee
@@ -10,16 +12,19 @@ namespace OrdersDb.Domain.Services.Staff.Employee
         /// <summary>
         /// Имя 
         /// </summary>
+        [Required]
         public string FirstName { get; set; }
 
         /// <summary>
         /// Фамилия
         /// </summary>
+        [Required]
         public string LastName { get; set; }
 
         /// <summary>
         /// Отчество
         /// </summary>
+        [Required]
         public string Patronymic { get; set; }
 
         /// <summary>
@@ -40,6 +45,8 @@ namespace OrdersDb.Domain.Services.Staff.Employee
         /// <summary>
         /// Email пользователя
         /// </summary>
+        [Email]
+        [Required]
         public string Email { get; set; }
 
         /// <summary>

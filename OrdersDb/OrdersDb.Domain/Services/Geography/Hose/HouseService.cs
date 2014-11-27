@@ -22,7 +22,7 @@ namespace OrdersDb.Domain.Services.Geography.Hose
 
             query = SearchByIds(query, @params);
 
-            if (@params.Numbers != null)
+            if (!@params.Numbers.IsNullOrEmpty())
                 query = query.Where(x => @params.Numbers.Contains(x.Number));
 
             if (!string.IsNullOrEmpty(@params.Building))

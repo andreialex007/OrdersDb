@@ -1,4 +1,5 @@
-﻿@media (min-width: 992px) {
+﻿// ordinary devices
+@media (min-width: 992px) {
 
     .select-dropdown {
 
@@ -10,12 +11,19 @@
             z-index: 99999;
             background-color: black;
 
+            .drop-area-inner > div {
+                display: table-cell;
+                padding-right: 5px;
+            }
+
             .drop-area-inner {
                 width: 100%;
                 position: absolute;
                 right: 0px;
                 left: 0px;
                 top: 0;
+                display: table;
+                padding-right: 36px !important;
 
                 .country-cell {
                 }
@@ -28,7 +36,15 @@
     }
 }
 
+// mobile devices
+@media (max-width: 992px) {
+    .drop-area-inner > div {
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+}
 
+// all devices
 .select-dropdown {
 
     .result-block {
@@ -53,28 +69,18 @@
 
     .drop-area {
 
-
         .drop-area-inner {
             padding: 6px;
             background-color: #cfcdd3;
 
-            .country-cell {
-                padding-left: 3px;
-                padding-right: 3px;
-            }
-
-            .region-cell {
-                padding-left: 3px;
-                padding-right: 3px;
-            }
 
             .accept-cell {
-                padding-left: 3px;
-                padding-right: 3px;
-                width: 5.5%;
+                width: 0px !important;
+                height: 0px !important;
+                position: relative !important;
 
                 a {
-                    width: 100%;
+                    position: absolute;
                 }
             }
         }

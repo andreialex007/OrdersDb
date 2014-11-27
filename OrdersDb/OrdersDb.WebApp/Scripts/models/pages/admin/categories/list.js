@@ -36,6 +36,7 @@
         self.searchTextThrottled = ko.computed(self.searchText).extend({ throttle: 400 });
         self.searchTextThrottled.subscribe(function (value) {
             self.tree.textFilter(value);
+            self.load();
         });
 
         var loadBase = self.load;
@@ -48,7 +49,7 @@
                 type: "POST",
                 dataType: "JSON",
                 contentType: "application/json; charset=utf-8",
-                data: JSON.stringify({ ParentCategoryFilterEnabled: true, OrderBy: "Name" }),
+                data: JSON.stringify({ ParentCategoryFilterEnabled: self.searchText() == "", OrderBy: "Name", Name: self.searchText() }),
                 success: function (json) {
                     var nodes = $.map(json.List, function (element, index) {
                         return new node(self.tree, element.Id, element.Name, [], element.CategoriesAmount);

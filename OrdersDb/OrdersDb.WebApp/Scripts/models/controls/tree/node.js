@@ -11,6 +11,19 @@
         self.hovered = ko.observable(false);
         self.isvisible = ko.observable(true);
         self.selected = ko.observable(false);
+        self.children = ko.observableArray(children || []);
+
+
+        self._textFilter = ko.observable("");
+        self.textFilter = ko.computed({
+            read: function () {
+                return self._textFilter();
+            },
+            write: function (value) {
+                self._textFilter(value);
+            }
+        });
+
         self.childrenAmount = ko.observable(childrenAmount || 0);
         self.toggle = function () {
             self.isOpen(!self.isOpen());
@@ -56,7 +69,7 @@
             self.hovered(false);
         };
 
-        self.children = ko.observableArray(children || []);
+
         return self;
     }
     return node;

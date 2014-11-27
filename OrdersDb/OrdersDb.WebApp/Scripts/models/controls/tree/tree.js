@@ -6,7 +6,7 @@
     function tree() {
         var self = {};
 
-        self._nodes = ko.observableArray([]);
+        self.nodes = ko.observableArray([]);
 
         self._textFilter = ko.observable("");
         self.textFilter = ko.computed({
@@ -14,13 +14,10 @@
                 return self._textFilter();
             },
             write: function (value) {
-                $(self.nodes()).each(function (i, x) { x.isvisible(true); });
-                var notFound = $.grep(self.nodes(), function (x) { return x.name().toLowerCase().indexOf(value.toLowerCase()) == -1; });
-                $(notFound).each(function (i, x) { x.isvisible(false); });
                 self._textFilter(value);
             }
         });
-        self.nodes = ko.observableArray([]);
+
         self.removeAllNodes = function () {
             self.nodes.removeAll();
         }
@@ -28,6 +25,7 @@
         self.onSelect = function (item) {
 
         };
+
         self.deselectAll = function () {
             $(self.nodes()).each(function (index, element) {
                 element.deselectAll();

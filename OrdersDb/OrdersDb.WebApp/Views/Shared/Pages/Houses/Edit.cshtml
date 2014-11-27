@@ -51,28 +51,28 @@
 
                     <div data-bind="visible: dropAreaVisible, click: clickInside" class="drop-area">
                         <div class="drop-area-inner" style="">
-                            <div class="col-md-3">
+                            <div style="width: 25%">
                                 <!-- ko with: countries -->
                                 <select class="form-control"
                                         data-bind="options: avaliableValues, optionsText: 'Text', optionsValue: 'Value', value: value, optionsCaption: placeholder, event: { change: change }"></select>
                                 <!-- /ko -->
                             </div>
-                            <div class="col-md-3">
+                            <div style="width: 25%">
                                 <!-- ko with: regions -->
                                 <select class="form-control" data-bind="options: avaliableValues, optionsText: 'Text', optionsValue: 'Value', value: value, optionsCaption: placeholder, event: { change: change }"></select>
                                 <!-- /ko -->
                             </div>
-                            <div class="col-md-3">
+                            <div style="width: 25%">
                                 <!-- ko with: cities -->
                                 <select class="form-control" data-bind="options: avaliableValues, optionsText: 'Text', optionsValue: 'Value', value: value, optionsCaption: placeholder, event: { change: change }"></select>
                                 <!-- /ko -->
                             </div>
-                            <div class="col-md-3">
+                            <div style="width: 25%">
                                 <!-- ko with: streets -->
                                 <select class="form-control" data-bind="options: avaliableValues, optionsText: 'Text', optionsValue: 'Value', value: value, optionsCaption: placeholder"></select>
                                 <!-- /ko -->
                             </div>
-                            <div class="col-md-1 accept-cell">
+                            <div class="accept-cell">
                                 <a data-bind="click: accept" href="#" class="btn btn-icon-only btn-primary">
                                     <i class="fa fa-check"></i>
                                 </a>

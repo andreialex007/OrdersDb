@@ -261,7 +261,6 @@
     <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\CountriesController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
-    <Compile Include="Controllers\EmployeeVM.cs" />
     <Compile Include="Controllers\HousesController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\PositionsController.cs" />
@@ -277,7 +276,7 @@
     <Compile Include="Controllers\_Common\MenuItem.cs" />
     <Compile Include="Controllers\_Common\NamedViewModelBase.cs" />
     <Compile Include="Controllers\_Common\NamedEntityControllerBase.cs" />
-    <Compile Include="Controllers\IndexController.cs" />
+    <Compile Include="Controllers\_Common\IndexController.cs" />
     <Compile Include="Controllers\StreetsController.cs" />
     <Compile Include="Controllers\_Common\PermissionViewModel.cs" />
     <Compile Include="Controllers\_Common\PrincipalExtensions.cs" />
@@ -2707,6 +2706,8 @@
     <Content Include="Scripts\models\pages\admin\employees\edit.js" />
     <Content Include="Scripts\models\pages\admin\employees\list.js" />
     <Content Include="Scripts\models\pages\admin\houses\edit.js" />
+    <Content Include="Scripts\models\pages\admin\orders\edit.js" />
+    <Content Include="Scripts\models\pages\admin\orders\list.js" />
     <Content Include="Scripts\models\pages\admin\positions\edit.js" />
     <Content Include="Scripts\models\pages\admin\products\edit.js" />
     <Content Include="Scripts\models\pages\admin\regions\edit.js" />
@@ -3051,6 +3052,8 @@
     <Content Include="Views\Shared\Pages\Roles\Edit.cshtml" />
     <Content Include="Views\Shared\Pages\Users\Edit.cshtml" />
     <Content Include="Views\Shared\Pages\Employees\Edit.cshtml" />
+    <Content Include="Views\Shared\Pages\Orders\Edit.cshtml" />
+    <Content Include="Views\Shared\Pages\Orders\List.cshtml" />
     <None Include="_build\build.json" />
   </ItemGroup>
   <PropertyGroup>

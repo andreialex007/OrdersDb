@@ -21,6 +21,8 @@ namespace OrdersDb.Domain.Services.Staff.Employee
                 .Include(x => x.Position)
                 .AsQueryable();
 
+            query = SearchByIds(query, @params);
+
             if (!string.IsNullOrEmpty(@params.FirstName))
                 query = query.Where(x => x.FirstName.ToLower().Contains(@params.FirstName.ToLower()));
 
@@ -36,6 +38,9 @@ namespace OrdersDb.Domain.Services.Staff.Employee
             if (!string.IsNullOrEmpty(@params.SNILS))
                 query = query.Where(x => x.SNILS.ToLower().Contains(@params.SNILS.ToLower()));
 
+            if (!string.IsNullOrEmpty(@params.PositionName))
+                query = query.Where(x => x.Position.Name.ToLower().Contains(@params.PositionName.ToLower()));
+
             return query.OrderByTakeSkip(@params).Select(x => new EmployeeDto
                                                               {
                                                                   Id = x.Id,
@@ -47,7 +52,6 @@ namespace OrdersDb.Domain.Services.Staff.Employee
                                                                   SNILS = x.SNILS
                                                               }).ToList();
         }
-
 
         public override EmployeeDto GetById(int id)
         {
