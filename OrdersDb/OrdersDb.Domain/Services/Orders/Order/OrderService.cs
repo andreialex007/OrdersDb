@@ -22,11 +22,14 @@ namespace OrdersDb.Domain.Services.Orders.Order
 
             query = SearchByIds(query, @params);
 
+            if (!string.IsNullOrEmpty(@params.Code))
+                query = query.Where(x => x.Code.Value.ToLower().Contains(@params.Code.ToLower()));
+
             return query.OrderByTakeSkip(@params).Select(x => new OrderDto
-                                                              {
-                                                                  Id = x.Id,
-                                                                  Code = x.Code.Value
-                                                              }).ToList();
+                                                  {
+                                                      Id = x.Id,
+                                                      Code = x.Code.Value
+                                                  }).ToList();
         }
 
         public override OrderDto GetById(int id)

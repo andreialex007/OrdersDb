@@ -15,7 +15,7 @@
             $(targetCells).each(function (index, element) {
                 var col = self.table.columns()[index + self.cells().length];
                 if (!col) {
-                    debugger;
+//                    debugger;
                 }
                 element.column = col;
             });

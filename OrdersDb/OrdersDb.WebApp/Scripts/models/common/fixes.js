@@ -3,7 +3,9 @@
     window.onTableDataLoaded = function () {
         $(".scroll-fix").each(function (index, element) {
             var $tableControl = $(element).closest(".table-control");
-            $(element).css({ width: $tableControl.find(".table-head").width() - $tableControl.find(".table-body").width() + "px" });
+            var calculatedWidth = $tableControl.find(".table-head").width() - $tableControl.find(".table-body").width();
+            console.log("calculatedWidth=" + calculatedWidth);
+            $(element).css({ width: calculatedWidth + "px" });
         });
     };
 

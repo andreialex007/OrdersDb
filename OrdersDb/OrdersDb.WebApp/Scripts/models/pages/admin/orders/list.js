@@ -19,18 +19,17 @@
         self.title("Список городов");
 
         self.table.columns(self.table.columns().concat([
-//            new column("Region.Name", "Регион", "200px"),
+            new column("Code.Value", "Код")
 //            new column("Population", "Население", "150px")
         ]));
 
-        self.regionName = new textField("Название региона", "", "Введите как минимум 3 символа");
-//        self.population = new rangeSpinnerControl("Население", 0, 15000000);
+        self.Code = new textField("Код закза", "", "Введите как минимум 3 символа");
 
         var toRowBase = self.toRow;
         self.toRow = function (el) {
             var rowBase = toRowBase(el);
             rowBase.addCells([
-                new cell("Код")
+                new cell(el.Code)
             ]);
             return rowBase;
         };
@@ -38,7 +37,9 @@
         var getSearchParamsBase = self.getSearchParams;
         self.getSearchParams = function () {
             var searchParamsBase = getSearchParamsBase();
-            return searchParamsBase;
+            return $.extend(searchParamsBase, {
+                Code: self.Code.value().length < 3 ? "" : self.Code.value(),
+            });
         };
 
         self.init();

@@ -9,6 +9,6 @@ namespace OrdersDb.Domain.Services.Orders.Order
 {
     public class OrderSearchParameters : SearchParameters
     {
-        public string OrderCode { get; set; }
+        public string Code { get; set; }
     }
 }
