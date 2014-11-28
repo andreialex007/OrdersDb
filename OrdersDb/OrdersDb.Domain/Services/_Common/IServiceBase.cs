@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using OrdersDb.Domain.Services._Common.Entities;
 
 namespace OrdersDb.Domain.Services._Common
