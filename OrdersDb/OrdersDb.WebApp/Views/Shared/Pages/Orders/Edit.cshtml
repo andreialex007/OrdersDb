@@ -8,10 +8,33 @@
             <span data-bind="text: title" class="title-span"></span>
         </h3>
         <br />
-        <!-- ko with: fields -->
+        <div class="scrolling-area">
 
-        <span>fields will be here</span>
 
-        <!-- /ko -->
+
+            <!-- ko with: fields -->
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- ko with: Code -->
+                    @Html.Partial("Controls/Fields/EditTextField")
+                    <!-- /ko -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- ko with: Client -->
+                    @Html.Partial("Controls/Fields/Dropdown")
+                    <!-- /ko -->
+                </div>
+            </div>
+            <!-- /ko -->
+            <!-- ko with: table -->
+            <div class="row">
+                @Html.Partial("Controls/Table/OrderItemsTable")
+            </div>
+            <!-- /ko -->
+
+
+        </div>
     </div>
 </div>

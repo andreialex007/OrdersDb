@@ -83,6 +83,18 @@ h3 {
   .info-item small {
     margin-left: 15px;
   }
+  .scrolling-area {
+    position: absolute;
+    right: 31px;
+    left: 0px;
+    bottom: 21px;
+    top: 34px;
+    overflow-y: auto;
+  }
+  .scrolling-area > div.row {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
 }
 .category-search-fix .form-control {
   margin-top: 11px;

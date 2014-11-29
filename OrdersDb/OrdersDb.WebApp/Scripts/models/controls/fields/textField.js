@@ -1,11 +1,11 @@
 ﻿define(["knockout"], function (ko) {
 
-    function textField(title, value, placeholder, mask) {
+    function textField(title, value, placeholder, mask, disabled) {
         var self = {};
         self.title = ko.observable(title);
         self.value = ko.observable(value);
         self.valueThrottle = ko.computed(self.value).extend({ throttle: 700 });
-        self.disabled = ko.observable(false);
+        self.disabled = ko.observable(disabled || false);
         self.placeholder = ko.observable(placeholder || "Введите текст");
         self.errorsText = ko.observable("");
         self.mask = mask;

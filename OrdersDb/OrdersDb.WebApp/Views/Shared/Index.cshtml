@@ -1,4 +1,5 @@
-﻿@using OrdersDb.WebApp.Code.Helpers
+﻿@using System.Diagnostics
+@using OrdersDb.WebApp.Code.Helpers
 @{
     ViewBag.Title = "Система организации заказов";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -16,6 +17,9 @@
         <!-- /ko -->
         <!--  Формы редактирования -->
         <!-- ko with: @Html.Raw(string.Format("{0}edit", item.ToLower())) -->
+        @{
+    Debug.WriteLine(string.Format("Pages/{0}/Edit", item));
+        }
         @Html.PartialIfExists(string.Format("Pages/{0}/Edit", item))
         <!-- /ko -->
         <!--  Формы создания -->

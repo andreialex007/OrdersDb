@@ -148,6 +148,7 @@
     <Compile Include="Services\Geography\Hose\HouseDto.cs" />
     <Compile Include="Services\Geography\Region\RegionDto.cs" />
     <Compile Include="Services\Geography\Street\StreetDto.cs" />
+    <Compile Include="Services\Orders\OrderItem\OrderItemDto.cs" />
     <Compile Include="Services\Orders\Order\IOrderService.cs" />
     <Compile Include="Services\Orders\Order\OrderDto.cs" />
     <Compile Include="Services\Orders\Order\OrderSearchParameters.cs" />

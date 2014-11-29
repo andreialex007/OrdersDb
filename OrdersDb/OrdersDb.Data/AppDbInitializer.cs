@@ -287,7 +287,7 @@ namespace OrdersDb.Data
                                                                 roles.First()
                                                             },
                                                     Name = RoleService.AdminUserName,
-                                                    Password = Domain.Services.Accounts.User.PasswordHasher.HashPassword("123456"),
+                                                    Password = PasswordHasher.HashPassword("123456"),
                                                     Email = string.Format("{0}@yandex.ru", codesList.Random().Value)
                                                 }
                                             });
@@ -300,7 +300,7 @@ namespace OrdersDb.Data
                                                                 roles.Skip(1).First()
                                                             },
                                                     Name = moderatorUserName,
-                                                    Password = Domain.Services.Accounts.User.PasswordHasher.HashPassword("123456"),
+                                                    Password = PasswordHasher.HashPassword("123456"),
                                                     Email = string.Format("{0}@yandex.ru", codesList.Random().Value)
                                                 }
                                             });
@@ -312,6 +312,7 @@ namespace OrdersDb.Data
 
             var orders = Builder<Order>.CreateListOfSize(100).All()
                 .With(x => x.CodeId = codesList.Random().Id)
+                .With(x => x.Client = organizations.Random())
                 .Build();
 
             context.Orders.AddRangeWithDates(orders);

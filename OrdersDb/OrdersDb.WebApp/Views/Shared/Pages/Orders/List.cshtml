@@ -5,9 +5,17 @@
         <!-- ko with: id -->
         @Html.Partial("Controls/Fields/TextField")
         <!-- /ko -->
-        
+        <!-- ko with: Client -->
+        @Html.Partial("Controls/Fields/TextField")
+        <!-- /ko -->
         <!-- ko with: Code -->
         @Html.Partial("Controls/Fields/TextField")
+        <!-- /ko -->
+        <!-- ko with: BuyPrice -->
+        @Html.Partial("Controls/Fields/RangeSpinnerControl")
+        <!-- /ko -->
+        <!-- ko with: SellPrice -->
+        @Html.Partial("Controls/Fields/RangeSpinnerControl")
         <!-- /ko -->
     </div>
     <div class="table-area col-md-10 title-fix">

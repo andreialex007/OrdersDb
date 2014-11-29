@@ -39,7 +39,7 @@ h3 {
     opacity: 0.5;
 }
 
-
+// normal screen
 @media (min-width: 992px) {
 
     .sidebar-left {
@@ -108,6 +108,21 @@ h3 {
         small {
             margin-left: 15px;
         }
+    }
+
+
+    .scrolling-area {
+        position: absolute;
+        right: 31px;
+        left: 0px;
+        bottom: 21px;
+        top: 34px;
+        overflow-y: auto;
+    }
+
+    .scrolling-area > div.row {
+        margin-left: 0px !important;
+        margin-right: 0px !important;
     }
 }
 

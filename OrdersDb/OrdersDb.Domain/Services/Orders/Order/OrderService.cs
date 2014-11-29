@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using OrdersDb.Domain.Services.Orders.OrderItem;
 using OrdersDb.Domain.Services._Common;
+using OrdersDb.Domain.Services._Common.Entities;
 using OrdersDb.Domain.Utils;
 using OrdersDb.Domain.Wrappers;
 
@@ -18,6 +20,7 @@ namespace OrdersDb.Domain.Services.Orders.Order
         {
             var query = Db.Set<Order>()
                 .Include(x => x.Code)
+                .Include(x => x.OrderItems)
                 .AsQueryable();
 
             query = SearchByIds(query, @params);
@@ -25,24 +28,67 @@ namespace OrdersDb.Domain.Services.Orders.Order
             if (!string.IsNullOrEmpty(@params.Code))
                 query = query.Where(x => x.Code.Value.ToLower().Contains(@params.Code.ToLower()));
 
-            return query.OrderByTakeSkip(@params).Select(x => new OrderDto
-                                                  {
-                                                      Id = x.Id,
-                                                      Code = x.Code.Value
-                                                  }).ToList();
+            if (@params.MinBuyPrice != null)
+                query = query.Where(x => x.BuyPrice >= @params.MinBuyPrice);
+
+            if (@params.MaxBuyPrice != null)
+                query = query.Where(x => x.BuyPrice <= @params.MaxBuyPrice);
+
+            if (@params.MinSellPrice != null)
+                query = query.Where(x => x.SellPrice >= @params.MinSellPrice);
+
+            if (@params.MaxSellPrice != null)
+                query = query.Where(x => x.SellPrice <= @params.MaxSellPrice);
+
+            if (!string.IsNullOrEmpty(@params.ClientName))
+                query = query.Where(x => x.Client.Name.ToLower().Contains(@params.ClientName.ToLower()));
+
+            var search = query.OrderByTakeSkip(@params).Select(x => new OrderDto
+                                                                       {
+                                                                           Id = x.Id,
+                                                                           Code = x.Code.Value,
+                                                                           BuyPrice = x.BuyPrice,
+                                                                           ClientName = x.Client.Name,
+                                                                           SellPrice = x.SellPrice,
+                                                                           TotalItems = x.OrderItems.Count
+                                                                       }).ToList();
+            return search;
         }
 
         public override OrderDto GetById(int id)
         {
-            return Db.Set<Order>()
-                .Include(x => x.OrderItems)
-                .Include(x => x.Code)
-                .Where(x => x.Id == id)
-                .Select(x => new OrderDto
-                             {
-                                 Id = x.Id,
-                                 Code = x.Code.Value
-                             }).Single();
+            var orderDto = new OrderDto();
+
+            if (id != 0)
+            {
+                orderDto = Db.Set<Order>()
+                    .Include(x => x.OrderItems)
+                    .Include(x => x.Code)
+                    .Where(x => x.Id == id)
+                    .Select(x => new OrderDto
+                                 {
+                                     Id = x.Id,
+                                     Code = x.Code.Value,
+                                     ClientName = x.Client.Name,
+                                     BuyPrice = x.BuyPrice,
+                                     SellPrice = x.SellPrice,
+                                     ClientId = x.Client.Id,
+                                     TotalItems = x.OrderItems.Count,
+                                     OrderItems = x.OrderItems.Select(o => new OrderItemDto
+                                     {
+                                         Amount = o.Amount,
+                                         BuyPrice = o.BuyPrice,
+                                         Id = o.Id,
+                                         SellPrice = o.SellPrice,
+                                         ProductName = o.Product.Name,
+                                         ProductId = o.Product.Id
+                                     }).ToList()
+                                 }).Single();
+            }
+
+            orderDto.Clients = Db.Clients.Select(x => new NameValue { Id = x.Id, Name = x.Name }).OrderBy(x => x.Name).ToList();
+
+            return orderDto;
         }
     }
 }

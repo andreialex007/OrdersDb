@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using OrdersDb.Domain.Services.Production.Product;
 using OrdersDb.Domain.Services._Common.Entities;
 
@@ -9,6 +10,7 @@ namespace OrdersDb.Domain.Services.Orders.OrderItem
     /// </summary>
     public class OrderItem : EntityBase
     {
+
         public override int Id { get; set; }
 
         /// <summary>
@@ -31,5 +33,23 @@ namespace OrdersDb.Domain.Services.Orders.OrderItem
         /// Заказ в который входит данный элемент
         /// </summary>
         public Order.Order Order { get; set; }
+
+        /// <summary>
+        /// Цена продажи
+        /// </summary>
+        public decimal SellPrice
+        {
+            get { return Product == null ? 0 : Amount * Product.SellPrice; }
+            private set { }
+        }
+
+        /// <summary>
+        /// Цена покупки
+        /// </summary>
+        public decimal BuyPrice
+        {
+            get { return Product == null ? 0 : Amount * Product.BuyPrice; }
+            private set { }
+        }
     }
 }

@@ -6,8 +6,8 @@ namespace OrdersDb.Domain.Services.Production.Product
 {
     public class ProductDto : NamedDtoBase
     {
-        public decimal BuyPrice { get; set; }
-        public decimal SellPrice { get; set; }
+        public decimal? BuyPrice { get; set; }
+        public decimal? SellPrice { get; set; }
         public bool IsService { get; set; }
         public string CategoryName { get; set; }
         public int CategoryId { get; set; }
