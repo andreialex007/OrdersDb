@@ -1,8 +1,23 @@
 ﻿<div data-bind="visible: visible">
     <div class="search-area col-md-2 title-fix">
         @Html.Partial("Controls/EditActionsBlock")
+
+        <h4><i class="fa fa-dropbox"></i>&nbsp;&nbsp; Товарные позиции</h4>
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <a data-bind="click: addNew" class="btn btn-success btn-xs" href="javascript:;"><i class="fa fa-plus-square"></i> Добавить новый</a>
+                    <div class="empty-space"></div>
+                    <a data-bind="click: deleteSelected" class="btn btn-danger btn-xs" href="javascript:;"><i class="fa fa-remove"></i> Удалить выделенные</a>
+                    <div class="empty-space"></div>
+                    <a data-bind="click: clearList" class="btn purple btn-xs" href="javascript:;"><i class="fa fa-trash"></i> Очистить список</a>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <div class="table-area col-md-10 title-fix">
+    <div class="table-area col-md-10 title-fix form">
         <h3>
             <i class="fa fa-edit"></i>
             <span data-bind="text: title" class="title-span"></span>
@@ -10,7 +25,11 @@
         <br />
         <div class="scrolling-area">
 
-
+            <div class="row">
+                <div class="col-md-12 order-data">
+                    <h4 class="form-section">Данные заказа</h4>
+                </div>
+            </div>
 
             <!-- ko with: fields -->
             <div class="row">
@@ -28,13 +47,53 @@
                 </div>
             </div>
             <!-- /ko -->
-            <!-- ko with: table -->
+
             <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <p class="form-control-static">
+                                <strong>Всего товарных позиций:</strong>&nbsp;&nbsp;
+                                <span data-bind="text: displayed" class="badge bg-red"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <p class="form-control-static">
+                                <strong>Общая цена закупки:</strong>&nbsp;&nbsp;
+                                <span data-bind="text: totalBuyPrice" class="badge bg-yellow-crusta">12.183,50</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <p class="form-control-static">
+                                <strong>Общая цена продажи:</strong>&nbsp;&nbsp;
+                                <span data-bind="text: totalSellPrice" class="badge bg-green-jungle">15.183,50</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 order-data">
+                    <h4 class="form-section">Товарные позиции</h4>
+                </div>
+            </div>
+            <!-- ko with: table -->
+            <div class="row table-control-top-fix">
                 @Html.Partial("Controls/Table/OrderItemsTable")
             </div>
             <!-- /ko -->
-
-
         </div>
     </div>
+
+    <!-- ko with: orderItemModal -->
+    @Html.Partial("Controls/OrderItemModal")
+    <!-- /ko -->
 </div>

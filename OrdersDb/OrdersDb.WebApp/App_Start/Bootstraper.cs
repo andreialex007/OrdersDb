@@ -14,7 +14,7 @@ using StructureMap.Web.Pipeline;
 
 // ReSharper disable  CSharpWarnings::CS0618
 
-namespace OrdersDb.WebApp.App_Start
+namespace OrdersDb.WebApp
 {
     public class Bootstraper
     {

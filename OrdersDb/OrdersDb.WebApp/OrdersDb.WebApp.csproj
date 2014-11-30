@@ -2671,6 +2671,7 @@
     <Content Include="Scripts\libs\jquery.ui.widget.js" />
     <Content Include="Scripts\libs\knockout-3.1.0.js" />
     <Content Include="Scripts\libs\knockout.mapping.js" />
+    <Content Include="Scripts\libs\linq.js" />
     <Content Include="Scripts\libs\r.js" />
     <Content Include="Scripts\libs\require.js" />
     <Content Include="Scripts\libs\sammy.js" />
@@ -2687,6 +2688,8 @@
     <Content Include="Scripts\models\controls\fields\intField.js" />
     <Content Include="Scripts\models\controls\fields\dropdown.js" />
     <Content Include="Scripts\models\controls\fields\textField.js" />
+    <Content Include="Scripts\models\controls\modals\modalbase.js" />
+    <Content Include="Scripts\models\controls\modals\orderitemmodal.js" />
     <Content Include="Scripts\models\controls\searchArea\searchArea.js" />
     <Content Include="Scripts\models\controls\table\cell.js" />
     <Content Include="Scripts\models\controls\table\column.js" />
@@ -3055,6 +3058,7 @@
     <Content Include="Views\Shared\Pages\Orders\Edit.cshtml" />
     <Content Include="Views\Shared\Pages\Orders\List.cshtml" />
     <Content Include="Views\Shared\Controls\Table\OrderItemsTable.cshtml" />
+    <Content Include="Views\Shared\Controls\OrderItemModal.cshtml" />
     <None Include="_build\build.json" />
   </ItemGroup>
   <PropertyGroup>

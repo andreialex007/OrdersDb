@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace OrdersDb.WebApp.App_Start
+namespace OrdersDb.WebApp
 {
     public class FilterConfig
     {

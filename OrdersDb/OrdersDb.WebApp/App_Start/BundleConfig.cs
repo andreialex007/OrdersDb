@@ -2,7 +2,7 @@
 using System.Web.Optimization;
 using Antlr.Runtime.Misc;
 
-namespace OrdersDb.WebApp.App_Start
+namespace OrdersDb.WebApp
 {
     public class BundleConfig
     {
@@ -27,9 +27,7 @@ namespace OrdersDb.WebApp.App_Start
                               "~/Metronic/global/plugins/fullcalendar/fullcalendar/fullcalendar.css",
                               "~/Metronic/global/plugins/jqvmap/jqvmap/jqvmap.css",
                               "~/Metronic/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.css",
-//                              "~/Metronic/global/plugins/bootstrap-select.min.css",
                               "~/Metronic/global/plugins/select2/select2.css",
-//                              "~/Metronic/global/plugins/select2/select2-bootstrap.css",
                               "~/Metronic/global/css/plugins.css",
                               "~/Metronic/admin/pages/css/tasks.css"
                           };
@@ -47,12 +45,9 @@ namespace OrdersDb.WebApp.App_Start
 
 
             //APPLICATION STYLES ******************
-            Func<Bundle, Bundle> applicationStyles = bundle =>
-                                        {
-                                            return bundle.Include("~/Styles/common.css")
-                                                .IncludeDirectory("~/Styles/controls", "*.css", true)
-                                                .IncludeDirectory("~/Styles/pages", "*.css", true);
-                                        };
+            Func<Bundle, Bundle> applicationStyles = bundle => bundle.Include("~/Styles/common.css")
+                .IncludeDirectory("~/Styles/controls", "*.css", true)
+                .IncludeDirectory("~/Styles/pages", "*.css", true);
 
             //BUNDLES DEFINITION
             bundles.Add(new StyleBundle("~/css") { Orderer = new AsIsBundleOrderer() }

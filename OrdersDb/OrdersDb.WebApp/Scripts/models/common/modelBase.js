@@ -1,8 +1,9 @@
-﻿define([ "knockout" ],function(ko) {
-    
+﻿define(["knockout"], function (ko) {
+
     function modelBase(parent) {
         var self = {};
         self.parent = parent;
+        self.visible = ko.observable(true);
         return self;
     }
 

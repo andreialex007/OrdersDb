@@ -8,7 +8,8 @@
 
         'Metronic/init',
         "Scripts/models/common/fixes",
-        "Scripts/models/common/customBinders"
+        "Scripts/models/common/customBinders",
+        "Scripts/libs/linq"
 ], function (ko, sammy, modelBase, adminDirectories, accountPage, newPage) {
 
     //Функция главного приложения

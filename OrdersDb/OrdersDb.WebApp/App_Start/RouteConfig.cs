@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace OrdersDb.WebApp.App_Start
+namespace OrdersDb.WebApp
 {
     public class RouteConfig
     {
