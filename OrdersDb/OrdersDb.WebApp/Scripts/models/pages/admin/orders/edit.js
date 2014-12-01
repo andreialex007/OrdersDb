@@ -31,6 +31,36 @@
         ]);
 
         self.orderItemModal = new orderItemModal(self);
+        self.orderItemModal.onSave = function () {
+            var productItemId = self.orderItemModal.productItemId;
+            var productId = self.orderItemModal.fields.product.value();
+            var product = $.grep(self.orderItemModal.fields.product.avaliableValues(), function (x) { return x.Id == productId; })[0];
+            var amount = self.orderItemModal.fields.amount.value();
+
+            if (productItemId != 0) {
+                var oldRow = $.grep(self.table.rows(), function (x) { return x.id() == productItemId; })[0];
+                oldRow.cells()[0].value(productId);
+                oldRow.cells()[1].value(product.Name);
+                oldRow.cells()[2].value(product.SellPrice);
+                oldRow.cells()[3].value(product.BuyPrice);
+                oldRow.cells()[4].value(amount);
+                oldRow.cells()[5].value(amount * product.SellPrice);
+                oldRow.cells()[6].value(amount * product.BuyPrice);
+            } else {
+                var rowItem = new row(self.table, productItemId, [
+                    new cell(productId),
+                    new cell(product.Name),
+                    new cell(product.SellPrice),
+                    new cell(product.BuyPrice),
+                    new cell(amount),
+                    new cell(amount * product.SellPrice),
+                    new cell(amount * product.BuyPrice)
+                ]);
+                var newRows = self.table.rows();
+                newRows.push(rowItem);
+                self.table.rows(newRows);
+            }
+        }
 
         self.table.load = function () {
             var sortColumn = self.table.sortColumn();
@@ -51,6 +81,7 @@
                 }).length != 0;
             }
         });
+
         self.displayed = ko.computed({
             read: function () {
                 return self.table.rows().length;
@@ -62,7 +93,6 @@
                 return Enumerable.From(self.table.rows()).Sum(function (x) { return x.cells()[5].value(); });
             }
         });
-
 
         self.totalSellPrice = ko.computed({
             read: function () {
@@ -79,13 +109,14 @@
         });
 
         self.addNew = function () {
-            console.log("addNew");
             self.orderItemModal.show();
         }
 
         self.deleteSelected = function () {
-            console.log("deleteSelected");
-            self.orderItemModal.hide();
+            var newItems = $.grep(self.table.rows(), function (el) {
+                return !el.isChecked();
+            });
+            self.table.rows(newItems);
         }
 
         self.clearList = function () {
@@ -93,7 +124,11 @@
         }
 
         self.table.onEdit = function (item) {
-            console.log("table.onEdit");
+            var productItemId = item.id();
+            var productId = item.cells()[0].value();
+            self.orderItemModal.fields.product.value(productId);
+            self.orderItemModal.productItemId = productItemId;
+            self.orderItemModal.show();
         }
 
         self.table.onDelete = function (item) {
@@ -103,15 +138,13 @@
         self.fromJSON = function (json) {
             self.fields.Code.value(json.Code);
 
-            self.products = json.Products;
-
-            self.orderItemModal.fields.product.avaliableValues(utils.idNameToTextValue(json.Products));
+            self.orderItemModal.fields.product.avaliableValues(json.Products);
             self.fields.Client.avaliableValues(utils.idNameToTextValue(json.Clients));
             self.fields.Client.value(json.ClientId);
 
             var orderItems = json.OrderItems;
             var rows = $(orderItems).map(function (i, x) {
-                return new row(self.table, x.ProductId, [
+                return new row(self.table, x.Id, [
                     new cell(x.ProductId),
                     new cell(x.ProductName),
                     new cell(x.ProductSellPrice),

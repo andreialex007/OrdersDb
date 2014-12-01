@@ -93,7 +93,13 @@ namespace OrdersDb.Domain.Services.Orders.Order
                 .ToList();
 
             orderDto.Products = Db.Products
-                .Select(x => new NameValue { Id = x.Id, Name = x.Name })
+                .Select(x => new ProductPriceDto
+                             {
+                                 Id = x.Id,
+                                 Name = x.Name,
+                                 BuyPrice = x.BuyPrice,
+                                 SellPrice = x.SellPrice
+                             })
                 .OrderBy(x => x.Name)
                 .ToList();
 
