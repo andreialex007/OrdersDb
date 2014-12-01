@@ -92,6 +92,11 @@ namespace OrdersDb.Domain.Services.Orders.Order
                 .OrderBy(x => x.Name)
                 .ToList();
 
+            orderDto.Products = Db.Products
+                .Select(x => new NameValue { Id = x.Id, Name = x.Name })
+                .OrderBy(x => x.Name)
+                .ToList();
+
             return orderDto;
         }
     }

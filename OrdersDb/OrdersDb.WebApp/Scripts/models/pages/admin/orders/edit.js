@@ -89,13 +89,23 @@
         }
 
         self.clearList = function () {
-            console.log("clearList");
+            self.table.rows.removeAll();
         }
 
+        self.table.onEdit = function (item) {
+            console.log("table.onEdit");
+        }
+
+        self.table.onDelete = function (item) {
+            self.table.rows.remove(item);
+        }
 
         self.fromJSON = function (json) {
             self.fields.Code.value(json.Code);
 
+            self.products = json.Products;
+
+            self.orderItemModal.fields.product.avaliableValues(utils.idNameToTextValue(json.Products));
             self.fields.Client.avaliableValues(utils.idNameToTextValue(json.Clients));
             self.fields.Client.value(json.ClientId);
 

@@ -222,4 +222,10 @@ textarea {
   left: 4px;
   cursor: pointer;
 }
+select option {
+  width: 100px;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
 /*# sourceMappingURL=common.css.map */

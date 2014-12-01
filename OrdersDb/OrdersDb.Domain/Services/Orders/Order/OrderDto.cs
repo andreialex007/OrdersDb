@@ -19,6 +19,7 @@ namespace OrdersDb.Domain.Services.Orders.Order
         public decimal? SellPrice { get; set; }
         public int TotalItems { get; set; }
         public List<OrderItemDto> OrderItems { get; set; }
+        public List<NameValue> Products { get; set; }
         public List<NameValue> Clients { get; set; }
     }
 }
