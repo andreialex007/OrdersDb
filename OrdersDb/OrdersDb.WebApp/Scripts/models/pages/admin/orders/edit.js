@@ -17,6 +17,7 @@
         self.EDIT_TITLE("Редактирование заказа");
         self.NEW_TITLE("Создание заказа");
 
+        self.CodeId = null;
         self.fields.Code = new textField("Код заказа", "", "Код будет сгенерирован автоматически", "", true);
         self.fields.Client = new dropdown("Заказчик", 0, [], "Выберите заказчика из выпадающего списка");
 
@@ -37,8 +38,8 @@
             var product = $.grep(self.orderItemModal.fields.product.avaliableValues(), function (x) { return x.Id == productId; })[0];
             var amount = self.orderItemModal.fields.amount.value();
 
-            if (productItemId != 0) {
-                var oldRow = $.grep(self.table.rows(), function (x) { return x.id() == productItemId; })[0];
+            if (self.orderItemModal.rowPosition != null) {
+                var oldRow = self.table.rows()[self.orderItemModal.rowPosition];
                 oldRow.cells()[0].value(productId);
                 oldRow.cells()[1].value(product.Name);
                 oldRow.cells()[2].value(product.SellPrice);
@@ -82,6 +83,12 @@
             }
         });
 
+        self.isEmptyTable = ko.computed({
+            read: function () {
+                return self.table.rows().length == 0;
+            }
+        });
+
         self.displayed = ko.computed({
             read: function () {
                 return self.table.rows().length;
@@ -109,6 +116,7 @@
         });
 
         self.addNew = function () {
+            self.orderItemModal.rowPosition = null;
             self.orderItemModal.show();
         }
 
@@ -126,7 +134,9 @@
         self.table.onEdit = function (item) {
             var productItemId = item.id();
             var productId = item.cells()[0].value();
+            self.orderItemModal.rowPosition = self.table.rows().indexOf(item);
             self.orderItemModal.fields.product.value(productId);
+            self.orderItemModal.fields.amount.value(item.cells()[4].value());
             self.orderItemModal.productItemId = productItemId;
             self.orderItemModal.show();
         }
@@ -137,7 +147,7 @@
 
         self.fromJSON = function (json) {
             self.fields.Code.value(json.Code);
-
+            self.CodeId = json.CodeId;
             self.orderItemModal.fields.product.avaliableValues(json.Products);
             self.fields.Client.avaliableValues(utils.idNameToTextValue(json.Clients));
             self.fields.Client.value(json.ClientId);
@@ -154,13 +164,31 @@
                     new cell(x.BuyPrice)
                 ]);
             });
-            self.table.rows(rows);
 
+            self.table.rows(rows);
             self.table.sortColumn(self.table.columns()[0]);
             self.table.load();
         };
         self.toJSON = function () {
             var json = { Id: self.Id() };
+            json.CodeId = self.CodeId;
+            json.Code = {
+                Id: self.CodeId,
+                Value: self.fields.Code.value()
+            };
+            json.ClientId = self.fields.Client.value();
+            json.OrderItems = $.map(self.table.rows(), function (x) {
+                return {
+                    Id: x.id(),
+                    ProductId: x.cells()[0].value(),
+                    Product: {
+                        Id: x.cells()[0].value(),
+                        Name: x.cells()[1].value()
+                    },
+                    Amount: x.cells()[4].value(),
+                    OrderId: self.Id()
+                };
+            });
 
             return json;
         };

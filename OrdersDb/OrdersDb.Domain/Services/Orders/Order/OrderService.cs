@@ -68,6 +68,7 @@ namespace OrdersDb.Domain.Services.Orders.Order
                                  {
                                      Id = x.Id,
                                      Code = x.Code.Value,
+                                     CodeId = x.Code.Id,
                                      ClientName = x.Client.Name,
                                      BuyPrice = x.BuyPrice,
                                      SellPrice = x.SellPrice,
@@ -105,5 +106,37 @@ namespace OrdersDb.Domain.Services.Orders.Order
 
             return orderDto;
         }
+
+        public override void Update(Order entity)
+        {
+            var errors = entity.OrderItems.SelectMany(x => x.GetValidationErrors(o => o.Amount, o => o.ProductId)).ToList();
+            errors = errors.Concat(entity.GetValidationErrors(x => x.ClientId, x => x.CodeId).ToList()).ToList();
+            errors.ThrowIfHasErrors();
+
+            entity.OrderItems.ForEach(x => Db.AttachIfDetached(x));
+
+            var dbOrder = Db.Set<Order>()
+                .Include(x => x.OrderItems)
+                .Include(x => x.Code)
+                .Include(x => x.Client)
+                .Single(x => x.Id == entity.Id);
+
+            dbOrder.OrderItems.Clear();
+            dbOrder.OrderItems.AddRange(entity.OrderItems);
+            dbOrder.ClientId = entity.ClientId;
+            dbOrder.CodeId = entity.CodeId;
+            Db.SaveChanges();
+        }
+
+
+        public override void Add(Order entity)
+        {
+            base.Add(entity);
+        }
+
+//        private void ProcessEntity(Order entity)
+//        {
+//            
+//        }
     }
 }

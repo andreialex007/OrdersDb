@@ -13,6 +13,7 @@ namespace OrdersDb.Domain.Services.Orders.Order
         }
 
         public string Code { get; set; }
+        public int CodeId { get; set; }
         public int ClientId { get; set; }
         public string ClientName { get; set; }
         public decimal? BuyPrice { get; set; }

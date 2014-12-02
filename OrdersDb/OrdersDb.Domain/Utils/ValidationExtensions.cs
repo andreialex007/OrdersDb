@@ -65,8 +65,15 @@ namespace OrdersDb.Domain.Utils
             var validationErrors = new List<DbValidationError>();
             foreach (var action in propertiesToValidate)
             {
+                var propertyName = string.Empty;
+                var body = action.Body as MemberExpression;
+                if (body != null)
+                    propertyName = body.Member.Name;
 
-                var propertyName = ((MemberExpression)action.Body).Member.Name;
+                var expression = action.Body as UnaryExpression;
+                if (expression != null)
+                    propertyName = ((MemberExpression)expression.Operand).Member.Name;
+
                 var propertyValue = action.Compile().Invoke(entityBase);
                 var validationContext = new ValidationContext(entityBase)
                 {

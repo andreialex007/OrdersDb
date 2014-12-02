@@ -9,9 +9,9 @@
                 <div class="form-group">
                     <a data-bind="click: addNew" class="btn btn-success btn-xs" href="javascript:;"><i class="fa fa-plus-square"></i> Добавить новый</a>
                     <div class="empty-space"></div>
-                    <a data-bind="click: deleteSelected" class="btn btn-danger btn-xs" href="javascript:;"><i class="fa fa-remove"></i> Удалить выделенные</a>
+                    <a data-bind="click: deleteSelected, css: { 'disabled' : !anyChecked() }" class="btn btn-danger btn-xs" href="javascript:;"><i class="fa fa-remove"></i> Удалить выделенные</a>
                     <div class="empty-space"></div>
-                    <a data-bind="click: clearList" class="btn purple btn-xs" href="javascript:;"><i class="fa fa-trash"></i> Очистить список</a>
+                    <a data-bind="click: clearList, css: { 'disabled': isEmptyTable }" class="btn purple btn-xs" href="javascript:;"><i class="fa fa-trash"></i> Очистить список</a>
                 </div>
             </div>
         </div>

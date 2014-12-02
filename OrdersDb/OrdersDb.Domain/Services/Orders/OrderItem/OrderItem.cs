@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using OrdersDb.Domain.Services.Production.Product;
 using OrdersDb.Domain.Services._Common.Entities;
 
@@ -17,6 +16,12 @@ namespace OrdersDb.Domain.Services.Orders.OrderItem
         /// Количество продуктов в элементе заказа
         /// </summary>
         public int Amount { get; set; }
+
+        /// <summary>
+        /// Идентификатор услуги
+        /// </summary>
+        [Required]
+        public int ProductId { get; set; }
 
         /// <summary>
         /// Продукт в данном элементе заказа
