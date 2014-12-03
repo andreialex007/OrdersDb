@@ -33,7 +33,7 @@ namespace OrdersDb.Domain.Services.Production.Product
         /// <summary>
         /// Цена продажи
         /// </summary>
-         [Min(1)]
+        [Min(1)]
         public decimal SellPrice { get; set; }
 
         /// <summary>
@@ -56,5 +56,10 @@ namespace OrdersDb.Domain.Services.Production.Product
         /// Элементы заказа в которых присутствует данный продукт
         /// </summary>
         public List<OrderItem> OrderItems { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("Id: {0}, Name: {1}, BuyPrice: {2}, SellPrice: {3}, IsService: {4}, Category: {5}, CategoryId: {6}", Id, Name, BuyPrice, SellPrice, IsService, Category, CategoryId);
+        }
     }
 }

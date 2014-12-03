@@ -65,5 +65,10 @@ namespace OrdersDb.Domain.Services.Orders.Order
             get { return OrderItems.Sum(x => x.BuyPrice); }
             private set { }
         }
+
+        public override string ToString()
+        {
+            return string.Format("CodeId: {0}, Code: {1}, Id: {2}, ClientId: {3}, Client: {4}, SellPrice: {5}, BuyPrice: {6}", CodeId, Code, Id, ClientId, Client, SellPrice, BuyPrice);
+        }
     }
 }

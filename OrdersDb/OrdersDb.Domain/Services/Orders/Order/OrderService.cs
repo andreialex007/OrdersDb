@@ -109,10 +109,10 @@ namespace OrdersDb.Domain.Services.Orders.Order
 
         public override void Update(Order entity)
         {
+            //Валидация и аттач
             var errors = entity.OrderItems.SelectMany(x => x.GetValidationErrors(o => o.Amount, o => o.ProductId)).ToList();
             errors = errors.Concat(entity.GetValidationErrors(x => x.ClientId, x => x.CodeId).ToList()).ToList();
             errors.ThrowIfHasErrors();
-
             entity.OrderItems.ForEach(x => Db.AttachIfDetached(x));
 
             var dbOrder = Db.Set<Order>()
@@ -121,6 +121,20 @@ namespace OrdersDb.Domain.Services.Orders.Order
                 .Include(x => x.Client)
                 .Single(x => x.Id == entity.Id);
 
+            //Добавляем новые элементы заказа
+            var newOrderItems = entity.OrderItems.Where(x => x.Id == 0).ToList();
+            Db.Set<OrderItem.OrderItem>().AddRange(newOrderItems);
+
+            //Удаляем помеченные на удаление элементы заказа
+            var modifiedOrderItemsIds = entity.OrderItems.Select(x => x.Id).ToList();
+            var orderItemsToDelete = dbOrder.OrderItems.Where(x => !modifiedOrderItemsIds.Contains(x.Id)).ToList();
+            Db.Set<OrderItem.OrderItem>().RemoveRange(orderItemsToDelete);
+
+            //Обновляем измененные элементы заказа
+            var orderItemsToUpdate = dbOrder.OrderItems.Where(x => modifiedOrderItemsIds.Contains(x.Id)).ToList();
+            orderItemsToUpdate.ForEach(x => Db.Entry(x).State = EntityState.Modified);
+
+            //Обновляем основную сущность
             dbOrder.OrderItems.Clear();
             dbOrder.OrderItems.AddRange(entity.OrderItems);
             dbOrder.ClientId = entity.ClientId;
@@ -133,10 +147,5 @@ namespace OrdersDb.Domain.Services.Orders.Order
         {
             base.Add(entity);
         }
-
-//        private void ProcessEntity(Order entity)
-//        {
-//            
-//        }
     }
 }

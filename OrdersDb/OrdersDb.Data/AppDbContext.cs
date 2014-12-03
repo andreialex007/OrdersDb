@@ -3,7 +3,9 @@ using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.Validation;
+using Mono.CSharp;
 using OrdersDb.Domain.Services.Accounts.Role;
 using OrdersDb.Domain.Services.Accounts.User;
 using OrdersDb.Domain.Services.Geography.City;
@@ -63,6 +65,13 @@ namespace OrdersDb.Data
                 .HasOptional(u => u.ParentCategory)
                 .WithMany(x => x.Categories)
                 .HasForeignKey(u => u.CategoryId);
+
+//            modelBuilder.Entity<OrderItem>()
+//                .HasRequired(x=>x.Order)
+//                .WithRequiredPrincipal(x=>x.)
+
+            modelBuilder.Properties<DateTime>().Configure(c => c.HasColumnType("datetime2"));
+
 
             base.OnModelCreating(modelBuilder);
         }

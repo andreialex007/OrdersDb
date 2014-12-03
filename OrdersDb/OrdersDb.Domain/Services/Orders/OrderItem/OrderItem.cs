@@ -56,5 +56,10 @@ namespace OrdersDb.Domain.Services.Orders.OrderItem
             get { return Product == null ? 0 : Amount * Product.BuyPrice; }
             private set { }
         }
+
+        public override string ToString()
+        {
+            return string.Format("Id: {0}, Amount: {1}, ProductId: {2}, Product: {3}, OrderId: {4}, Order: {5}, SellPrice: {6}, BuyPrice: {7}", Id, Amount, ProductId, Product, OrderId, Order, SellPrice, BuyPrice);
+        }
     }
 }
