@@ -12,7 +12,7 @@ namespace OrdersDb.Domain.Tests.Common
     [TestFixture]
     public class TestsBase
     {
-        protected IAppDbContext AppDbContext;
+        protected IAppDbContext Db;
 
         [SetUp]
         public virtual void Setup()
@@ -42,7 +42,7 @@ namespace OrdersDb.Domain.Tests.Common
                     });
             });
 
-            AppDbContext = ObjectFactory.GetInstance<IAppDbContext>();
+            Db = ObjectFactory.GetInstance<IAppDbContext>();
         }
 
     }

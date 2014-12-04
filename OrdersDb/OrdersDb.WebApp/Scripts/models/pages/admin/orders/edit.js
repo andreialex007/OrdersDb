@@ -75,6 +75,12 @@
             self.table.rows(rowsOrdered);
         };
 
+        self.loadEntityData = function (params) {
+            self.getById(self.Id(), function (json) {
+                self.fromJSON(json);
+            });
+        };
+
         self.anyChecked = ko.computed({
             read: function () {
                 return $.grep(self.table.rows(), function (el) {
@@ -171,11 +177,13 @@
         };
         self.toJSON = function () {
             var json = { Id: self.Id() };
-            json.CodeId = self.CodeId;
-            json.Code = {
-                Id: self.CodeId,
-                Value: self.fields.Code.value()
-            };
+            if (self.CodeId) {
+                json.CodeId = self.CodeId;
+                json.Code = {
+                    Id: self.CodeId,
+                    Value: self.fields.Code.value()
+                };
+            }
             json.ClientId = self.fields.Client.value();
             json.OrderItems = $.map(self.table.rows(), function (x) {
                 return {

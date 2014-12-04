@@ -2,6 +2,7 @@
 using System.Data.Entity;
 using System.Linq;
 using OrdersDb.Domain.Services.Orders.OrderItem;
+using OrdersDb.Domain.Services.SystemServices;
 using OrdersDb.Domain.Services._Common;
 using OrdersDb.Domain.Services._Common.Entities;
 using OrdersDb.Domain.Utils;
@@ -126,7 +127,7 @@ namespace OrdersDb.Domain.Services.Orders.Order
             Db.Set<OrderItem.OrderItem>().AddRange(newOrderItems);
 
             //Удаляем помеченные на удаление элементы заказа
-            var modifiedOrderItemsIds = entity.OrderItems.Select(x => x.Id).ToList();
+            var modifiedOrderItemsIds = entity.OrderItems.Where(x => x.Id != 0).Select(x => x.Id).ToList();
             var orderItemsToDelete = dbOrder.OrderItems.Where(x => !modifiedOrderItemsIds.Contains(x.Id)).ToList();
             Db.Set<OrderItem.OrderItem>().RemoveRange(orderItemsToDelete);
 
@@ -142,10 +143,25 @@ namespace OrdersDb.Domain.Services.Orders.Order
             Db.SaveChanges();
         }
 
-
         public override void Add(Order entity)
         {
-            base.Add(entity);
+            //Валидация и аттач
+            var errors = entity.OrderItems.SelectMany(x => x.GetValidationErrors(o => o.Amount, o => o.ProductId)).ToList();
+            errors = errors.Concat(entity.GetValidationErrors(x => x.ClientId, x => x.CodeId).ToList()).ToList();
+            errors.ThrowIfHasErrors();
+
+            var code = Db.Set<Code>().Include(x=>x.Order).First(x => x.Order == null).Id;
+            entity.CodeId = code;
+
+            //Аттач
+            entity.OrderItems.ForEach(x => Db.AttachIfDetached(x));
+            Db.AttachIfDetached(entity);
+
+            //Изменение
+            Db.Entry(entity).State = EntityState.Added;
+            entity.OrderItems.ForEach(x => Db.Entry(x).State = EntityState.Added);
+
+            Db.SaveChanges();
         }
     }
 }

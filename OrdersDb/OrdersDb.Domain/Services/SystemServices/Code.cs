@@ -1,4 +1,6 @@
-﻿using OrdersDb.Domain.Services.Orders.Order;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using OrdersDb.Domain.Services.Orders.Order;
 using OrdersDb.Domain.Services._Common.Entities;
 
 namespace OrdersDb.Domain.Services.SystemServices
@@ -14,11 +16,6 @@ namespace OrdersDb.Domain.Services.SystemServices
         /// Значение кода
         /// </summary>
         public string Value { get; set; }
-
-        /// <summary>
-        /// Идентификатор заказа
-        /// </summary>
-        public int? OrderId { get; set; }
 
         /// <summary>
         /// Заказ привязанный к коду

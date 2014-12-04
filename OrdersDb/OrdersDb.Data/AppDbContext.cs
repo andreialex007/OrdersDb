@@ -66,12 +66,30 @@ namespace OrdersDb.Data
                 .WithMany(x => x.Categories)
                 .HasForeignKey(u => u.CategoryId);
 
-//            modelBuilder.Entity<OrderItem>()
-//                .HasRequired(x=>x.Order)
-//                .WithRequiredPrincipal(x=>x.)
 
             modelBuilder.Properties<DateTime>().Configure(c => c.HasColumnType("datetime2"));
 
+            modelBuilder.Entity<Code>().HasOptional(x => x.Order).WithMany();
+
+
+            //            modelBuilder.Entity<Order>()
+            //                
+            //                .HasOptional(x => x.Code)
+            //                .WithOptionalDependent();
+
+            //            modelBuilder.Entity<Order>()
+            //                .HasRequired(a => a.Code)
+            //                .WithRequiredDependent();
+
+            //            modelBuilder.Entity<Order>()
+            //                .HasRequired(a => a.Code)
+            //                .WithMany()
+            //                .HasForeignKey(u => u.CodeId);
+
+            //            modelBuilder.Entity<Code>()
+            //            .HasOptional(f => f.Order)
+            //            .WithRequired(s => s.Code)
+            //            .Map(p => p.MapKey("CodeId"));
 
             base.OnModelCreating(modelBuilder);
         }

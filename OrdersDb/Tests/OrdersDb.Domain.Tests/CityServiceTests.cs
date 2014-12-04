@@ -5,6 +5,7 @@ using Moq;
 using NUnit.Framework;
 using OrdersDb.Domain.Services.Geography.City;
 using OrdersDb.Domain.Services.Production.Category;
+using OrdersDb.Domain.Services.SystemServices;
 using OrdersDb.Domain.Services._Common.Entities;
 using OrdersDb.Domain.Tests.Common;
 using System.Data.Entity;
@@ -19,7 +20,13 @@ namespace OrdersDb.Domain.Tests
         [Test]
         public void IntegrationTest()
         {
-            var query = AppDbContext.Set<Category>()
+//            var code = Db.Set<Code>().Include(x => x.Order).First(x => x.Order == null);
+
+            var codes = Db.Codes.Where(x => x.Order == null).ToList();
+
+//            var orders = Db.Orders.Include(x => x.Code).Where(x => x.Code == null).ToList();
+
+            var query = Db.Set<Category>()
                .Include(x => x.Categories.Select(c => c.Categories))
                .Include(x => x.ParentCategory)
                .Include(x => x.Products)
@@ -36,7 +43,7 @@ namespace OrdersDb.Domain.Tests
             //            var city = new City();
             //            //            var forProperties = city.get(x => x.Name, x => x.Id);
             //
-            //            var cities = AppDbContext.Cities.Include(x => x.Region)
+            //            var cities = Db.Cities.Include(x => x.Region)
             //                .Include(x => x.Region)
             //                .Where(x => !string.IsNullOrEmpty(x.Name))
             //                //                .OrderBy(x => x.Name)
