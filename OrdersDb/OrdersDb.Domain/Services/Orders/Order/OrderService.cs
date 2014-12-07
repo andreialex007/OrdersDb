@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 using OrdersDb.Domain.Services.Orders.OrderItem;
 using OrdersDb.Domain.Services.SystemServices;
@@ -111,10 +112,7 @@ namespace OrdersDb.Domain.Services.Orders.Order
         public override void Update(Order entity)
         {
             //Валидация и аттач
-            var errors = entity.OrderItems.SelectMany(x => x.GetValidationErrors(o => o.Amount, o => o.ProductId)).ToList();
-            errors = errors.Concat(entity.GetValidationErrors(x => x.ClientId, x => x.CodeId).ToList()).ToList();
-            errors.ThrowIfHasErrors();
-            entity.OrderItems.ForEach(x => Db.AttachIfDetached(x));
+            Validate(entity);
 
             var dbOrder = Db.Set<Order>()
                 .Include(x => x.OrderItems)
@@ -146,12 +144,14 @@ namespace OrdersDb.Domain.Services.Orders.Order
         public override void Add(Order entity)
         {
             //Валидация и аттач
-            var errors = entity.OrderItems.SelectMany(x => x.GetValidationErrors(o => o.Amount, o => o.ProductId)).ToList();
-            errors = errors.Concat(entity.GetValidationErrors(x => x.ClientId, x => x.CodeId).ToList()).ToList();
-            errors.ThrowIfHasErrors();
+            Validate(entity);
 
-            var code = Db.Set<Code>().Include(x=>x.Order).First(x => x.Order == null).Id;
-            entity.CodeId = code;
+            entity.OrderItems.ForEach(x => Db.AttachIfDetached(x));
+
+            var code = Db.Set<Code>().Include(x => x.Order).First(x => x.Order == null);
+            entity.CodeId = code.Id;
+            entity.Id = code.Id;
+            entity.OrderItems.ForEach(x => x.OrderId = code.Id);
 
             //Аттач
             entity.OrderItems.ForEach(x => Db.AttachIfDetached(x));
@@ -162,6 +162,20 @@ namespace OrdersDb.Domain.Services.Orders.Order
             entity.OrderItems.ForEach(x => Db.Entry(x).State = EntityState.Added);
 
             Db.SaveChanges();
+        }
+
+        protected override void Validate(Order entity)
+        {
+            //Валидация и аттач
+            var errors = entity.OrderItems.SelectMany(x => x.GetValidationErrors(o => o.Amount, o => o.ProductId)).ToList();
+            var entityErrors = entity.GetValidationErrors(x => x.CodeId).ToList();
+            var foundClient = Db.Clients.SingleOrDefault(x => x.Id == entity.ClientId);
+            if (foundClient == null)
+                errors.Add(new DbValidationError("Client", "Client must be specified"));
+            if (!entity.OrderItems.Any())
+                errors.Add(new DbValidationError(string.Empty, "Require to add order items"));
+            errors = errors.Concat(entityErrors).ToList();
+            errors.ThrowIfHasErrors();
         }
     }
 }

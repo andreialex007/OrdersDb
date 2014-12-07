@@ -16,6 +16,9 @@
             }
         });
 
+        self.otherErrors = ko.observable("");
+        self.otherErrorsVisible = ko.observable(false);
+
         self.fields = {};
         self.fieldsArr = function () {
             return $.map(self.fields, function (value, index) {
@@ -80,15 +83,45 @@
                 if (element.errorsText)
                     element.errorsText("");
             });
+            self.hasErrors(false);
+            self.otherErrorsVisible(false);
         };
 
         self.onError = function (json) {
             self.clearErrors();
 
             $(json.Errors).each(function (index, element) {
-                self.fields[element.PropertyName].appendError(element.ErrorMessage);
+                if (element.PropertyName)
+                    self.fields[element.PropertyName].appendError(element.ErrorMessage);
             });
+            var otherErrors = $.map($.grep(json.Errors, function (x) { return !self.fields[x.PropertyName]; }), function (a) { return a.ErrorMessage; }).join();
+            if (otherErrors) {
+                self.otherErrors(otherErrors);
+                self.otherErrorsVisible(true);
+            }
+
+            self.checkErrors();
         };
+
+        self.hasErrors = ko.observable(false);
+
+        self.checkErrors = function () {
+            var hasErrors = false;
+
+            var hasAnyErrors = $.grep(self.fieldsArr(), function (x) {
+                if (x.hasErrors && x.hasErrors() == true)
+                    return true;
+                return false;
+            }).length > 0;
+
+            if (hasAnyErrors)
+                hasErrors = true;
+
+            if (self.otherErrors())
+                hasErrors = true;
+
+            self.hasErrors(hasErrors);
+        }
 
         self.cancel = function () {
             window.location.hash = "#/" + self.controllerName;

@@ -1,0 +1,10 @@
+﻿<div data-bind="visible: hasErrors" class="row validation-block">
+    <div class="col-md-12 common-alert">
+        <div class="alert alert-danger display-none" style="display: block;">
+            Ошибки заполнения формы
+        </div>
+    </div>
+    <div data-bind="visible: otherErrorsVisible" class="col-md-12 has-error extra-errors">
+        <span data-bind="text: otherErrors" class="help-block help-block-error"></span>
+    </div>
+</div>

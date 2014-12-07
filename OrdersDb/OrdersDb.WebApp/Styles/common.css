@@ -228,4 +228,15 @@ select option {
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
 }
+.validation-block .common-alert {
+  margin-bottom: -34px !important;
+  margin-top: 13px !important;
+}
+.scrolling-area .validation-block {
+  margin-bottom: 20px;
+}
+.validation-block .extra-errors {
+  margin-top: 16px;
+  margin-bottom: -9px;
+}
 /*# sourceMappingURL=common.css.map */

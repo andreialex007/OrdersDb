@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using DataAnnotationsExtensions;
 using OrdersDb.Domain.Services.Production.Client;
 using OrdersDb.Domain.Services.SystemServices;
 using OrdersDb.Domain.Services._Common.Entities;
@@ -18,11 +19,13 @@ namespace OrdersDb.Domain.Services.Orders.Order
             OrderItems = new List<OrderItem.OrderItem>();
         }
 
+        [Required]
         public int CodeId { get; set; }
 
         /// <summary>
         /// Уникальный код заказа в базе
         /// </summary>
+        [Required]
         public Code Code { get; set; }
 
         /// <summary>
@@ -39,6 +42,7 @@ namespace OrdersDb.Domain.Services.Orders.Order
         /// Идентификатор клиента
         /// </summary>
         [Required]
+        [Min(1)]
         public int ClientId { get; set; }
 
         /// <summary>

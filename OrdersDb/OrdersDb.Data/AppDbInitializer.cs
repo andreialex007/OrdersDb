@@ -315,7 +315,7 @@ namespace OrdersDb.Data
                 .With(x => x.Client = organizations.Random())
                 .Build();
 
-            context.Orders.AddRangeWithDates(orders);
+            context.Orders.AddRange(orders);
             context.SaveChanges();
 
             #endregion

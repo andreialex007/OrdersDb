@@ -3062,6 +3062,7 @@
     <Content Include="Views\Shared\Controls\FieldsTwoColumn\Dropdown.cshtml" />
     <Content Include="Views\Shared\Controls\Spinner.cshtml" />
     <Content Include="Views\Shared\Test.cshtml" />
+    <Content Include="Views\Shared\Controls\ValidationBlock.cshtml" />
     <None Include="_build\build.json" />
   </ItemGroup>
   <PropertyGroup>

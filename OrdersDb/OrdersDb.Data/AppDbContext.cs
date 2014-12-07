@@ -69,7 +69,7 @@ namespace OrdersDb.Data
 
             modelBuilder.Properties<DateTime>().Configure(c => c.HasColumnType("datetime2"));
 
-            modelBuilder.Entity<Code>().HasOptional(x => x.Order).WithMany();
+//            modelBuilder.Entity<Code>().HasOptional(x => x.Order).WithMany();
 
 
             //            modelBuilder.Entity<Order>()

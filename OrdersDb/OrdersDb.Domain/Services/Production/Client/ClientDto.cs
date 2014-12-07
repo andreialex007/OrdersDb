@@ -37,9 +37,9 @@ namespace OrdersDb.Domain.Services.Production.Client
                     RegionName,
                     CityName,
                     StreetName,
-                    Location.Number,
-                    Location.Building,
-                    Location.PostalCode);
+                    Location != null ? (object)Location.Number : null,
+                    Location != null ? Location.Building : string.Empty,
+                    Location != null ? Location.PostalCode : string.Empty);
             }
         }
     }

@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AutoMapper.Impl;
 using Moq;
 using NUnit.Framework;
 using OrdersDb.Domain.Services.Geography.City;
+using OrdersDb.Domain.Services.Orders.Order;
 using OrdersDb.Domain.Services.Production.Category;
 using OrdersDb.Domain.Services.SystemServices;
 using OrdersDb.Domain.Services._Common.Entities;
@@ -14,17 +16,39 @@ using OrdersDb.Domain.Utils;
 
 namespace OrdersDb.Domain.Tests
 {
+
     [TestFixture]
     public class CityServiceTests : TestsBase
     {
+
+
+
         [Test]
         public void IntegrationTest()
         {
-//            var code = Db.Set<Code>().Include(x => x.Order).First(x => x.Order == null);
+            //            var code = Db.Set<Code>().Include(x => x.Order).First(x => x.Order == null);
 
-            var codes = Db.Codes.Where(x => x.Order == null).ToList();
 
-//            var orders = Db.Orders.Include(x => x.Code).Where(x => x.Code == null).ToList();
+
+            var lastOrder = Db.Orders.OrderByDescending(x => x.Id).First();
+            var lastOrderId = lastOrder.Id;
+            var newId = lastOrderId + 1;
+            var codeId = Db.Codes.First(x => x.Id == newId).Id;
+            var client = Db.Clients.First();
+
+            var order = new Order
+                        {
+                            Client = client,
+                            ClientId = client.Id,
+                            CodeId = codeId,
+                            Id = codeId
+                        };
+
+            Db.Orders.Add(order);
+            Db.SaveChanges();
+
+
+            //            var orders = Db.Orders.Include(x => x.Code).Where(x => x.Code == null).ToList();
 
             var query = Db.Set<Category>()
                .Include(x => x.Categories.Select(c => c.Categories))
@@ -36,7 +60,7 @@ namespace OrdersDb.Domain.Tests
             var result = new List<CategoryItem>();
             FlattenChildren(categories, result);
 
-//            var flatten = categories.Flatten(x => x.Categories);
+            //            var flatten = categories.Flatten(x => x.Categories);
 
 
             //
