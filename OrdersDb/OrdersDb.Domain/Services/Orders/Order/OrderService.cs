@@ -31,29 +31,34 @@ namespace OrdersDb.Domain.Services.Orders.Order
                 query = query.Where(x => x.Code.Value.ToLower().Contains(@params.Code.ToLower()));
 
             if (@params.MinBuyPrice != null)
-                query = query.Where(x => x.BuyPrice >= @params.MinBuyPrice);
+                query = query.Where(x => x.OrderItems.Sum(oi => oi.Product.BuyPrice * oi.Amount) >= @params.MinBuyPrice);
 
             if (@params.MaxBuyPrice != null)
-                query = query.Where(x => x.BuyPrice <= @params.MaxBuyPrice);
+                query = query.Where(x => x.OrderItems.Sum(oi => oi.Product.BuyPrice * oi.Amount) <= @params.MaxBuyPrice);
 
             if (@params.MinSellPrice != null)
-                query = query.Where(x => x.SellPrice >= @params.MinSellPrice);
+                query = query.Where(x => x.OrderItems.Sum(oi => oi.Product.SellPrice * oi.Amount) >= @params.MinSellPrice);
 
             if (@params.MaxSellPrice != null)
-                query = query.Where(x => x.SellPrice <= @params.MaxSellPrice);
+                query = query.Where(x => x.OrderItems.Sum(oi => oi.Product.SellPrice * oi.Amount) <= @params.MaxSellPrice);
 
             if (!string.IsNullOrEmpty(@params.ClientName))
                 query = query.Where(x => x.Client.Name.ToLower().Contains(@params.ClientName.ToLower()));
 
-            return query.OrderByTakeSkip(@params).Select(x => new OrderDto
+            var result = query.OrderByTakeSkip(@params).Select(x => new OrderDto
                                                                        {
                                                                            Id = x.Id,
                                                                            Code = x.Code.Value,
-                                                                           BuyPrice = x.BuyPrice,
+                                                                           OrderItems = x.OrderItems.Select(oi => new OrderItemDto
+                                                                                                                  {
+                                                                                                                      Amount = oi.Amount,
+                                                                                                                      ProductBuyPrice = oi.Product.BuyPrice,
+                                                                                                                      ProductSellPrice = oi.Product.SellPrice
+                                                                                                                  }).ToList(),
                                                                            ClientName = x.Client.Name,
-                                                                           SellPrice = x.SellPrice,
                                                                            TotalItems = x.OrderItems.Count
                                                                        }).ToList();
+            return result;
         }
 
         public override OrderDto GetById(int id)
@@ -72,16 +77,12 @@ namespace OrdersDb.Domain.Services.Orders.Order
                                      Code = x.Code.Value,
                                      CodeId = x.Code.Id,
                                      ClientName = x.Client.Name,
-                                     BuyPrice = x.BuyPrice,
-                                     SellPrice = x.SellPrice,
                                      ClientId = x.Client.Id,
                                      TotalItems = x.OrderItems.Count,
                                      OrderItems = x.OrderItems.Select(o => new OrderItemDto
                                                                            {
                                                                                Amount = o.Amount,
-                                                                               BuyPrice = o.BuyPrice,
                                                                                Id = o.Id,
-                                                                               SellPrice = o.SellPrice,
                                                                                ProductName = o.Product.Name,
                                                                                ProductId = o.Product.Id,
                                                                                ProductBuyPrice = o.Product.BuyPrice,
@@ -114,6 +115,8 @@ namespace OrdersDb.Domain.Services.Orders.Order
             //Валидация и аттач
             Validate(entity);
 
+            entity.OrderItems.ForEach(x => Db.AttachIfDetached(x));
+
             var dbOrder = Db.Set<Order>()
                 .Include(x => x.OrderItems)
                 .Include(x => x.Code)
@@ -131,13 +134,12 @@ namespace OrdersDb.Domain.Services.Orders.Order
 
             //Обновляем измененные элементы заказа
             var orderItemsToUpdate = dbOrder.OrderItems.Where(x => modifiedOrderItemsIds.Contains(x.Id)).ToList();
-            orderItemsToUpdate.ForEach(x => Db.Entry(x).State = EntityState.Modified);
+            orderItemsToUpdate.ForEach(x => Db.Entry(x).SetModifiedProperties(p => p.Amount, p => p.OrderId, p => p.ProductId));
 
             //Обновляем основную сущность
             dbOrder.OrderItems.Clear();
             dbOrder.OrderItems.AddRange(entity.OrderItems);
             dbOrder.ClientId = entity.ClientId;
-            dbOrder.CodeId = entity.CodeId;
             Db.SaveChanges();
         }
 

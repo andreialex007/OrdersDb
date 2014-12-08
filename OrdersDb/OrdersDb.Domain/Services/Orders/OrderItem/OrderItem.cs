@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using OrdersDb.Domain.Services.Production.Product;
 using OrdersDb.Domain.Services._Common.Entities;
 
@@ -42,6 +43,7 @@ namespace OrdersDb.Domain.Services.Orders.OrderItem
         /// <summary>
         /// Цена продажи
         /// </summary>
+        [NotMapped]
         public decimal SellPrice
         {
             get { return Product == null ? 0 : Amount * Product.SellPrice; }
@@ -51,6 +53,7 @@ namespace OrdersDb.Domain.Services.Orders.OrderItem
         /// <summary>
         /// Цена покупки
         /// </summary>
+        [NotMapped]
         public decimal BuyPrice
         {
             get { return Product == null ? 0 : Amount * Product.BuyPrice; }

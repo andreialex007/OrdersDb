@@ -54,6 +54,7 @@ namespace OrdersDb.Domain.Services.Orders.Order
         /// <summary>
         /// Цена продажи
         /// </summary>
+        [NotMapped]
         public decimal SellPrice
         {
             get { return OrderItems.Sum(x => x.SellPrice); }
@@ -63,6 +64,7 @@ namespace OrdersDb.Domain.Services.Orders.Order
         /// <summary>
         /// Цена покупки
         /// </summary>
+        [NotMapped]
         public decimal BuyPrice
         {
             get { return OrderItems.Sum(x => x.BuyPrice); }

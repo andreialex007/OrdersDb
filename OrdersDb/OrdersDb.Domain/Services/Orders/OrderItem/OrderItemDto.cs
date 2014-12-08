@@ -14,7 +14,15 @@ namespace OrdersDb.Domain.Services.Orders.OrderItem
         public int ProductId { get; set; }
         public decimal ProductSellPrice { get; set; }
         public decimal ProductBuyPrice { get; set; }
-        public decimal SellPrice { get; set; }
-        public decimal BuyPrice { get; set; }
+
+        public decimal SellPrice
+        {
+            get { return ProductSellPrice * Amount; }
+        }
+
+        public decimal BuyPrice
+        {
+            get { return ProductBuyPrice * Amount; }
+        }
     }
 }
