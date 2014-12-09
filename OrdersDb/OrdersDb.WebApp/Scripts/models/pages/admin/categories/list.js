@@ -44,6 +44,8 @@
             loadBase();
 
             self.categoriesLoading(true);
+            self.tree.removeAllNodes();
+
             $.ajax({
                 url: self.controllerName + "/Search/",
                 type: "POST",
@@ -54,14 +56,21 @@
                     var nodes = $.map(json.List, function (element, index) {
                         return new node(self.tree, element.Id, element.Name, [], element.CategoriesAmount);
                     });
-                    self.tree.removeAllNodes();
-                    self.tree.nodes(nodes);
+
                     self.categoriesLoading(false);
+                    self.tree.nodes(nodes);
+                    var firstNode = self.tree.nodes()[0];
+                    if (firstNode)
+                        firstNode.select();
                 }
             });
         };
 
-
+        self.isEmptyResult = ko.computed({
+            read: function () {
+                return self.tree.nodes().length == 0;
+            }
+        });
 
         self.tabclick = function (tab) {
             $(self.tabs).each(function (index, element) {

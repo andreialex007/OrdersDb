@@ -4,8 +4,10 @@
         <!-- ko template: { name: 'tree-item', data: $data } -->
         <!-- /ko -->
         <!-- /ko -->
-
     </ul>
+    <div class="empty-categories" data-bind="visible: $parent.isEmptyResult">
+        <span>Ничего не найдено</span>
+    </div>
 </div>
 
 
