@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using DataAnnotationsExtensions;
 using OrdersDb.Domain.Services.Geography.Hose;
 using OrdersDb.Domain.Services._Common.Entities;
 
@@ -24,6 +25,7 @@ namespace OrdersDb.Domain.Services.Geography.Street
         /// Идентификатор города в котором находится улица
         /// </summary>
         [Required]
+        [Min(1)]
         public int CityId { get; set; }
 
         /// <summary>

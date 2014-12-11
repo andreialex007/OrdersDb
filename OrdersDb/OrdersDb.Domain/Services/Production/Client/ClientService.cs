@@ -10,6 +10,7 @@ using OrdersDb.Domain.Services._Common;
 using OrdersDb.Domain.Services._Common.Entities;
 using OrdersDb.Domain.Wrappers;
 using System.Data.Entity;
+using System.Web.UI.WebControls;
 using OrdersDb.Domain.Utils;
 
 namespace OrdersDb.Domain.Services.Production.Client
@@ -92,12 +93,13 @@ namespace OrdersDb.Domain.Services.Production.Client
 
         protected override void Validate(Client entity)
         {
+            //TODO: remove magic strings
             var errors = new List<DbValidationError>();
             errors.AddRange(entity.GetValidationErrors());
-            errors.AddErrors<Client>((entity.Location ?? (entity.Location = new House())).GetValidationErrors(x => x.Street), x => x.Location);
-            errors.AddErrors<Client>((entity.Location.Street ?? (entity.Location.Street = new Street())).GetValidationErrors(x => x.City), x => x.Location.Street);
-            errors.AddErrors<Client>((entity.Location.Street.City ?? (entity.Location.Street.City = new City())).GetValidationErrors(x => x.Region), x => x.Location.Street.City);
-            errors.AddErrors<Client>((entity.Location.Street.City.Region ?? (entity.Location.Street.City.Region = new Region())).GetValidationErrors(x => x.Country), x => x.Location.Street.City.Region);
+            errors.AddRange(entity.Location.GetValidationErrors(x => x.StreetId).OfProperty("Street"));
+            errors.AddRange(entity.Location.Street.GetValidationErrors(x => x.CityId).OfProperty("City"));
+            errors.AddRange(entity.Location.Street.City.GetValidationErrors(x => x.RegionId).OfProperty("Region"));
+            errors.AddRange(entity.Location.Street.City.Region.GetValidationErrors(x => x.CountryId).OfProperty("Country"));
             errors.ThrowIfHasErrors();
         }
 

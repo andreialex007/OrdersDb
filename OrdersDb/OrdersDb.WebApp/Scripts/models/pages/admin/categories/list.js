@@ -100,7 +100,6 @@
         self.tree.add = function (parentNode) {
             if (parentNode == self.tree)
                 parentNode = null;
-            debugger;
             var postData = {};
             if (parentNode) {
                 postData.parentCategoryId = parentNode.id();
@@ -111,8 +110,7 @@
                 dataType: "JSON",
                 contentType: "application/json; charset=utf-8",
                 data: JSON.stringify(postData),
-                success: function (data) {
-                    debugger;
+                success: function(data) {
                     if (parentNode) {
                         parentNode.children.unshift(new node(self.tree, data.Id, data.Name));
                     } else {

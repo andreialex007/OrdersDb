@@ -35,9 +35,21 @@ namespace OrdersDb.Domain.Utils
             return e.SelectMany(c => f(c).Flatten(f)).Concat(e);
         }
 
-        public static void AddErrors<TSource>(this List<DbValidationError> errors, IEnumerable<DbValidationError> errorsToAdd, Expression<Func<TSource, object>> selector)
+
+        public static List<DbValidationError> OfProperty<Tobj>(this IEnumerable<DbValidationError> errors, Expression<Func<Tobj, object>> selector) where Tobj : new()
         {
-            var namesChain = string.Join(".", selector.ToString().Split('.').Skip(1));
+            var propertyName = Common.GetPropertyName(new Tobj(), selector);
+            return errors.Select(x => new DbValidationError(propertyName, x.ErrorMessage)).ToList();
+        }
+
+        public static List<DbValidationError> OfProperty(this IEnumerable<DbValidationError> errors, string propertyName)
+        {
+            return errors.Select(x => new DbValidationError(propertyName, x.ErrorMessage)).ToList();
+        }
+
+
+        public static void AddErrors<TSource>(this List<DbValidationError> errors, IEnumerable<DbValidationError> errorsToAdd, string namesChain)
+        {
             var errorsWithNames = errorsToAdd.Select(x => new DbValidationError(string.Format("{0}.{1}", namesChain, x.PropertyName), x.ErrorMessage));
             errors.AddRange(errorsWithNames);
         }
@@ -73,7 +85,7 @@ namespace OrdersDb.Domain.Utils
         }
         public static IOrderedQueryable<T> OrderBy<T>(this IQueryable<T> source, string property, bool isAsc)
         {
-            return isAsc ? source.OrderBy(property) : source.OrderByDescending(property);
+            return !isAsc ? source.OrderBy(property) : source.OrderByDescending(property);
         }
         public static IOrderedQueryable<T> OrderBy<T>(this IQueryable<T> source, string property)
         {

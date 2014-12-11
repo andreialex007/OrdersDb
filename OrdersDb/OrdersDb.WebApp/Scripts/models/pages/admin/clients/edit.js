@@ -45,7 +45,7 @@
                 self.fields.Region.avaliableValues(utils.idNameToTextValue(data));
             });
         };
-        
+
         self.fields.Region.change = function () {
             var val = self.fields.Region.value();
 
@@ -135,40 +135,68 @@
             json.INN = self.fields.INN.value();
             json.OGRN = self.fields.OGRN.value();
             json.LocationId = self.locationId;
+
             json.Location = {
-                Id: self.locationId,
-                Number: self.fields.Number.value(),
-                Building: self.fields.Building.value(),
-                PostalCode: self.fields.PostalCode.value()
-            };
-
-            if (self.fields.Street.value()) {
-                json.Location.StreetId = self.fields.Street.value();
-                json.Location.Street = {
-                    Id: self.fields.Street.value()
-                };
-
-                if (self.fields.City.value()) {
-                    json.Location.Street.CityId = self.fields.City.value();
-                    json.Location.Street.City = {
-                        Id: self.fields.City.value()
-                    };
-
-                    if (self.fields.Region.value()) {
-                        json.Location.Street.City.RegionId = self.fields.Region.value();
-                        json.Location.Street.City.Region = {
-                            Id: self.fields.Region.value()
-                        };
-
-                        if (self.fields.Country.value()) {
-                            json.Location.Street.City.Region.CountryId = self.fields.Country.value();
-                            json.Location.Street.City.Region.Country = {
-                                Id: self.fields.Country.value()
-                            };
+                "Id": self.locationId,
+                "Number": self.fields.Number.value() || "0",
+                "Building": self.fields.Building.value(),
+                "PostalCode": self.fields.PostalCode.value(),
+                "StreetId": self.fields.Street.value(),
+                "Street": {
+                    "Id": self.fields.Street.value(),
+                    "CityId": self.fields.City.value(),
+                    "City": {
+                        "Id": self.fields.City.value(),
+                        "RegionId": self.fields.Region.value(),
+                        "Region": {
+                            "Id": self.fields.Region.value(),
+                            "CountryId": self.fields.Country.value(),
+                            "Country": {
+                                "Id": self.fields.Country.value()
+                            }
                         }
                     }
                 }
-            }
+            };
+
+//
+//            json.Location = {
+//                Id: self.locationId,
+//                Number: self.fields.Number.value() || "0",
+//                Building: self.fields.Building.value(),
+//                PostalCode: self.fields.PostalCode.value()
+//            };
+//
+//            if (self.fields.Street.value()) {
+//                json.Location.StreetId = self.fields.Street.value();
+//                json.Location.Street = {
+//                    Id: self.fields.Street.value()
+//                };
+//            }
+//
+//            if (self.fields.City.value()) {
+//                json.Location.Street.CityId = self.fields.City.value();
+//                json.Location.Street.City = {
+//                    Id: self.fields.City.value()
+//                };
+//            }
+//
+//            if (self.fields.Region.value()) {
+//                json.Location.Street.City.RegionId = self.fields.Region.value();
+//                json.Location.Street.City.Region = {
+//                    Id: self.fields.Region.value()
+//                };
+//            }
+//
+//            if (self.fields.Country.value()) {
+//                json.Location.Street.City.Region.CountryId = self.fields.Country.value();
+//                json.Location.Street.City.Region.Country = {
+//                    Id: self.fields.Country.value()
+//                };
+//            }
+
+            debugger;
+
             return json;
         };
         return self;
