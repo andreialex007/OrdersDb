@@ -159,44 +159,6 @@
                 }
             };
 
-//
-//            json.Location = {
-//                Id: self.locationId,
-//                Number: self.fields.Number.value() || "0",
-//                Building: self.fields.Building.value(),
-//                PostalCode: self.fields.PostalCode.value()
-//            };
-//
-//            if (self.fields.Street.value()) {
-//                json.Location.StreetId = self.fields.Street.value();
-//                json.Location.Street = {
-//                    Id: self.fields.Street.value()
-//                };
-//            }
-//
-//            if (self.fields.City.value()) {
-//                json.Location.Street.CityId = self.fields.City.value();
-//                json.Location.Street.City = {
-//                    Id: self.fields.City.value()
-//                };
-//            }
-//
-//            if (self.fields.Region.value()) {
-//                json.Location.Street.City.RegionId = self.fields.Region.value();
-//                json.Location.Street.City.Region = {
-//                    Id: self.fields.Region.value()
-//                };
-//            }
-//
-//            if (self.fields.Country.value()) {
-//                json.Location.Street.City.Region.CountryId = self.fields.Country.value();
-//                json.Location.Street.City.Region.Country = {
-//                    Id: self.fields.Country.value()
-//                };
-//            }
-
-            debugger;
-
             return json;
         };
         return self;
