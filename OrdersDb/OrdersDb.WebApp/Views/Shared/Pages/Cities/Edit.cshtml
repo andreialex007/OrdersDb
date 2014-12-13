@@ -13,8 +13,8 @@
 
         <div class="row">
             <div class="col-md-12">
-                <!-- ko with: name -->
-                <div class="form-group">
+                <!-- ko with: Name -->
+                <div data-bind="css: { 'has-error': hasErrors }" class="form-group">
                     <label data-bind="text: title" class="control-label"></label>
                     <input data-bind="value: value, valueUpdate: 'afterkeydown', attr: { placeholder: placeholder }, inputMask: mask, event : { keyup: change }" type="text" class="form-control">
                     <span data-bind="text: errorsText" class="help-block hidden-if-no-error">
@@ -25,8 +25,8 @@
         </div>
         <div class="row">
             <div class="col-md-9">
-                <!-- ko with: regionDropDown -->
-                <div class="form-group select-dropdown">
+                <!-- ko with: Region -->
+                <div data-bind="css: { 'has-error': hasErrors }" class="form-group select-dropdown">
                     <!-- ko with: selectedField -->
                     <label class="control-label">Регион</label>
                     <div class="result-block">
@@ -62,10 +62,9 @@
                         </div>
                     </div>
                     <!-- ko with: selectedField -->
-                    <span class="help-block hidden-if-no-error">
-                        This is inline help
-                    </span>
                     <!-- /ko -->
+                    <span data-bind="text: errorsText" class="help-block hidden-if-no-error">
+                    </span>
                 </div>
                 <!-- /ko -->
             </div>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
@@ -70,15 +71,23 @@ namespace OrdersDb.Domain.Services.Geography.Country
 
         public override void Add(Country entity)
         {
-            Validate(entity);
-
             var fileName = GetFileName();
             if (!string.IsNullOrEmpty(fileName))
                 entity.Flag = _fileService.ReadAllBytes(fileName);
 
+            Validate(entity);
+
             Db.AttachIfDetached(entity);
             Db.Entry(entity).State = EntityState.Added;
             Db.SaveChanges();
+        }
+
+        protected override void Validate(Country entity)
+        {
+            var errors = entity.GetValidationErrors().ToList();
+            if (entity.Flag == null)
+                errors.Add(DbValidation.ErrorFor<Country>(x => x.Flag, "Flag image required"));
+            errors.ThrowIfHasErrors();
         }
 
         public byte[] GetFlag(int? countryId)

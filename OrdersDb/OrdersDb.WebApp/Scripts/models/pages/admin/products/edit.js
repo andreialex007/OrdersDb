@@ -50,10 +50,13 @@
             json.BuyPrice = self.fields.BuyPrice.value();
             json.SellPrice = self.fields.SellPrice.value();
             json.IsService = self.fields.IsService();
-            json.CategoryId = self.fields.Category.value(),
-            json.Category = {
-                Id: self.fields.Category.value()
-            };
+            json.CategoryId = self.fields.Category.value();
+            if (json.CategoryId) {
+                json.Category = {
+                    Id: self.fields.Category.value()
+                };
+            }
+           
             return json;
         };
         return self;

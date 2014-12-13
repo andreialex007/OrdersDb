@@ -33,6 +33,10 @@
             loadBase();
             self.table.onLoad();
             self.table.onDelete = function (row) {
+
+                if (!confirm("Вы действительно хотите удалить указанную запись?"))
+                    return;
+
                 $.ajax({
                     url: self.controllerName + "/delete",
                     type: "POST",
@@ -142,7 +146,10 @@
         };
 
         self.deleteItems = function () {
-            debugger;
+
+            if (!confirm("Вы действительно хотите удалить выбранные элементы?"))
+                return;
+
             var toDelete = $.grep(self.table.rows(), function (x) { return x.isChecked() == true; });
             var idsToDelete = $.map(toDelete, function (x) { return x.id(); });
 

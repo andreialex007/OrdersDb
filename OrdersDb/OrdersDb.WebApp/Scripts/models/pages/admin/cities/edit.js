@@ -11,41 +11,47 @@
         self.EDIT_TITLE("Редактирование города");
         self.NEW_TITLE("Создание города");
 
-        self.fields.name = new textField("Название", "", "Введите название города (обязательно)");
-        self.fields.regionDropDown = new regionDropDown("Регион", "", "", "Выберите регион из выпадающего списка");
+        self.fields.Name = new textField("Название", "", "Введите название города (обязательно)");
+        self.fields.Region = new regionDropDown("Регион", "", "", "Выберите регион из выпадающего списка");
         self.fields.population = new spinner("Численность населения", 1000, 1000, 1000, 15000000);
 
-        self.fields.regionDropDown.loadCountries = function () {
+        self.fields.Region.loadCountries = function () {
             $.ajax({
                 url: "/Countries/GetAllNameValues",
                 dataType: "json",
             }).done(function (data) {
-                self.fields.regionDropDown.loadCountriesCompleted($.map(data, function (el) {
+                self.fields.Region.loadCountriesCompleted($.map(data, function (el) {
                     return { Text: el.Name, Value: el.Id };
                 }));
             });
         };
-        self.fields.regionDropDown.loadRegions = function () {
+        self.fields.Region.loadRegions = function () {
             $.ajax({
                 url: "/Regions/GetAllNameValues",
                 dataType: "json",
             }).done(function (data) {
-                self.fields.regionDropDown.loadRegionsCompleted($.map(data, function (el) {
+                self.fields.Region.loadRegionsCompleted($.map(data, function (el) {
                     return { Text: el.Name, Value: el.Id };
                 }));
             });
         };
         self.fromJSON = function (json) {
-            self.fields.regionDropDown.selectedField.value(json.RegionName);
-            self.fields.regionDropDown.selectedId = json.RegionId;
-            self.fields.name.value(json.Name);
+            self.fields.Region.selectedField.value(json.RegionName);
+            self.fields.Region.selectedId = json.RegionId;
+            self.fields.Name.value(json.Name);
             self.fields.population.value(json.Population);
         };
         self.toJSON = function () {
             var json = { Id: self.Id() };
-            json.RegionName = self.fields.regionDropDown.selectedField.value();
-            json.RegionId = self.fields.regionDropDown.selectedId;
-            json.Name = self.fields.name.value();
+
+            if (self.fields.Region.selectedId) {
+                json.Region = {};
+                json.Region.Name = self.fields.Region.selectedField.value();
+                json.Region.Id = self.fields.Region.selectedId;
+                json.RegionId = self.fields.Region.selectedId;
+            }
+
+            json.Name = self.fields.Name.value();
             json.Population = self.fields.population.value();
             return json;
         };

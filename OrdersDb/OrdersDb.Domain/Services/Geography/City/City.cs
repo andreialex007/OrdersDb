@@ -26,8 +26,6 @@ namespace OrdersDb.Domain.Services.Geography.City
         /// <summary>
         /// Идентификатор региона
         /// </summary>
-        [Required]
-        [Min(1)]
         public int RegionId { get; set; }
 
         /// <summary>

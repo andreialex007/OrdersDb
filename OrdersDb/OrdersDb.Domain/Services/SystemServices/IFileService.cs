@@ -5,5 +5,6 @@
         void WriteAllBytes(string path, byte[] bytes);
         string GetTemporaryFolder();
         byte[] ReadAllBytes(string path);
+        bool FileExists(string path);
     }
 }

@@ -42,8 +42,13 @@
         self.toJSON = function () {
             var json = { Id: self.Id() };
 
-            json.PositionId = self.fields.Position.value();
-            json.PositionName = self.fields.Position.text();
+            if (self.fields.Position.value()) {
+                json.Position = {};
+                json.Position.Id = self.fields.Position.value();
+                json.PositionId = self.fields.Position.value();
+                json.Position.Name = self.fields.Position.text();
+            }
+
 
             json.FirstName = self.fields.FirstName.value();
             json.LastName = self.fields.LastName.value();

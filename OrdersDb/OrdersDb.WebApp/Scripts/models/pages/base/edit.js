@@ -91,7 +91,7 @@
             self.clearErrors();
 
             $(json.Errors).each(function (index, element) {
-                if (element.PropertyName)
+                if (self.fields[element.PropertyName])
                     self.fields[element.PropertyName].appendError(element.ErrorMessage);
             });
             var otherErrors = $.map($.grep(json.Errors, function (x) { return !self.fields[x.PropertyName]; }), function (a) { return a.ErrorMessage; }).join();

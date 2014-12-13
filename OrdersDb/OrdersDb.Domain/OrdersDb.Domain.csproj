@@ -232,6 +232,7 @@
     <Compile Include="Services\Production\Category\ICategoryService.cs" />
     <Compile Include="Services\_Common\NamedSearchParameters.cs" />
     <Compile Include="Utils\Common.cs" />
+    <Compile Include="Utils\DbValidation.cs" />
     <Compile Include="Utils\DisplayNameExtended.cs" />
     <Compile Include="Utils\EnumHelper.cs" />
     <Compile Include="Utils\ImageUtils.cs" />

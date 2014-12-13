@@ -59,7 +59,7 @@ namespace OrdersDb.Domain.Utils
         }
 
         public static string GetPropertyName<TSource, TProperty>(
-            TSource source,
+            this TSource source,
             Expression<Func<TSource, TProperty>> propertyLambda)
         {
             var type = typeof(TSource);

@@ -35,6 +35,7 @@ namespace OrdersDb.Domain.Services.Staff.Employee
         /// <summary>
         /// Должность пользователя
         /// </summary>
+        [Required]
         public Position.Position Position { get; set; }
 
         /// <summary>
