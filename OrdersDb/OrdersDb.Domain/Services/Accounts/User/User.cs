@@ -5,17 +5,22 @@ using OrdersDb.Domain.Services._Common.Entities;
 
 namespace OrdersDb.Domain.Services.Accounts.User
 {
+    /// <summary>
+    /// Пользователь
+    /// </summary>
     public class User : EntityBase, INamedEntity
     {
-        /// <summary>
-        /// Пользователь
-        /// </summary>
         public User()
         {
             Roles = new List<Role.Role>();
         }
 
         public override int Id { get; set; }
+
+        /// <summary>
+        /// Аватар пользователя
+        /// </summary>
+        public byte[] Image { get; set; }
 
         /// <summary>
         /// Имя пользователя

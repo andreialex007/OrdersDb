@@ -18,14 +18,14 @@ namespace OrdersDb.WebApp.Controllers
         [HttpPost]
         public ActionResult UploadFlag(HttpPostedFileBase file, int? id)
         {
-            _service.UploadFlag(file.ToByteArray(), id);
+            _service.UploadImage(x => x.Flag, file.ToByteArray(), id);
             return SuccessJsonResult();
         }
 
         [HttpGet]
         public ActionResult GetFlag(int? id)
         {
-            var flagData = _service.GetFlag(id) ?? System.IO.File.ReadAllBytes(Server.MapPath("~/Images/default-flag.jpg"));
+            var flagData = _service.GetImage(x => x.Flag, id) ?? System.IO.File.ReadAllBytes(Server.MapPath("~/Images/default-flag.jpg"));
             return File(flagData, System.Net.Mime.MediaTypeNames.Image.Jpeg);
         }
 

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 using OrdersDb.Domain.Services._Common.Entities;
 
 namespace OrdersDb.Domain.Services._Common
@@ -27,6 +29,7 @@ namespace OrdersDb.Domain.Services._Common
         List<TDto> Search(TSearchParameters @params);
         int Total(TSearchParameters @params);
         TDto GetById(int id);
+        byte[] GetImage(Expression<Func<TEntity, byte[]>> propertyLambda, int? imageId);
     }
 
     public interface IServiceBase<TEntity, TDto> : IServiceBase<TEntity, SearchParameters, TDto>

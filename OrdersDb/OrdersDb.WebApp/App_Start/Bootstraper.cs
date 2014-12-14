@@ -29,7 +29,6 @@ namespace OrdersDb.WebApp
                     .LifecycleIs<HttpContextLifecycle>()
                     .Use(() => new ObjectContextWrapper(ObjectFactory.GetInstance<IAppDbContext>().ObjectContext));
                 config.For(typeof(IServiceBase<,,>)).Use(typeof(ServiceBase<,,>));
-                config.For(typeof(IFileService)).Use(typeof(FileServiceWrapper));
                 config.Scan(
                     x =>
                     {

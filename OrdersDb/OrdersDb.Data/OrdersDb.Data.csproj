@@ -151,7 +151,6 @@
     <Compile Include="DbChangeTrackerWrapper.cs" />
     <Compile Include="DbEntityEntryWrapper.cs" />
     <Compile Include="DbSetWrapper.cs" />
-    <Compile Include="FileServiceWrapper.cs" />
     <Compile Include="ObjectContextWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\ConvertTools.cs" />

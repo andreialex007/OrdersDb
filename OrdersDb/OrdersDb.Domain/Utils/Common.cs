@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Reflection;
+using System.Web.Hosting;
 using OrdersDb.Domain.Services._Common.Entities;
 
 // ReSharper disable ConditionIsAlwaysTrueOrFalse
@@ -59,6 +60,34 @@ namespace OrdersDb.Domain.Utils
         }
 
         public static string GetPropertyName<TSource, TProperty>(
+            Expression<Func<TSource, TProperty>> propertyLambda)
+        {
+            var type = typeof(TSource);
+
+            var member = propertyLambda.Body as MemberExpression;
+            if (member == null)
+                throw new ArgumentException(string.Format(
+                    "Expression '{0}' refers to a method, not a property.",
+                    propertyLambda.ToString()));
+
+            var propInfo = member.Member as PropertyInfo;
+            if (propInfo == null)
+                throw new ArgumentException(string.Format(
+                    "Expression '{0}' refers to a field, not a property.",
+                    propertyLambda.ToString()));
+
+            if (type != propInfo.ReflectedType &&
+                !type.IsSubclassOf(propInfo.ReflectedType))
+                throw new ArgumentException(string.Format(
+                    "Expresion '{0}' refers to a property that is not from type {1}.",
+                    propertyLambda.ToString(),
+                    type));
+
+            return propInfo.Name;
+        }
+
+
+        public static string GetPropertyName<TSource, TProperty>(
             this TSource source,
             Expression<Func<TSource, TProperty>> propertyLambda)
         {
@@ -84,6 +113,11 @@ namespace OrdersDb.Domain.Utils
                     type));
 
             return propInfo.Name;
+        }
+
+        public static string GetTemporaryFolder()
+        {
+            return HostingEnvironment.MapPath("~/Files/");
         }
 
     }

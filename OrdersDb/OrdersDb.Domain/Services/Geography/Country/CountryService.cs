@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.Entity.Validation;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.Linq;
-using System.Web;
-using OrdersDb.Domain.Services.SystemServices;
 using OrdersDb.Domain.Services._Common;
 using OrdersDb.Domain.Utils;
 using OrdersDb.Domain.Wrappers;
@@ -15,26 +10,21 @@ using OrdersDb.Domain.Wrappers;
 
 namespace OrdersDb.Domain.Services.Geography.Country
 {
-    public class CountryService : NamedServiceBase<Country, CountrySearchParameters, CountryDto>, ICountryService
+    public class CountryService :
+        NamedServiceBase<Country, CountrySearchParameters, CountryDto>,
+        ICountryService
     {
         private readonly Size CountryImageFlagSize = new Size(100, 100);
-        private readonly IFileService _fileService;
-        private HttpContext HttpContext
-        {
-            get
-            {
-                return HttpContext.Current;
-            }
-        }
 
-        public CountryService(IAppDbContext db, IObjectContext context, IFileService fileService)
+        public CountryService(IAppDbContext db, IObjectContext context)
             : base(db, context)
         {
-            _fileService = fileService;
         }
 
         public override List<CountryDto> Search(CountrySearchParameters @params)
         {
+            HttpContext.Session.ClearImagePath<Country>(x => x.Flag); //TODO убрать костыль
+
             var query = Db.Set<Country>()
                 .AsQueryable();
 
@@ -59,11 +49,20 @@ namespace OrdersDb.Domain.Services.Geography.Country
 
         public override CountryDto GetById(int id)
         {
+            HttpContext.Session.ClearImagePath<Country>(x => x.Flag);
+
             var query = Db.Countries.
                 AsQueryable();
 
             var countryDto = query.Where(x => x.Id == id)
-                .Select(x => new CountryDto { Id = x.Id, Name = x.Name, Code = x.Code, Flag = x.Flag, RussianName = x.Name })
+                .Select(x => new CountryDto
+                             {
+                                 Id = x.Id,
+                                 Name = x.Name,
+                                 Code = x.Code,
+                                 Flag = x.Flag,
+                                 RussianName = x.Name
+                             })
                 .Single();
 
             return countryDto;
@@ -71,15 +70,24 @@ namespace OrdersDb.Domain.Services.Geography.Country
 
         public override void Add(Country entity)
         {
-            var fileName = GetFileName();
-            if (!string.IsNullOrEmpty(fileName))
-                entity.Flag = _fileService.ReadAllBytes(fileName);
-
+            entity.Flag = File.ReadAllBytes(HttpContext.Session.GetImagePath<Country>(x => x.Flag));
             Validate(entity);
-
             Db.AttachIfDetached(entity);
             Db.Entry(entity).State = EntityState.Added;
             Db.SaveChanges();
+            HttpContext.Session.ClearImagePath<Country>(x => x.Flag);
+        }
+
+
+        public override void Update(Country entity)
+        {
+            var dbCountry = Db.Set<Country>().Single(x => x.Id == entity.Id);
+            dbCountry.Name = entity.Name;
+            dbCountry.RussianName = entity.RussianName;
+            dbCountry.Code = entity.Code;
+            Validate(dbCountry);
+            Db.SaveChanges();
+            HttpContext.Session.ClearImagePath<Country>(x => x.Flag);
         }
 
         protected override void Validate(Country entity)
@@ -88,75 +96,6 @@ namespace OrdersDb.Domain.Services.Geography.Country
             if (entity.Flag == null)
                 errors.Add(DbValidation.ErrorFor<Country>(x => x.Flag, "Flag image required"));
             errors.ThrowIfHasErrors();
-        }
-
-        public byte[] GetFlag(int? countryId)
-        {
-            return countryId.IsNullOrZero()
-                ? GetFlagTemporary()
-                : GetFlagFromDb(countryId.Value);
-        }
-
-        public void UploadFlag(byte[] imageData, int? countryId = null)
-        {
-            if (countryId.IsNullOrZero())
-                UploadFlagTemporary(imageData);
-            else
-                UploadFlagToDb(imageData, countryId.Value);
-        }
-
-        private void UploadFlagToDb(byte[] imageData, int id)
-        {
-            var country = new Country() { Id = id, Flag = imageData };
-            Db.AttachIfDetached(country);
-            Db.Entry(country).Property(x => x.Flag).IsModified = true;
-            CountryFlagPath = string.Empty;
-            Db.SaveChanges();
-        }
-
-        private byte[] GetFlagFromDb(int id)
-        {
-            return Db.Countries.Where(x => x.Id == id).Select(x => x.Flag).Single();
-        }
-
-        private byte[] GetFlagTemporary()
-        {
-            return !string.IsNullOrEmpty(CountryFlagPath) ? _fileService.ReadAllBytes(CountryFlagPath) : null;
-        }
-
-        private void UploadFlagTemporary(byte[] imageData)
-        {
-            _fileService.WriteAllBytes(GetFileName(), ProcessImage(imageData));
-        }
-
-        private byte[] ProcessImage(byte[] imageData)
-        {
-            var fullImage = ImageUtils.ConvertToJpg(imageData);
-            var bitmap = fullImage.ToBitmap();
-            var resized = ImageUtils.ResizeImage(bitmap, CountryImageFlagSize);
-            return resized.ToByteArray(ImageFormat.Jpeg);
-        }
-
-        private string GetFileName()
-        {
-            var fileName = string.IsNullOrEmpty(CountryFlagPath)
-                ? System.IO.Path.Combine(_fileService.GetTemporaryFolder(),
-                    string.Format("{0}{1}.jpg", DateTime.Now.ToString("dd_MM_yyyy_hh_mm_ss_"), System.IO.Path.GetRandomFileName()))
-                : CountryFlagPath;
-            CountryFlagPath = fileName;
-            return fileName;
-        }
-
-        private string CountryFlagPath
-        {
-            get
-            {
-                return HttpContext.Session["CountryFlagPath"] as string;
-            }
-            set
-            {
-                HttpContext.Session["CountryFlagPath"] = value;
-            }
         }
     }
 }

@@ -28,7 +28,16 @@ namespace OrdersDb.Domain.Services.Accounts.Role
 
         public override List<RoleDto> Search(RoleSearchParameters @params)
         {
-            return Db.Roles.IncludeAll().Select(x => new RoleDto
+
+            var query = Db.Set<Role>()
+                .Include(x => x.Users)
+                .Include(x => x.Permissions)
+                .AsQueryable();
+
+            query = SearchByIds(query, @params);
+            query = SearchByName(query, @params);
+
+            return query.OrderByTakeSkip(@params).Select(x => new RoleDto
                                                      {
                                                          Id = x.Id,
                                                          Name = x.Name,

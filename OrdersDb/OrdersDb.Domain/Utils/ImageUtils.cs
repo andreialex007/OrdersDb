@@ -34,6 +34,15 @@ namespace OrdersDb.Domain.Utils
             return bitmap;
         }
 
+        public static byte[] ResizeAndConvertToJpg(byte[] imageData, int width = 100, int height = 100)
+        {
+            var fullImage = ImageUtils.ConvertToJpg(imageData);
+            var bitmap = fullImage.ToBitmap();
+            var resized = ImageUtils.ResizeImage(bitmap, new Size(width, height));
+            return resized.ToByteArray(ImageFormat.Jpeg);
+        }
+
+
         private static Image cropImage(Image img, Rectangle cropArea)
         {
             var bmpImage = new Bitmap(img);

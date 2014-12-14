@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersDb.Domain", "OrdersDb.Domain\OrdersDb.Domain.csproj", "{6E421705-137E-41FF-A121-7E4184193278}"
 EndProject
@@ -18,29 +18,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildGenerator", "Utils\BuildGenerator\BuildGenerator.csproj", "{B03959DC-BB82-4FA6-809A-8DFE8957CF3D}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 6
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://notebook-pc:8080/tfs/development
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = OrdersDb.Data\\OrdersDb.Data.csproj
-		SccProjectName1 = OrdersDb.Data
-		SccLocalPath1 = OrdersDb.Data
-		SccProjectUniqueName2 = OrdersDb.Domain\\OrdersDb.Domain.csproj
-		SccProjectName2 = OrdersDb.Domain
-		SccLocalPath2 = OrdersDb.Domain
-		SccProjectUniqueName3 = OrdersDb.WebApp\\OrdersDb.WebApp.csproj
-		SccProjectName3 = OrdersDb.WebApp
-		SccLocalPath3 = OrdersDb.WebApp
-		SccProjectUniqueName4 = Tests\\OrdersDb.Domain.Tests\\OrdersDb.Domain.Tests.csproj
-		SccProjectTopLevelParentUniqueName4 = OrdersDb.sln
-		SccProjectName4 = Tests/OrdersDb.Domain.Tests
-		SccLocalPath4 = Tests\\OrdersDb.Domain.Tests
-		SccProjectUniqueName5 = Utils\\BuildGenerator\\BuildGenerator.csproj
-		SccProjectTopLevelParentUniqueName5 = OrdersDb.sln
-		SccProjectName5 = Utils/BuildGenerator
-		SccLocalPath5 = Utils\\BuildGenerator
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

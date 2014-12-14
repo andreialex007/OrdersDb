@@ -2,9 +2,15 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Web;
+using System.Web.Hosting;
+using OrdersDb.Domain.Services.Geography.Country;
 using OrdersDb.Domain.Services._Common.Entities;
 using OrdersDb.Domain.Utils;
 using OrdersDb.Domain.Wrappers;
+
+// ReSharper disable PossibleInvalidOperationException
 
 namespace OrdersDb.Domain.Services._Common
 {
@@ -19,6 +25,15 @@ namespace OrdersDb.Domain.Services._Common
         where TSearchParameters : SearchParameters
         where TDto : DtoBase, new()
     {
+
+        protected HttpContext HttpContext
+        {
+            get
+            {
+                return HttpContext.Current;
+            }
+        }
+
         protected readonly IAppDbContext Db;
         protected readonly IObjectContext ObjectContext;
 
@@ -63,6 +78,49 @@ namespace OrdersDb.Domain.Services._Common
             Db.Entry(c).State = EntityState.Deleted;
             Db.SaveChanges();
         }
+
+        public byte[] GetImage(Expression<Func<TEntity, byte[]>> propertyLambda, int? imageId)
+        {
+            return imageId.IsNullOrZero()
+                ? GetImageTemporary(propertyLambda)
+                : GetImageFromDb(propertyLambda, imageId.Value);
+        }
+
+        protected byte[] GetImageFromDb(Expression<Func<TEntity, byte[]>> propertyLambda, int id)
+        {
+            return Db.Set<TEntity>().Where(x => x.Id == id).Select(propertyLambda).Single();
+        }
+
+        protected byte[] GetImageTemporary(Expression<Func<TEntity, byte[]>> propertyLambda)
+        {
+            return !string.IsNullOrEmpty(HttpContext.Session.GetImagePath(propertyLambda))
+                ? File.ReadAllBytes(HttpContext.Session.GetImagePath(propertyLambda))
+                : null;
+        }
+
+        protected void UploadAndPrepareImageTemporary(Expression<Func<TEntity, byte[]>> propertyLambda ,byte[] imageData, int saveWidth = 100, int saveHeight = 100)
+        {
+            File.WriteAllBytes(HttpContext.Session.GetImagePath<TEntity>(propertyLambda), ImageUtils.ResizeAndConvertToJpg(imageData, saveWidth, saveHeight));
+        }
+
+        protected void UploadImageToDb(Expression<Func<TEntity, byte[]>> propertyLambda, byte[] imageData, int id)
+        {
+            var country = new TEntity { Id = id };
+            Db.AttachIfDetached(country);
+            Db.Entry(country).Property(propertyLambda).CurrentValue = imageData;
+            Db.Entry(country).Property(propertyLambda).IsModified = true;
+            HttpContext.Session.ClearImagePath(propertyLambda);
+            Db.SaveChanges();
+        }
+
+        public void UploadImage(Expression<Func<TEntity, byte[]>> propertyLambda, byte[] imageData, int? countryId)
+        {
+            if (countryId.IsNullOrZero())
+                UploadAndPrepareImageTemporary(propertyLambda, imageData);
+            else
+                UploadImageToDb(propertyLambda, imageData, countryId.Value);
+        }
+
 
         public virtual TDto GetById(int id)
         {

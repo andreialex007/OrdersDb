@@ -37,7 +37,12 @@
             return self.flagImage("/Countries/GetFlag/" + self.Id() + "?t=" + Math.random());
         };
 
-
+        self.loadEntityData = function (params) {
+            self.refreshFlag();
+            self.fields.Name.value("");
+            self.fields.RussianName.value("");
+            self.fields.Code.value("");
+        };
 
         self.fromJSON = function (json) {
             self.fields.Name.value(json.Name);

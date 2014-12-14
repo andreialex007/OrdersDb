@@ -168,7 +168,6 @@
     <Compile Include="Services\Orders\PaymentType\PaymentType.cs" />
     <Compile Include="Services\Production\Supplier\Supplier.cs" />
     <Compile Include="Services\Production\Vendor\Vendor.cs" />
-    <Compile Include="Services\SystemServices\IFileService.cs" />
     <Compile Include="Services\_Common\Entities\AccessType.cs" />
     <Compile Include="Services\Production\Category\Category.cs" />
     <Compile Include="Services\Production\Client\Client.cs" />
@@ -237,6 +236,8 @@
     <Compile Include="Utils\EnumHelper.cs" />
     <Compile Include="Utils\ImageUtils.cs" />
     <Compile Include="Utils\IoC.cs" />
+    <Compile Include="Utils\SessionExtensions.cs" />
+    <Compile Include="Wrappers\File.cs" />
     <Compile Include="Wrappers\IAppDbContext.cs" />
     <Compile Include="Wrappers\IDbChangeTracker.cs" />
     <Compile Include="Wrappers\IDbEntityEntry.cs" />
