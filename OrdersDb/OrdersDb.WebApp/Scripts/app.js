@@ -5,12 +5,13 @@
         "Scripts/models/pages/admin/dirsList",
         "Scripts/models/pages/account/account",
         "Scripts/models/pages/base/new",
+        "Scripts/models/pages/profile/profile",
 
         'Metronic/init',
         "Scripts/models/common/fixes",
         "Scripts/models/common/customBinders",
         "Scripts/libs/linq"
-], function (ko, sammy, modelBase, adminDirectories, accountPage, newPage) {
+], function (ko, sammy, modelBase, adminDirectories, accountPage, newPage, profilePage) {
 
     //Функция главного приложения
 
@@ -31,13 +32,21 @@
                 self.pages[newPageName].controllerName = element.dir;
             }
         });
-        
+
+        //Редактирование профиля пользователя
+        self.pages.profile = new profilePage(self);
+
         //Загружка определенной страницы
         self.loadPage = function (pageName, params) {
             setTimeout(function () {
                 //Выгружаем все страницы
                 for (var i in self.pages) {
                     self.pages[i].unload();
+                }
+
+                if (self.pages[pageName]) {
+                    self.pages[pageName].load(params);
+                    return;
                 }
 
                 var fullPageName = self.getPageByUrlParams(pageName, params.id);

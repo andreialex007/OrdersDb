@@ -2736,6 +2736,7 @@
     <Content Include="Scripts\models\pages\base\list.js" />
     <Content Include="Scripts\models\pages\base\edit.js" />
     <Content Include="Scripts\models\pages\base\page.js" />
+    <Content Include="Scripts\models\pages\profile\profile.js" />
     <Content Include="Styles\common.css">
       <DependentUpon>common.less</DependentUpon>
     </Content>
@@ -3063,6 +3064,7 @@
     <Content Include="Views\Shared\Controls\Spinner.cshtml" />
     <Content Include="Views\Shared\Test.cshtml" />
     <Content Include="Views\Shared\Controls\ValidationBlock.cshtml" />
+    <Content Include="Views\Shared\Profile\Edit.cshtml" />
     <None Include="_build\build.json" />
   </ItemGroup>
   <PropertyGroup>

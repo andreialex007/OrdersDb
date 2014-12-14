@@ -88,6 +88,17 @@ namespace OrdersDb.Domain.Services.Accounts.User
             errors.ThrowIfHasErrors();
         }
 
+        public UserDto GetByUserName(string userName)
+        {
+            var user = Db.Users.SingleOrDefault(x => x.Name.ToLower() == userName.ToLower());
+            return new UserDto
+                   {
+                       Id = user.Id,
+                       Name = user.Name,
+                       Email = user.Email
+                   };
+        }
+
         public override UserDto GetById(int id)
         {
             var query = Db.Users.Include(x => x.Roles).AsQueryable();
