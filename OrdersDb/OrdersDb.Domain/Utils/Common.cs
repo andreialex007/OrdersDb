@@ -16,9 +16,9 @@ namespace OrdersDb.Domain.Utils
             if (string.IsNullOrEmpty(input))
                 return default(T);
 
-            var converter = TypeDescriptor.GetConverter(typeof(T));
+            var converter = TypeDescriptor.GetConverter(typeof (T));
             if (converter != null)
-                return (T)converter.ConvertFromString(input);
+                return (T) converter.ConvertFromString(input);
 
             return default(T);
         }
@@ -62,25 +62,25 @@ namespace OrdersDb.Domain.Utils
         public static string GetPropertyName<TSource, TProperty>(
             Expression<Func<TSource, TProperty>> propertyLambda)
         {
-            var type = typeof(TSource);
+            var type = typeof (TSource);
 
             var member = propertyLambda.Body as MemberExpression;
             if (member == null)
                 throw new ArgumentException(string.Format(
                     "Expression '{0}' refers to a method, not a property.",
-                    propertyLambda.ToString()));
+                    propertyLambda));
 
             var propInfo = member.Member as PropertyInfo;
             if (propInfo == null)
                 throw new ArgumentException(string.Format(
                     "Expression '{0}' refers to a field, not a property.",
-                    propertyLambda.ToString()));
+                    propertyLambda));
 
             if (type != propInfo.ReflectedType &&
                 !type.IsSubclassOf(propInfo.ReflectedType))
                 throw new ArgumentException(string.Format(
                     "Expresion '{0}' refers to a property that is not from type {1}.",
-                    propertyLambda.ToString(),
+                    propertyLambda,
                     type));
 
             return propInfo.Name;
@@ -91,25 +91,25 @@ namespace OrdersDb.Domain.Utils
             this TSource source,
             Expression<Func<TSource, TProperty>> propertyLambda)
         {
-            var type = typeof(TSource);
+            var type = typeof (TSource);
 
             var member = propertyLambda.Body as MemberExpression;
             if (member == null)
                 throw new ArgumentException(string.Format(
                     "Expression '{0}' refers to a method, not a property.",
-                    propertyLambda.ToString()));
+                    propertyLambda));
 
             var propInfo = member.Member as PropertyInfo;
             if (propInfo == null)
                 throw new ArgumentException(string.Format(
                     "Expression '{0}' refers to a field, not a property.",
-                    propertyLambda.ToString()));
+                    propertyLambda));
 
             if (type != propInfo.ReflectedType &&
                 !type.IsSubclassOf(propInfo.ReflectedType))
                 throw new ArgumentException(string.Format(
                     "Expresion '{0}' refers to a property that is not from type {1}.",
-                    propertyLambda.ToString(),
+                    propertyLambda,
                     type));
 
             return propInfo.Name;
@@ -119,6 +119,5 @@ namespace OrdersDb.Domain.Utils
         {
             return HostingEnvironment.MapPath("~/Files/");
         }
-
     }
 }

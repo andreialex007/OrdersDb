@@ -36,9 +36,9 @@ namespace OrdersDb.Domain.Utils
 
         public static byte[] ResizeAndConvertToJpg(byte[] imageData, int width = 100, int height = 100)
         {
-            var fullImage = ImageUtils.ConvertToJpg(imageData);
+            var fullImage = ConvertToJpg(imageData);
             var bitmap = fullImage.ToBitmap();
-            var resized = ImageUtils.ResizeImage(bitmap, new Size(width, height));
+            var resized = ResizeImage(bitmap, new Size(width, height));
             return resized.ToByteArray(ImageFormat.Jpeg);
         }
 

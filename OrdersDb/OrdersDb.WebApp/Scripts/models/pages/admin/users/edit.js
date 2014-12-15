@@ -15,6 +15,27 @@
         self.fields.Email = new textField("Email", "", "Email (обязательно)");
         self.fields.Password = new textField("Пароль", "", "Пароль (обязательно)");
         self.Roles = ko.observableArray([]);
+        self.userImage = ko.observable("");
+
+        self.userImageSelected = function (item, event) {
+            var xhr = new XMLHttpRequest();
+            var formData = new FormData();
+
+            if (event.target.files.length != 1)
+                return;
+
+            formData.append("file", event.target.files[0]);
+            formData.append("id", self.Id());
+            xhr.open("POST", "/Users/UploadImage/", true);
+            xhr.send(formData);
+            xhr.addEventListener("load", function () {
+                self.refreshImage();
+            }, false);
+        };
+
+        self.refreshImage = function () {
+            return self.userImage("/Users/GetImage/" + self.Id() + "?t=" + Math.random());
+        };
 
         self.fromJSON = function (json) {
             self.fields.Name.value(json.Name);
@@ -26,6 +47,7 @@
             });
 
             self.Roles(mapping.fromJS(json.Roles)());
+            self.refreshImage();
         };
         self.toJSON = function () {
             var json = { Id: self.Id() };

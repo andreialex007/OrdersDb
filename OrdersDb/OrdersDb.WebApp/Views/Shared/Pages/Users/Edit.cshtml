@@ -37,6 +37,20 @@
             </div>
         </div>
         <!-- /ko -->
+        
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Изображение пользователя</h4>
+                <img data-bind="attr: { src: userImage }" alt="" style="width: 100px; padding: 12px;" />
+                <div style="position: relative;">
+                    <input class="upload-flag-input flag-file-input" data-bind="event: { change: userImageSelected }" type="file" />
+                    <a href="javascript:;" class="btn btn-success">
+                        <i class="fa fa-upload"></i>
+                        Загрузить
+                    </a>
+                </div>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-md-12">

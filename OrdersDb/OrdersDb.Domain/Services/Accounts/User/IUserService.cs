@@ -6,5 +6,6 @@ namespace OrdersDb.Domain.Services.Accounts.User
     {
         User Login(string name, string password);
         UserDto GetByUserName(string userName);
+        byte[] GetUserImage(string userName);
     }
 }

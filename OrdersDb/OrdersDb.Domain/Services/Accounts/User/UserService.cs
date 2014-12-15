@@ -2,6 +2,7 @@
 using System.Linq;
 using OrdersDb.Domain.Exceptions;
 using OrdersDb.Domain.Services.Accounts.Role;
+using OrdersDb.Domain.Services.Geography.Country;
 using OrdersDb.Domain.Services._Common;
 using OrdersDb.Domain.Utils;
 using OrdersDb.Domain.Wrappers;
@@ -18,11 +19,13 @@ namespace OrdersDb.Domain.Services.Accounts.User
 
         public override void Add(User entity)
         {
+            entity.Image = File.ReadAllBytes(HttpContext.Session.GetImagePath<User>(x => x.Image));
             entity.GetValidationErrors().ThrowIfHasErrors();
             Db.AttachIfDetached(entity);
             entity.Roles.ForEach(x => Db.Roles.Attach(x));
             Db.Entry(entity).State = EntityState.Added;
             Db.SaveChanges();
+            HttpContext.Session.ClearImagePath<User>(x => x.Image);
         }
 
         public override void Update(User entity)
@@ -34,6 +37,13 @@ namespace OrdersDb.Domain.Services.Accounts.User
 
             ProcessEntity(entity);
             Db.SaveChanges();
+            HttpContext.Session.ClearImagePath<User>(x => x.Image);
+        }
+
+        public byte[] GetUserImage(string userName)
+        {
+            var user = Db.Set<User>().Single(x => x.Name.ToLower() == userName.ToLower());
+            return user.Image;
         }
 
         private void ProcessEntity(User entity)

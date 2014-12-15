@@ -23,7 +23,7 @@ namespace OrdersDb.Domain.Services.Geography.Country
 
         public override List<CountryDto> Search(CountrySearchParameters @params)
         {
-            HttpContext.Session.ClearImagePath<Country>(x => x.Flag); //TODO убрать костыль
+            HttpContext.Session.ClearImagePath<Country>(x => x.Flag);
 
             var query = Db.Set<Country>()
                 .AsQueryable();
@@ -77,7 +77,6 @@ namespace OrdersDb.Domain.Services.Geography.Country
             Db.SaveChanges();
             HttpContext.Session.ClearImagePath<Country>(x => x.Flag);
         }
-
 
         public override void Update(Country entity)
         {

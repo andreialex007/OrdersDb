@@ -34,5 +34,11 @@ namespace OrdersDb.WebApp.Controllers
             this.SignOut();
             return Redirect(Url.Content("~/"));
         }
+
+        public ActionResult UserImage(string userName)
+        {
+            var userImage = _userService.GetUserImage(userName) ?? System.IO.File.ReadAllBytes(Server.MapPath("~/Images/avatar-blank.jpg"));
+            return File(userImage, System.Net.Mime.MediaTypeNames.Image.Jpeg);
+        }
     }
 }

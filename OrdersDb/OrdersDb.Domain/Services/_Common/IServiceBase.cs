@@ -30,6 +30,7 @@ namespace OrdersDb.Domain.Services._Common
         int Total(TSearchParameters @params);
         TDto GetById(int id);
         byte[] GetImage(Expression<Func<TEntity, byte[]>> propertyLambda, int? imageId);
+        void UploadImage(Expression<Func<TEntity, byte[]>> propertyLambda, byte[] imageData, int? countryId);
     }
 
     public interface IServiceBase<TEntity, TDto> : IServiceBase<TEntity, SearchParameters, TDto>

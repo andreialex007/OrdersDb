@@ -42,8 +42,8 @@
                 <ul class="nav navbar-nav pull-right">
                     <!-- BEGIN USER LOGIN DROPDOWN -->
                     <li class="dropdown dropdown-user">
-                        <a href="#/profile" class="dropdown-toggle" >
-                            <img alt="" class="img-circle hide1" src="/Metronic/admin/layout/img/avatar3_small.jpg" />
+                        <a href="#/profile" class="dropdown-toggle">
+                            <img alt="" class="img-circle hide1" src="@Url.Content(string.Format("~/account/userimage?userName={0}", User.Identity.Name))" />
                             <span class="username username-hide-on-mobile">
                                 @User.Identity.Name
                             </span>

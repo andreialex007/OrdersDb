@@ -288,6 +288,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\avatar-blank.jpg" />
     <Content Include="Images\default-flag.jpg" />
     <Content Include="Images\default_product.png" />
     <Content Include="Metronic\admin\layout\css\custom.css" />
