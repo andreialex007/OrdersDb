@@ -162,12 +162,7 @@
     <Compile Include="Services\Staff\Position\PositionDto.cs" />
     <Compile Include="Services\SystemServices\Comment.cs" />
     <Compile Include="Services\Geography\Country\Country.cs" />
-    <Compile Include="Services\Orders\Currency\Currency.cs" />
-    <Compile Include="Services\Orders\CurrencyRate\CurrencyRate.cs" />
     <Compile Include="Services\Staff\Department\Department.cs" />
-    <Compile Include="Services\Orders\PaymentType\PaymentType.cs" />
-    <Compile Include="Services\Production\Supplier\Supplier.cs" />
-    <Compile Include="Services\Production\Vendor\Vendor.cs" />
     <Compile Include="Services\_Common\Entities\AccessType.cs" />
     <Compile Include="Services\Production\Category\Category.cs" />
     <Compile Include="Services\Production\Client\Client.cs" />
@@ -260,8 +255,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Attributes\" />
-    <Folder Include="Entities\_Common\" />
     <Folder Include="Services\Accounts\Permission\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

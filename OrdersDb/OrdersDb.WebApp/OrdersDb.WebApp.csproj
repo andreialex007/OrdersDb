@@ -2771,6 +2771,7 @@
   <ItemGroup>
     <Folder Include="Files\" />
     <Folder Include="Metronic\global\plugins\jquery-file-upload\server\php\files\thumbnail\" />
+    <Folder Include="Scripts\_Localization\" />
     <Folder Include="Styles\pages\" />
   </ItemGroup>
   <ItemGroup>
@@ -3106,8 +3107,8 @@
     <PreBuildEvent>$(SolutionDir)Utils\BuildGenerator\bin\Debug\BuildGenerator.exe $(SolutionDir)
 if $(ConfigurationName) == Release (
    node $(ProjectDir)\Scripts\libs\r.js -o $(ProjectDir)_build\build.json
-   echo "js build succeeded"
-)</PreBuildEvent>
+   echo "js build succeeded" )
+$(SolutionDir)\ResourcesToJsConverter\ResourcesToJsConverter.exe $(SolutionDir)\Resources\OrdersDb.Resources $(SolutionDir)\OrdersDb.WebApp\Scripts\_Localization</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PostBuildEvent>
