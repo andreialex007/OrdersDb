@@ -8,6 +8,10 @@ namespace OrdersDb.WebApp
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
+
+            bundles.Add(new ScriptBundle("~/scriptlocalization_ru").IncludeDirectory("~/Scripts/_Localization/ru/", "*.js", true));
+            bundles.Add(new ScriptBundle("~/scriptlocalization_en").IncludeDirectory("~/Scripts/_Localization/en/", "*.js", true));
+
             //METRONIC STYLES  ******************
             //GLOBAL MANDATORY STYLES
             var globalMandatoryStyles = new[]

@@ -2738,6 +2738,12 @@
     <Content Include="Scripts\models\pages\base\edit.js" />
     <Content Include="Scripts\models\pages\base\page.js" />
     <Content Include="Scripts\models\pages\profile\profile.js" />
+    <Content Include="Scripts\_Localization\en\CommonResources.js" />
+    <Content Include="Scripts\_Localization\en\EntitiesResources.js" />
+    <Content Include="Scripts\_Localization\en\ValidationResources.js" />
+    <Content Include="Scripts\_Localization\ru\CommonResources.js" />
+    <Content Include="Scripts\_Localization\ru\EntitiesResources.js" />
+    <Content Include="Scripts\_Localization\ru\ValidationResources.js" />
     <Content Include="Styles\common.css">
       <DependentUpon>common.less</DependentUpon>
     </Content>
@@ -2771,7 +2777,6 @@
   <ItemGroup>
     <Folder Include="Files\" />
     <Folder Include="Metronic\global\plugins\jquery-file-upload\server\php\files\thumbnail\" />
-    <Folder Include="Scripts\_Localization\" />
     <Folder Include="Styles\pages\" />
   </ItemGroup>
   <ItemGroup>
@@ -3067,6 +3072,7 @@
     <Content Include="Views\Shared\Test.cshtml" />
     <Content Include="Views\Shared\Controls\ValidationBlock.cshtml" />
     <Content Include="Views\Shared\Profile\Edit.cshtml" />
+    <Content Include="Views\Shared\Controls\_TranslationBundleSelector.cshtml" />
     <None Include="_build\build.json" />
   </ItemGroup>
   <PropertyGroup>

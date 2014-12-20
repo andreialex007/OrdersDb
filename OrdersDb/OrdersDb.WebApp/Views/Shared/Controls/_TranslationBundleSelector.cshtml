@@ -1,0 +1,10 @@
+﻿@using System.Threading
+
+@if (Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName == "ru")
+{
+    @Scripts.Render("~/scriptlocalization_ru")
+}
+else if (Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName == "en")
+{
+    @Scripts.Render("~/scriptlocalization_en")
+}

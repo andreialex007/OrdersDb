@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Globalization;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.Threading;
+using System.Web;
 using System.Web.Mvc;
 using OrdersDb.Domain.Services._Common;
 using OrdersDb.Domain.Services._Common.Entities;
@@ -112,5 +116,28 @@ namespace OrdersDb.WebApp.Controllers._Common
             return Json(new { Result = "ok" });
         }
 
+        protected override IActionInvoker CreateActionInvoker()
+        {
+            InitLangCookies(Request.Cookies, Response.Cookies);
+            return base.CreateActionInvoker();
+        }
+
+        public static void InitLangCookies(HttpCookieCollection requestCookie, HttpCookieCollection responseCookie)
+        {
+            string language;
+            if (!requestCookie.AllKeys.Contains("lang"))
+            {
+                var langCookie = new HttpCookie("lang", "en") { Path = "/" };
+                responseCookie.Add(langCookie);
+                requestCookie.Add(langCookie);
+                language = "en";
+            }
+            else
+            {
+                language = requestCookie["lang"].Value;
+            }
+            Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo(language);
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(language);
+        }
     }
 }

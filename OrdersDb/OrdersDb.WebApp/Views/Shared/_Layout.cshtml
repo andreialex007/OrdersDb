@@ -40,6 +40,11 @@
             <!-- BEGIN TOP NAVIGATION MENU -->
             <div class="top-menu">
                 <ul class="nav navbar-nav pull-right">
+                    <li class="dropdown dropdown-user change-language">
+                        <a data-bind="click: changeLanguage" href="javascript:;" class="dropdown-toggle">
+                            <span class="label label-sm label-danger " data-bind="text: currentLanguage()"></span>
+                        </a>
+                    </li>
                     <!-- BEGIN USER LOGIN DROPDOWN -->
                     <li class="dropdown dropdown-user">
                         <a href="#/profile" class="dropdown-toggle">
@@ -150,6 +155,8 @@
             </span>
         </div>
     </div>
+
+    @Html.Partial("Controls/_TranslationBundleSelector")
 
     @if (Html.IsDebug())
     {

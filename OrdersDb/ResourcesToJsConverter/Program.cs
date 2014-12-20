@@ -60,7 +60,7 @@ namespace ResourcesToJsConverter
             }
             var langFolderPath = Path.Combine(outputFolder, langFolderName);
             Directory.CreateDirectory(langFolderPath);
-            File.WriteAllText(Path.Combine(langFolderPath, fileName + ".js"), fileContent,Encoding.UTF8);
+            File.WriteAllText(Path.Combine(langFolderPath, string.Format("{0}.js", fileName)), fileContent,Encoding.UTF8);
         }
     }
 }

@@ -17,6 +17,17 @@
 
     function app() {
         var self = new modelBase();
+        self.currentLanguage = function () {
+            return $.cookie('lang') === "en" ? "ru" : "en";
+        };
+
+        self.changeLanguage = function () {
+            var lang = self.currentLanguage();
+            self.currentLanguage(lang);
+            $.cookie('lang', lang, { path: '/' });
+            window.location.reload();
+        };
+
         self.pages = {};
         self.pagesArr = function () {
             return $.map(self.pages, function (el) { return el; });
