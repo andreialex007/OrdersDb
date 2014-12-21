@@ -296,6 +296,121 @@
     <value>Street city</value>
   </data>
 
+  <!-- Category -->
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="Category_Name" xml:space="preserve">
+    <value>Category name</value>
+  </data>
+  <data name="Category_Description" xml:space="preserve">
+    <value>Category description</value>
+  </data>
+  <data name="Category_ImagePreview" xml:space="preserve">
+    <value>Category preview image</value>
+  </data>
+  <data name="Category_ImageFull" xml:space="preserve">
+    <value>Category full image</value>
+  </data>
+  <data name="Category_ParentCategory" xml:space="preserve">
+    <value>Category parent category</value>
+  </data>
+
+  <!-- Client -->
+  <data name="Client" xml:space="preserve">
+    <value>Client</value>
+  </data>
+  <data name="Clients" xml:space="preserve">
+    <value>Clients</value>
+  </data>
+  <data name="Client_Name" xml:space="preserve">
+    <value>Client name</value>
+  </data>
+  <data name="Client_FullName" xml:space="preserve">
+    <value>Client full name</value>
+  </data>
+  <data name="Client_INN" xml:space="preserve">
+    <value>Client INN</value>
+  </data>
+  <data name="Client_OGRN" xml:space="preserve">
+    <value>Client OGRN</value>
+  </data>
+  <data name="Client_Location" xml:space="preserve">
+    <value>Client location</value>
+  </data>
+  <data name="Client_Orders" xml:space="preserve">
+    <value>Client orders</value>
+  </data>
+
+  <!-- Product -->
+  <data name="Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="Product_Name" xml:space="preserve">
+    <value>Product name</value>
+  </data>
+  <data name="Product_BuyPrice" xml:space="preserve">
+    <value>Product buy price</value>
+  </data>
+  <data name="Product_SellPrice" xml:space="preserve">
+    <value>Product sell price</value>
+  </data>
+  <data name="Product_IsService" xml:space="preserve">
+    <value>Product is price</value>
+  </data>
+  <data name="Product_Category" xml:space="preserve">
+    <value>Product category</value>
+  </data>
+
+  <!-- Employee -->
+  <data name="Employee" xml:space="preserve">
+    <value>Employee</value>
+  </data>
+  <data name="Employees" xml:space="preserve">
+    <value>Employees</value>
+  </data>
+  <data name="Employee_FirstName" xml:space="preserve">
+    <value>Employee first name</value>
+  </data>
+  <data name="Employee_LastName" xml:space="preserve">
+    <value>Employee last name</value>
+  </data>
+  <data name="Employee_Patronymic" xml:space="preserve">
+    <value>Employee patronymic</value>
+  </data>
+  <data name="Employee_Position" xml:space="preserve">
+    <value>Employee position</value>
+  </data>
+  <data name="Employee_SNILS" xml:space="preserve">
+    <value>Employee SNILS</value>
+  </data>
+  <data name="Employee_Email" xml:space="preserve">
+    <value>Employee email</value>
+  </data>
+  <data name="Employee_Residence" xml:space="preserve">
+    <value>Employee residence</value>
+  </data>
+
+  <!-- Position -->
+  <data name="Position" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="Positions" xml:space="preserve">
+    <value>Positions</value>
+  </data>
+  <data name="Position_Name" xml:space="preserve">
+    <value>Position name</value>
+  </data>
+
 
 
 </root>

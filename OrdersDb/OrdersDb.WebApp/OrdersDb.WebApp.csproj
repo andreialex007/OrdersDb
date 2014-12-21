@@ -2791,6 +2791,10 @@
       <Project>{6e421705-137e-41ff-a121-7e4184193278}</Project>
       <Name>OrdersDb.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Resources\OrdersDb.Resources\OrdersDb.Resources.csproj">
+      <Project>{D9DE9397-FD80-4BC4-B1D1-8603107355EE}</Project>
+      <Name>OrdersDb.Resources</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\Index.cshtml" />

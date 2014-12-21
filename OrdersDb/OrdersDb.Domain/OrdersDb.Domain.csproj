@@ -160,9 +160,7 @@
     <Compile Include="Services\Production\Product\ProductDto.cs" />
     <Compile Include="Services\Staff\Employee\EmployeeDto.cs" />
     <Compile Include="Services\Staff\Position\PositionDto.cs" />
-    <Compile Include="Services\SystemServices\Comment.cs" />
     <Compile Include="Services\Geography\Country\Country.cs" />
-    <Compile Include="Services\Staff\Department\Department.cs" />
     <Compile Include="Services\_Common\Entities\AccessType.cs" />
     <Compile Include="Services\Production\Category\Category.cs" />
     <Compile Include="Services\Production\Client\Client.cs" />

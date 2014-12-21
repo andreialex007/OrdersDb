@@ -61,6 +61,69 @@ namespace OrdersDb.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Categories.
+        /// </summary>
+        public static string Categories {
+            get {
+                return ResourceManager.GetString("Categories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Category.
+        /// </summary>
+        public static string Category {
+            get {
+                return ResourceManager.GetString("Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Category description.
+        /// </summary>
+        public static string Category_Description {
+            get {
+                return ResourceManager.GetString("Category_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Category full image.
+        /// </summary>
+        public static string Category_ImageFull {
+            get {
+                return ResourceManager.GetString("Category_ImageFull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Category preview image.
+        /// </summary>
+        public static string Category_ImagePreview {
+            get {
+                return ResourceManager.GetString("Category_ImagePreview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Category name.
+        /// </summary>
+        public static string Category_Name {
+            get {
+                return ResourceManager.GetString("Category_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Category parent category.
+        /// </summary>
+        public static string Category_ParentCategory {
+            get {
+                return ResourceManager.GetString("Category_ParentCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cities.
         /// </summary>
         public static string Cities {
@@ -115,6 +178,78 @@ namespace OrdersDb.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Client.
+        /// </summary>
+        public static string Client {
+            get {
+                return ResourceManager.GetString("Client", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Client full name.
+        /// </summary>
+        public static string Client_FullName {
+            get {
+                return ResourceManager.GetString("Client_FullName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Client INN.
+        /// </summary>
+        public static string Client_INN {
+            get {
+                return ResourceManager.GetString("Client_INN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Client location.
+        /// </summary>
+        public static string Client_Location {
+            get {
+                return ResourceManager.GetString("Client_Location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Client name.
+        /// </summary>
+        public static string Client_Name {
+            get {
+                return ResourceManager.GetString("Client_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Client OGRN.
+        /// </summary>
+        public static string Client_OGRN {
+            get {
+                return ResourceManager.GetString("Client_OGRN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Client orders.
+        /// </summary>
+        public static string Client_Orders {
+            get {
+                return ResourceManager.GetString("Client_Orders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clients.
+        /// </summary>
+        public static string Clients {
+            get {
+                return ResourceManager.GetString("Clients", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Countries.
         /// </summary>
         public static string Countries {
@@ -165,6 +300,87 @@ namespace OrdersDb.Resources {
         public static string Country_RussianName {
             get {
                 return ResourceManager.GetString("Country_RussianName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee.
+        /// </summary>
+        public static string Employee {
+            get {
+                return ResourceManager.GetString("Employee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee email.
+        /// </summary>
+        public static string Employee_Email {
+            get {
+                return ResourceManager.GetString("Employee_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee first name.
+        /// </summary>
+        public static string Employee_FirstName {
+            get {
+                return ResourceManager.GetString("Employee_FirstName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee last name.
+        /// </summary>
+        public static string Employee_LastName {
+            get {
+                return ResourceManager.GetString("Employee_LastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee patronymic.
+        /// </summary>
+        public static string Employee_Patronymic {
+            get {
+                return ResourceManager.GetString("Employee_Patronymic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee position.
+        /// </summary>
+        public static string Employee_Position {
+            get {
+                return ResourceManager.GetString("Employee_Position", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee residence.
+        /// </summary>
+        public static string Employee_Residence {
+            get {
+                return ResourceManager.GetString("Employee_Residence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee SNILS.
+        /// </summary>
+        public static string Employee_SNILS {
+            get {
+                return ResourceManager.GetString("Employee_SNILS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employees.
+        /// </summary>
+        public static string Employees {
+            get {
+                return ResourceManager.GetString("Employees", resourceCulture);
             }
         }
         
@@ -336,6 +552,96 @@ namespace OrdersDb.Resources {
         public static string Orders {
             get {
                 return ResourceManager.GetString("Orders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Position.
+        /// </summary>
+        public static string Position {
+            get {
+                return ResourceManager.GetString("Position", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Position name.
+        /// </summary>
+        public static string Position_Name {
+            get {
+                return ResourceManager.GetString("Position_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Positions.
+        /// </summary>
+        public static string Positions {
+            get {
+                return ResourceManager.GetString("Positions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product.
+        /// </summary>
+        public static string Product {
+            get {
+                return ResourceManager.GetString("Product", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product buy price.
+        /// </summary>
+        public static string Product_BuyPrice {
+            get {
+                return ResourceManager.GetString("Product_BuyPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product category.
+        /// </summary>
+        public static string Product_Category {
+            get {
+                return ResourceManager.GetString("Product_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product is price.
+        /// </summary>
+        public static string Product_IsService {
+            get {
+                return ResourceManager.GetString("Product_IsService", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product name.
+        /// </summary>
+        public static string Product_Name {
+            get {
+                return ResourceManager.GetString("Product_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product sell price.
+        /// </summary>
+        public static string Product_SellPrice {
+            get {
+                return ResourceManager.GetString("Product_SellPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Products.
+        /// </summary>
+        public static string Products {
+            get {
+                return ResourceManager.GetString("Products", resourceCulture);
             }
         }
         

@@ -3,13 +3,14 @@ using System.Web;
 using System.Web.Mvc;
 using OrdersDb.Domain.Services.Production.Category;
 using OrdersDb.Domain.Services._Common.Entities;
+using OrdersDb.Resources;
 using OrdersDb.WebApp.Code;
 using OrdersDb.WebApp.Code.Extensions;
 using OrdersDb.WebApp.Controllers._Common;
 
 namespace OrdersDb.WebApp.Controllers
 {
-    [MenuItem(Icon = "fa-folder", Name = "Категории товаров")]
+    [MenuItem(Icon = "fa-folder", Name = "categories")]
     public class CategoriesController : ControllerBase<ICategoryService, Category, CategorySearchParameters, CategoryDto>
     {
         public CategoriesController(ICategoryService service)
