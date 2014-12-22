@@ -15,6 +15,7 @@ namespace OrdersDb.WebApp.Controllers._Common
                 var menuitem = new MenuItem();
                 var menuItemAttr = (MenuItemAttribute)customAttributes.First();
                 menuitem.Id = menuItemAttr.Id ?? type.Name.Replace("Controller", string.Empty).ToLower();
+                menuItemAttr.ResourcePropertyName = menuitem.Id;
                 menuitem.Name = menuItemAttr.Name ?? menuitem.Id;
                 menuitem.Icon = menuItemAttr.Icon ?? "fa-circle";
                 return menuitem;

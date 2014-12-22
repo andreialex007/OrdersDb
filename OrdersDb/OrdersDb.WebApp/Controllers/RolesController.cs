@@ -4,13 +4,14 @@ using System.Web.Mvc;
 using Newtonsoft.Json;
 using OrdersDb.Domain.Services.Accounts.Role;
 using OrdersDb.Domain.Services._Common.Entities;
+using OrdersDb.Resources;
 using OrdersDb.WebApp.Code;
 using OrdersDb.WebApp.Code.Extensions;
 using OrdersDb.WebApp.Controllers._Common;
 
 namespace OrdersDb.WebApp.Controllers
 {
-    [MenuItem(Icon = "fa-puzzle-piece", Name = "Роли")]
+    [MenuItem(Icon = "fa-puzzle-piece", ResourceType = typeof(EntitiesResources), ResourcePropertyName = "Roles")]
     public class RolesController : NamedEntityControllerBase<IRoleService, Role, RoleSearchParameters, RoleDto>
     {
         public RolesController(IRoleService service)

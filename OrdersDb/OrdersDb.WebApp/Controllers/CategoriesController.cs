@@ -7,15 +7,17 @@ using OrdersDb.Resources;
 using OrdersDb.WebApp.Code;
 using OrdersDb.WebApp.Code.Extensions;
 using OrdersDb.WebApp.Controllers._Common;
+using OrdersDb.Resources;
 
 namespace OrdersDb.WebApp.Controllers
 {
-    [MenuItem(Icon = "fa-folder", Name = "categories")]
+    [MenuItemEntityResourceAttribute(Icon = "fa-folder")]
     public class CategoriesController : ControllerBase<ICategoryService, Category, CategorySearchParameters, CategoryDto>
     {
         public CategoriesController(ICategoryService service)
             : base(service)
         {
+            var categories = EntitiesResources.Categories;
         }
 
         [HttpPost]
