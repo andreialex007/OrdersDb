@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using OrdersDb.Domain.Services._Common.Entities;
+using OrdersDb.Resources;
 
 namespace OrdersDb.Domain.Services.Accounts.Role
 {
@@ -21,7 +22,7 @@ namespace OrdersDb.Domain.Services.Accounts.Role
         /// <summary>
         /// Название роли
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public string Name { get; set; }
 
         /// <summary>

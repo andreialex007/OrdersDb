@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using DataAnnotationsExtensions;
 using OrdersDb.Domain.Services._Common.Entities;
+using OrdersDb.Resources;
 
 namespace OrdersDb.Domain.Services.Accounts.User
 {
@@ -25,22 +26,22 @@ namespace OrdersDb.Domain.Services.Accounts.User
         /// <summary>
         /// Имя пользователя
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         [StringLength(50, MinimumLength = 6)]
         public string Name { get; set; }
 
         /// <summary>
         /// Почта пользователя
         /// </summary>
-        [Email]
-        [Required]
+        [Email(ErrorMessageResourceType = typeof(ValidationResources),ErrorMessageResourceName = "EmailAddress")]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public string Email { get; set; }
 
         /// <summary>
         /// Пароль пользователя
         /// </summary>
         [StringLength(50, MinimumLength = 6)]
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public string Password { get; set; }
 
         /// <summary>

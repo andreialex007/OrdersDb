@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using DataAnnotationsExtensions;
 using OrdersDb.Domain.Services._Common.Entities;
+using OrdersDb.Resources;
 
 namespace OrdersDb.Domain.Services.Geography.City
 {
@@ -20,7 +21,7 @@ namespace OrdersDb.Domain.Services.Geography.City
         /// <summary>
         /// Имя города
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public string Name { get; set; }
 
         /// <summary>
@@ -31,13 +32,13 @@ namespace OrdersDb.Domain.Services.Geography.City
         /// <summary>
         /// Регион в котором находится данный город
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public Region.Region Region { get; set; }
 
         /// <summary>
         /// Численность населения
         /// </summary>
-        [Min(1000)]
+        [Min(1000, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Min")]
         public int Population { get; set; }
 
         /// <summary>

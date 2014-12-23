@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using DataAnnotationsExtensions;
 using OrdersDb.Domain.Services.Orders.OrderItem;
 using OrdersDb.Domain.Services._Common.Entities;
+using OrdersDb.Resources;
 
 namespace OrdersDb.Domain.Services.Production.Product
 {
@@ -21,19 +22,19 @@ namespace OrdersDb.Domain.Services.Production.Product
         /// <summary>
         /// Название продукта
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public string Name { get; set; }
 
         /// <summary>
         /// Цена закупки
         /// </summary>
-        [Min(1)]
+        [Min(1, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "ValueMustBeSpecified")]
         public decimal BuyPrice { get; set; }
 
         /// <summary>
         /// Цена продажи
         /// </summary>
-        [Min(1)]
+        [Min(1, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "ValueMustBeSpecified")]
         public decimal SellPrice { get; set; }
 
         /// <summary>
@@ -44,7 +45,7 @@ namespace OrdersDb.Domain.Services.Production.Product
         /// <summary>
         /// Категория к которой принадлежит данный продукт
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public Category.Category Category { get; set; }
 
         /// <summary>

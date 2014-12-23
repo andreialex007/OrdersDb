@@ -6,7 +6,7 @@ using OrdersDb.WebApp.Controllers._Common;
 
 namespace OrdersDb.WebApp.Controllers
 {
-    [MenuItem(Icon = "fa-tree", ResourceType = typeof(EntitiesResources), ResourcePropertyName = "Regions")]
+    [MenuItemEntityResourceAttribute(Icon = "fa-tree")]
     public class RegionsController : NamedEntityControllerBase<IRegionService, Region, RegionSearchParameters, RegionDto>
     {
         public RegionsController(IRegionService service)

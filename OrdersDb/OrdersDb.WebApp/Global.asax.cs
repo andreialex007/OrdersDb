@@ -4,9 +4,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using OrdersDb.WebApp.App_Start;
 using OrdersDb.WebApp.Code;
 using StructureMap.Web.Pipeline;
+using ControllerBase = OrdersDb.WebApp.Controllers._Common.ControllerBase;
 
 namespace OrdersDb.WebApp
 {
@@ -24,12 +24,22 @@ namespace OrdersDb.WebApp
             Bootstraper.Bootstrap();
         }
 
+        public void Application_PreRequestHandlerExecute()
+        {
+            ControllerBase.InitLangCookies(Request.Cookies, Response.Cookies);
+        }
+
         protected void Application_EndRequest(object sender, EventArgs e)
         {
             HttpContextLifecycle.DisposeAndClearAll();
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
+        {
+            RewriteLowerCaseUrls();
+        }
+
+        private void RewriteLowerCaseUrls()
         {
             //You don't want to redirect on posts, or images/css/js
             var isGet = HttpContext.Current.Request.RequestType.ToLowerInvariant().Contains("get");

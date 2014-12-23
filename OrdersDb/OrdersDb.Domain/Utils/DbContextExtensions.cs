@@ -21,7 +21,7 @@ namespace OrdersDb.Domain.Utils
         public static void AttachIfDetached<T>(this IAppDbContext appDbContext, T entity,
            params Expression<Func<T, IEnumerable<EntityBase>>>[] childEntitiesAction) where T : EntityBase
         {
-            if (appDbContext.Entry<T>(entity).State == EntityState.Detached)
+            if (appDbContext.Entry(entity).State == EntityState.Detached)
                 appDbContext.Set<T>().Attach(entity);
             foreach (var action in childEntitiesAction)
             {

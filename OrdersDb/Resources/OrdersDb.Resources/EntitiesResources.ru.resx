@@ -98,4 +98,290 @@
 	<resheader name="writer">
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
+  
+  <!-- ORDER -->
+  <data name="Order" xml:space="preserve">
+    <value>Заказ</value>
+  </data>
+  <data name="Orders" xml:space="preserve">
+    <value>Заказы</value>
+  </data>
+  <data name="Order_Code" xml:space="preserve">
+    <value>Код заказа</value>
+  </data>
+  <data name="Order_OrderItems" xml:space="preserve">
+    <value>Элементы заказа</value>
+  </data>
+  <data name="Order_Client" xml:space="preserve">
+    <value>Клиент заказа</value>
+  </data>
+  <data name="Order_SellPrice" xml:space="preserve">
+    <value>Цена продажи заказа</value>
+  </data>
+  <data name="Order_BuyPrice" xml:space="preserve">
+    <value>Цена покупки заказа</value>
+  </data>
+
+  <!-- OrderItem -->
+  <data name="OrderItem" xml:space="preserve">
+    <value>Элемент заказа</value>
+  </data>
+  <data name="OrderItems" xml:space="preserve">
+    <value>Элементы заказа</value>
+  </data>
+  <data name="OrderItem_Product" xml:space="preserve">
+    <value>Товар в заказе</value>
+  </data>
+  <data name="OrderItem_Order" xml:space="preserve">
+    <value>Элемент заказа</value>
+  </data>
+  <data name="OrderItem_SellPrice" xml:space="preserve">
+    <value>Цена продажи товарной позиции</value>
+  </data>
+  <data name="OrderItem_BuyPrice" xml:space="preserve">
+    <value>Цена покупки товарной позиции</value>
+  </data>
+
+  <!-- Role -->
+  <data name="Role" xml:space="preserve">
+    <value>Роль</value>
+  </data>
+  <data name="Roles" xml:space="preserve">
+    <value>Роли</value>
+  </data>
+  <data name="Role_Name" xml:space="preserve">
+    <value>Название роли</value>
+  </data>
+  <data name="Role_Users" xml:space="preserve">
+    <value>Пользователи роли</value>
+  </data>
+  <data name="Role_Permissions" xml:space="preserve">
+    <value>Разрешения роли</value>
+  </data>
+
+  <!-- User -->
+  <data name="User" xml:space="preserve">
+    <value>Пользователь</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Пользователи</value>
+  </data>
+  <data name="User_Image" xml:space="preserve">
+    <value>Изображение пользователя</value>
+  </data>
+  <data name="User_Name" xml:space="preserve">
+    <value>Имя пользователя</value>
+  </data>
+  <data name="User_Email" xml:space="preserve">
+    <value>Email пользователя</value>
+  </data>
+  <data name="User_Password" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="User_Roles" xml:space="preserve">
+    <value>Роли пользователя</value>
+  </data>
+
+  <!-- City -->
+  <data name="City" xml:space="preserve">
+    <value>Город</value>
+  </data>
+  <data name="Cities" xml:space="preserve">
+    <value>Города</value>
+  </data>
+  <data name="City_Name" xml:space="preserve">
+    <value>Название города</value>
+  </data>
+  <data name="City_Region" xml:space="preserve">
+    <value>Регион</value>
+  </data>
+  <data name="City_Population" xml:space="preserve">
+    <value>Численность населения</value>
+  </data>
+  <data name="City_Streets" xml:space="preserve">
+    <value>Улицы города</value>
+  </data>
+
+  <!-- Country -->
+  <data name="Country" xml:space="preserve">
+    <value>Страна</value>
+  </data>
+  <data name="Countries" xml:space="preserve">
+    <value>Страны</value>
+  </data>
+  <data name="Country_Code" xml:space="preserve">
+    <value>Код страны</value>
+  </data>
+  <data name="Country_Name" xml:space="preserve">
+    <value>Название страны на английском</value>
+  </data>
+  <data name="Country_RussianName" xml:space="preserve">
+    <value>Название страны на русском</value>
+  </data>
+  <data name="Country_Flag" xml:space="preserve">
+    <value>Флаг страны</value>
+  </data>
+
+  <!-- House -->
+  <data name="House" xml:space="preserve">
+    <value>Дом</value>
+  </data>
+  <data name="Houses" xml:space="preserve">
+    <value>Дома</value>
+  </data>
+  <data name="House_Number" xml:space="preserve">
+    <value>Номер дома</value>
+  </data>
+  <data name="House_Building" xml:space="preserve">
+    <value>Строение</value>
+  </data>
+  <data name="House_PostalCode" xml:space="preserve">
+    <value>Индекс</value>
+  </data>
+  <data name="House_Street" xml:space="preserve">
+    <value>Улица</value>
+  </data>
+
+
+  <!-- Region -->
+  <data name="Region" xml:space="preserve">
+    <value>Регион</value>
+  </data>
+  <data name="Regions" xml:space="preserve">
+    <value>Регионы</value>
+  </data>
+  <data name="Region_Name" xml:space="preserve">
+    <value>Название региона</value>
+  </data>
+  <data name="Region_Country" xml:space="preserve">
+    <value>Страна</value>
+  </data>
+
+  <!-- Street -->
+  <data name="Street" xml:space="preserve">
+    <value>Улица</value>
+  </data>
+  <data name="Streets" xml:space="preserve">
+    <value>Улицы</value>
+  </data>
+  <data name="Street_Name" xml:space="preserve">
+    <value>Название улицы</value>
+  </data>
+  <data name="Street_City" xml:space="preserve">
+    <value>Город</value>
+  </data>
+
+  <!-- Category -->
+  <data name="Category" xml:space="preserve">
+    <value>Категория</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Категории</value>
+  </data>
+  <data name="Category_Name" xml:space="preserve">
+    <value>Название категории</value>
+  </data>
+  <data name="Category_Description" xml:space="preserve">
+    <value>Описание категории</value>
+  </data>
+  <data name="Category_ImagePreview" xml:space="preserve">
+    <value>Изображение категории (превью)</value>
+  </data>
+  <data name="Category_ImageFull" xml:space="preserve">
+    <value>Изображение категории</value>
+  </data>
+  <data name="Category_ParentCategory" xml:space="preserve">
+    <value>Родительская категория</value>
+  </data>
+
+  <!-- Client -->
+  <data name="Client" xml:space="preserve">
+    <value>Заказчик</value>
+  </data>
+  <data name="Clients" xml:space="preserve">
+    <value>Заказчики</value>
+  </data>
+  <data name="Client_Name" xml:space="preserve">
+    <value>Наименование заказчика</value>
+  </data>
+  <data name="Client_FullName" xml:space="preserve">
+    <value>Полное наименование заказчика</value>
+  </data>
+  <data name="Client_INN" xml:space="preserve">
+    <value>ИНН заказчика</value>
+  </data>
+  <data name="Client_OGRN" xml:space="preserve">
+    <value>ОГРН заказчика</value>
+  </data>
+  <data name="Client_Location" xml:space="preserve">
+    <value>Адрес заказчика</value>
+  </data>
+  <data name="Client_Orders" xml:space="preserve">
+    <value>Заказы</value>
+  </data>
+
+  <!-- Product -->
+  <data name="Product" xml:space="preserve">
+    <value>Товар</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>Товары</value>
+  </data>
+  <data name="Product_Name" xml:space="preserve">
+    <value>Название товара</value>
+  </data>
+  <data name="Product_BuyPrice" xml:space="preserve">
+    <value>Цена продажи</value>
+  </data>
+  <data name="Product_SellPrice" xml:space="preserve">
+    <value>Цена покупки</value>
+  </data>
+  <data name="Product_IsService" xml:space="preserve">
+    <value>Является услугой</value>
+  </data>
+  <data name="Product_Category" xml:space="preserve">
+    <value>Категория товара</value>
+  </data>
+
+  <!-- Employee -->
+  <data name="Employee" xml:space="preserve">
+    <value>Сотрудник</value>
+  </data>
+  <data name="Employees" xml:space="preserve">
+    <value>Сотрудники</value>
+  </data>
+  <data name="Employee_FirstName" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="Employee_LastName" xml:space="preserve">
+    <value>Фамилия</value>
+  </data>
+  <data name="Employee_Patronymic" xml:space="preserve">
+    <value>Отчество</value>
+  </data>
+  <data name="Employee_Position" xml:space="preserve">
+    <value>Должность</value>
+  </data>
+  <data name="Employee_SNILS" xml:space="preserve">
+    <value>СНИЛС</value>
+  </data>
+  <data name="Employee_Email" xml:space="preserve">
+    <value>Email сотрудника</value>
+  </data>
+  <data name="Employee_Residence" xml:space="preserve">
+    <value>Место жительства</value>
+  </data>
+
+  <!-- Position -->
+  <data name="Position" xml:space="preserve">
+    <value>Должность</value>
+  </data>
+  <data name="Positions" xml:space="preserve">
+    <value>Должности</value>
+  </data>
+  <data name="Position_Name" xml:space="preserve">
+    <value>Название должности</value>
+  </data>
+
+
 </root>

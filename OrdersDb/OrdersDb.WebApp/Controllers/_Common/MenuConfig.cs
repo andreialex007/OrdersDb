@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using OrdersDb.Domain.Utils;
+using OrdersDb.Resources;
 using OrdersDb.WebApp.Code;
 
 namespace OrdersDb.WebApp.Controllers._Common
@@ -14,8 +16,9 @@ namespace OrdersDb.WebApp.Controllers._Common
             {
                 var menuitem = new MenuItem();
                 var menuItemAttr = (MenuItemAttribute)customAttributes.First();
-                menuitem.Id = menuItemAttr.Id ?? type.Name.Replace("Controller", string.Empty).ToLower();
-                menuItemAttr.ResourcePropertyName = menuitem.Id;
+                var id = menuItemAttr.Id ?? type.Name.Replace("Controller", string.Empty);
+                menuitem.Id = id.ToLower();
+                menuItemAttr.ResourcePropertyName = id;
                 menuitem.Name = menuItemAttr.Name ?? menuitem.Id;
                 menuitem.Icon = menuItemAttr.Icon ?? "fa-circle";
                 return menuitem;
@@ -23,14 +26,16 @@ namespace OrdersDb.WebApp.Controllers._Common
             return null;
         }
 
-        static MenuConfig()
+        public static List<MenuItem> Menu
         {
-            Menu = new List<MenuItem>
+            get
+            {
+                return new List<MenuItem>
                    {
                        new MenuItem
                        {
                            Id = "OrdersRoot",
-                           Name = "Orders",
+                           Name = CommonResources.Orders,
                            Icon = "fa-dropbox",
                            MenuItems = new List<MenuItem>
                                        {
@@ -40,7 +45,7 @@ namespace OrdersDb.WebApp.Controllers._Common
                        new MenuItem
                        {
                            Id = "ProductionRoot",
-                           Name = "Production",
+                           Name = CommonResources.Production,
                            Icon = "fa-shopping-cart",
                            MenuItems = new List<MenuItem>
                                        {
@@ -52,7 +57,7 @@ namespace OrdersDb.WebApp.Controllers._Common
                        new MenuItem
                        {
                            Id = "StaffRoot",
-                           Name = "Staff",
+                           Name = CommonResources.Staff,
                            Icon = "fa-wechat",
                            MenuItems = new List<MenuItem>
                                        {
@@ -63,7 +68,7 @@ namespace OrdersDb.WebApp.Controllers._Common
                        new MenuItem
                        {
                            Id = "GeographyRoot",
-                           Name = "Geography",
+                           Name = CommonResources.Geography,
                            Icon = "fa-globe",
                            MenuItems = new List<MenuItem>
                                        {
@@ -77,7 +82,7 @@ namespace OrdersDb.WebApp.Controllers._Common
                        new MenuItem
                        {
                            Id = "AdministrationRoot",
-                           Name = "Administration",
+                           Name = CommonResources.Administration,
                            Icon = "fa-users",
                            MenuItems = new List<MenuItem>
                                        {
@@ -86,7 +91,7 @@ namespace OrdersDb.WebApp.Controllers._Common
                                        }
                        }
                    };
+            }
         }
-        public static List<MenuItem> Menu { get; set; }
     }
 }

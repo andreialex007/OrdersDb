@@ -61,11 +61,47 @@ namespace OrdersDb.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to sdfs.
+        ///   Looks up a localized string similar to Administration.
         /// </summary>
-        public static string String1 {
+        public static string Administration {
             get {
-                return ResourceManager.GetString("String1", resourceCulture);
+                return ResourceManager.GetString("Administration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Geography.
+        /// </summary>
+        public static string Geography {
+            get {
+                return ResourceManager.GetString("Geography", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Orders.
+        /// </summary>
+        public static string Orders {
+            get {
+                return ResourceManager.GetString("Orders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Production.
+        /// </summary>
+        public static string Production {
+            get {
+                return ResourceManager.GetString("Production", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Staff.
+        /// </summary>
+        public static string Staff {
+            get {
+                return ResourceManager.GetString("Staff", resourceCulture);
             }
         }
     }

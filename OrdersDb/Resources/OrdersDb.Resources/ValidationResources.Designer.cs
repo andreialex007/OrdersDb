@@ -59,5 +59,59 @@ namespace OrdersDb.Resources {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Provided incorrect email address.
+        /// </summary>
+        public static string EmailAddress {
+            get {
+                return ResourceManager.GetString("EmailAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The property {0} exceed max length {1}.
+        /// </summary>
+        public static string MaxLength {
+            get {
+                return ResourceManager.GetString("MaxLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value of the field must be greater than {1}.
+        /// </summary>
+        public static string Min {
+            get {
+                return ResourceManager.GetString("Min", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The field {0} must be in range from {1} to {2}.
+        /// </summary>
+        public static string Range {
+            get {
+                return ResourceManager.GetString("Range", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The field {0} is required.
+        /// </summary>
+        public static string Required {
+            get {
+                return ResourceManager.GetString("Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value must be specified.
+        /// </summary>
+        public static string ValueMustBeSpecified {
+            get {
+                return ResourceManager.GetString("ValueMustBeSpecified", resourceCulture);
+            }
+        }
     }
 }

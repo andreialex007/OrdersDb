@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using OrdersDb.Domain.Services._Common.Entities;
+using OrdersDb.Resources;
 
 namespace OrdersDb.Domain.Services.Staff.Position
 {
@@ -13,7 +14,7 @@ namespace OrdersDb.Domain.Services.Staff.Position
         /// <summary>
         /// Название должности
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public string Name { get; set; }
     }
 }

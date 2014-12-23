@@ -2,6 +2,7 @@
 using DataAnnotationsExtensions;
 using OrdersDb.Domain.Services.Geography.Hose;
 using OrdersDb.Domain.Services._Common.Entities;
+using OrdersDb.Resources;
 
 namespace OrdersDb.Domain.Services.Staff.Employee
 {
@@ -12,19 +13,19 @@ namespace OrdersDb.Domain.Services.Staff.Employee
         /// <summary>
         /// Имя 
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public string FirstName { get; set; }
 
         /// <summary>
         /// Фамилия
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public string LastName { get; set; }
 
         /// <summary>
         /// Отчество
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public string Patronymic { get; set; }
 
         /// <summary>
@@ -35,7 +36,7 @@ namespace OrdersDb.Domain.Services.Staff.Employee
         /// <summary>
         /// Должность пользователя
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public Position.Position Position { get; set; }
 
         /// <summary>
@@ -47,7 +48,7 @@ namespace OrdersDb.Domain.Services.Staff.Employee
         /// Email пользователя
         /// </summary>
         [Email]
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public string Email { get; set; }
 
         /// <summary>

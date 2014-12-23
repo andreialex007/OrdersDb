@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using DataAnnotationsExtensions;
 using OrdersDb.Domain.Services.Production.Client;
 using OrdersDb.Domain.Services._Common.Entities;
+using OrdersDb.Resources;
 
 namespace OrdersDb.Domain.Services.Geography.Hose
 {
@@ -21,8 +22,8 @@ namespace OrdersDb.Domain.Services.Geography.Hose
         /// <summary>
         /// Номер дома
         /// </summary>
-        [Min(1)]
-        [Required]
+        [Min(1, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "ValueMustBeSpecified")]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public int Number { get; set; }
 
         /// <summary>
@@ -38,14 +39,14 @@ namespace OrdersDb.Domain.Services.Geography.Hose
         /// <summary>
         /// Идентификатор улицы
         /// </summary>
-        [Min(1)]
-        [Required]
+        [Min(1, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "ValueMustBeSpecified")]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public int StreetId { get; set; }
 
         /// <summary>
         /// Улица на которой находится дом
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public Street.Street Street { get; set; }
 
         /// <summary>

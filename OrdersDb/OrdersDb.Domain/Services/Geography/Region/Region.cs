@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using DataAnnotationsExtensions;
 using OrdersDb.Domain.Services._Common.Entities;
+using OrdersDb.Resources;
 
 namespace OrdersDb.Domain.Services.Geography.Region
 {
@@ -20,7 +21,7 @@ namespace OrdersDb.Domain.Services.Geography.Region
         /// <summary>
         /// Название региона
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public string Name { get; set; }
 
         /// <summary>
@@ -31,14 +32,14 @@ namespace OrdersDb.Domain.Services.Geography.Region
         /// <summary>
         /// Идентификатор страны
         /// </summary>
-        [Required]
-        [Min(1)]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
+        [Min(1, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "ValueMustBeSpecified")]
         public int CountryId { get; set; }
 
         /// <summary>
         /// Страна в которой находится регион
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public Country.Country Country { get; set; }
     }
 }

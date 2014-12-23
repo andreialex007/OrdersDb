@@ -7,7 +7,7 @@ using OrdersDb.WebApp.Controllers._Common;
 
 namespace OrdersDb.WebApp.Controllers
 {
-    [MenuItem(Icon = "fa-male", Name = "Пользователи")]
+    [MenuItemEntityResourceAttribute(Icon = "fa-male")]
     public class UsersController : NamedEntityControllerBase<IUserService, User, UserSearchParameters, UserDto>
     {
         public UsersController(IUserService service)

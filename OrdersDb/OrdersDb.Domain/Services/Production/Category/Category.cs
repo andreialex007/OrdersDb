@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using OrdersDb.Domain.Services._Common.Entities;
+using OrdersDb.Resources;
 
 namespace OrdersDb.Domain.Services.Production.Category
 {
@@ -21,7 +22,7 @@ namespace OrdersDb.Domain.Services.Production.Category
         /// <summary>
         /// Имя категории
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public string Name { get; set; }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace OrdersDb.Domain.Services.Production.Category
         /// <summary>
         /// Дочерние категории которые входят в текущую категорию
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public virtual List<Category> Categories { get; set; }
 
     }

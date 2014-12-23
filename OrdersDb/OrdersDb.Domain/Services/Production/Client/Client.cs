@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using OrdersDb.Domain.Services.Geography.Hose;
 using OrdersDb.Domain.Services.Orders.Order;
 using OrdersDb.Domain.Services._Common.Entities;
+using OrdersDb.Resources;
 
 namespace OrdersDb.Domain.Services.Production.Client
 {
@@ -22,31 +23,31 @@ namespace OrdersDb.Domain.Services.Production.Client
         /// <summary>
         /// Общее имя
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public string Name { get; set; }
 
         /// <summary>
         /// Полное имя
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public string FullName { get; set; }
 
         /// <summary>
         /// ИНН
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public string INN { get; set; }
 
         /// <summary>
         /// ОГРН
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public string OGRN { get; set; }
 
         /// <summary>
         /// Адрес
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public House Location { get; set; }
 
         /// <summary>

@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using OrdersDb.Domain.Services.Production.Product;
 using OrdersDb.Domain.Services._Common.Entities;
+using OrdersDb.Resources;
 
 namespace OrdersDb.Domain.Services.Orders.OrderItem
 {
@@ -21,13 +22,13 @@ namespace OrdersDb.Domain.Services.Orders.OrderItem
         /// <summary>
         /// Идентификатор услуги
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public int ProductId { get; set; }
 
         /// <summary>
         /// Продукт в данном элементе заказа
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         public Product Product { get; set; }
 
         /// <summary>

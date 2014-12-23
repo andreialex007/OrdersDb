@@ -1,3 +1,7 @@
 ﻿ var CommonResources = { 
-'String1' : 'sdfs'
+'Orders' : 'Orders',
+'Staff' : 'Staff',
+'Geography' : 'Geography',
+'Administration' : 'Administration',
+'Production' : 'Production'
  }
