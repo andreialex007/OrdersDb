@@ -1,4 +1,5 @@
-﻿@using OrdersDb.WebApp.Code
+﻿@using OrdersDb.Resources
+@using OrdersDb.WebApp.Code
 @using OrdersDb.WebApp.Code.Helpers
 @using OrdersDb.WebApp.Controllers._Common
 <!DOCTYPE html>
@@ -147,7 +148,7 @@
     <!-- BEGIN FOOTER -->
     <div class="page-footer">
         <div class="page-footer-inner">
-            @DateTime.Now.Year  &copy; Система организации заказов
+            @DateTime.Now.Year  &copy; @CommonResources.Orders_Creation_System
         </div>
         <div class="page-footer-tools">
             <span class="go-top">

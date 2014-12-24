@@ -1,6 +1,7 @@
-﻿<div data-bind="visible: visible">
+﻿@using OrdersDb.Resources
+<div data-bind="visible: visible">
     <div class="search-area col-md-2 title-fix">
-        <h3><i class="fa fa-search"></i>&nbsp;&nbsp; Поиск</h3>
+        <h3><i class="fa fa-search"></i>&nbsp;&nbsp; @CommonResources.Search</h3>
         <div style="height: 12px;"></div>
         <!-- ko with: id -->
         @Html.Partial("Controls/Fields/TextField")

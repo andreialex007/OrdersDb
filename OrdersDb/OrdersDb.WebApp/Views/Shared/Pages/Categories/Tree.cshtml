@@ -1,4 +1,5 @@
-﻿<div class="tree-wrapper">
+﻿@using OrdersDb.Resources
+<div class="tree-wrapper">
     <ul class="tree">
         <!-- ko foreach: nodes -->
         <!-- ko template: { name: 'tree-item', data: $data } -->
@@ -6,7 +7,7 @@
         <!-- /ko -->
     </ul>
     <div class="empty-categories" data-bind="visible: $parent.isEmptyResult">
-        <span>Ничего не найдено</span>
+        <span>@CommonResources.Search_Results_Is_Empty</span>
     </div>
 </div>
 

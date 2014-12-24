@@ -1,17 +1,20 @@
-﻿<div data-bind="visible: visible">
+﻿@using OrdersDb.Resources
+<div data-bind="visible: visible">
     <div class="search-area col-md-2 title-fix">
         @Html.Partial("Controls/EditActionsBlock")
 
-        <h4><i class="fa fa-dropbox"></i>&nbsp;&nbsp; Товарные позиции</h4>
+        <h4><i class="fa fa-dropbox"></i>&nbsp;&nbsp; @EntitiesResources.OrderItems</h4>
         <br />
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                    <a data-bind="click: addNew" class="btn btn-success btn-xs" href="javascript:;"><i class="fa fa-plus-square"></i> Добавить новый</a>
+                    <a data-bind="click: addNew" class="btn btn-success btn-xs" href="javascript:;"><i class="fa fa-plus-square"></i> @CommonResources.Add</a>
                     <div class="empty-space"></div>
-                    <a data-bind="click: deleteSelected, css: { 'disabled' : !anyChecked() }" class="btn btn-danger btn-xs" href="javascript:;"><i class="fa fa-remove"></i> Удалить выделенные</a>
+                    <a data-bind="click: deleteSelected, css: { 'disabled' : !anyChecked() }" class="btn btn-danger btn-xs" href="javascript:;">
+                        <i class="fa fa-remove"></i> @CommonResources.Delete_Selected
+                    </a>
                     <div class="empty-space"></div>
-                    <a data-bind="click: clearList, css: { 'disabled': isEmptyTable }" class="btn purple btn-xs" href="javascript:;"><i class="fa fa-trash"></i> Очистить список</a>
+                    <a data-bind="click: clearList, css: { 'disabled': isEmptyTable }" class="btn purple btn-xs" href="javascript:;"><i class="fa fa-trash"></i> @CommonResources.Clear_List</a>
                 </div>
             </div>
         </div>
@@ -22,13 +25,13 @@
             <i class="fa fa-edit"></i>
             <span data-bind="text: title" class="title-span"></span>
         </h3>
-        
+
         <br />
         <div class="scrolling-area">
             @Html.Partial("Controls/ValidationBlock")
             <div class="row">
                 <div class="col-md-12 order-data">
-                    <h4 class="form-section">Данные заказа</h4>
+                    <h4 class="form-section">@CommonResources.Order_Data</h4>
                 </div>
             </div>
 
@@ -54,7 +57,7 @@
                     <div class="form-group">
                         <div class="col-md-12">
                             <p class="form-control-static">
-                                <strong>Всего товарных позиций:</strong>&nbsp;&nbsp;
+                                <strong>@CommonResources.OrderItems_Total:</strong>&nbsp;&nbsp;
                                 <span data-bind="text: displayed" class="badge bg-red"></span>
                             </p>
                         </div>
@@ -64,8 +67,8 @@
                     <div class="form-group">
                         <div class="col-md-12">
                             <p class="form-control-static">
-                                <strong>Общая цена закупки:</strong>&nbsp;&nbsp;
-                                <span data-bind="text: totalBuyPrice" class="badge bg-yellow-crusta">12.183,50</span>
+                                <strong>@CommonResources.Total_Buy_Price:</strong>&nbsp;&nbsp;
+                                <span data-bind="text: totalBuyPrice" class="badge bg-yellow-crusta"></span>
                             </p>
                         </div>
                     </div>
@@ -74,8 +77,8 @@
                     <div class="form-group">
                         <div class="col-md-12">
                             <p class="form-control-static">
-                                <strong>Общая цена продажи:</strong>&nbsp;&nbsp;
-                                <span data-bind="text: totalSellPrice" class="badge bg-green-jungle">15.183,50</span>
+                                <strong>@CommonResources.Total_Sell_Price:</strong>&nbsp;&nbsp;
+                                <span data-bind="text: totalSellPrice" class="badge bg-green-jungle"></span>
                             </p>
                         </div>
                     </div>
@@ -83,7 +86,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12 order-data">
-                    <h4 class="form-section">Товарные позиции</h4>
+                    <h4 class="form-section">@EntitiesResources.OrderItems/h4>
                 </div>
             </div>
             <!-- ko with: table -->

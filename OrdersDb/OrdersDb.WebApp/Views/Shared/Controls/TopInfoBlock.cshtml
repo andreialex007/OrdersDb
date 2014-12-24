@@ -1,7 +1,11 @@
-﻿<h3>
+﻿@using OrdersDb.Resources
+<h3>
     <i class="fa fa-list"></i>
     <span class="title-span" data-bind="text: title"></span>
-    <span class="info-item"><small>всего:</small> <span data-bind="text: total" class="badge badge-info"></span></span>
-    <span class="info-item"><small>отображено:</small> <span data-bind="text: displayed" class="badge badge-success"></span></span>
-    <span data-bind="css: { 'opacity-disabled': !anyChecked() }" class="info-item"><small>выделено:</small> <span data-bind="text: checked" class="badge badge-default"></span></span>
+    <span class="info-item"><small>@CommonResources.Total:</small> <span data-bind="text: total" class="badge badge-info"></span></span>
+    <span class="info-item"><small>@CommonResources.Displayed:</small> <span data-bind="text: displayed" class="badge badge-success"></span></span>
+    <span data-bind="css: { 'opacity-disabled': !anyChecked() }" class="info-item">
+        <small>@CommonResources.Selected:</small>
+    <span data-bind="text: checked" class="badge badge-default"></span>
+</span>
 </h3>

@@ -1,15 +1,15 @@
-﻿<div class="title-fix category-page" data-bind="visible: visible">
+﻿@using OrdersDb.Resources
+<div class="title-fix category-page" data-bind="visible: visible">
     <div class="row">
         <div class="col-md-3 sidebar-left">
             <div class="side-bar-inner">
                 <div>
                     <h3>
-                        <i class="fa fa-folder-open-o fa-2x"></i>&nbsp;&nbsp; <span>Категории</span>
-
+                        <i class="fa fa-folder-open-o fa-2x"></i>&nbsp;&nbsp; <span>@EntitiesResources.Categories</span>
                     </h3>
                     <!-- ko with: tree -->
                     <a data-bind="click: add" href="#" class="btn btn-xs green add-to-tree">
-                        <i class="fa fa-plus"></i> Add
+                        <i class="fa fa-plus"></i> @CommonResources.Add
                     </a>
                     <!-- /ko -->
                 </div>
@@ -17,7 +17,7 @@
                     <div class="form-group">
                         <div class="input-icon right">
                             <i class="fa fa-search"></i>
-                            <input data-bind="value: searchText, valueUpdate: 'afterkeydown'" type="text" class="form-control" placeholder="Поиск категории">
+                            <input data-bind="value: searchText, valueUpdate: 'afterkeydown'" type="text" class="form-control" placeholder="@CommonResources.Category_Search">
                         </div>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                     <!-- /ko -->
 
                     <div style="position: absolute; top: 0px;" data-bind="visible: categoriesLoading" class="loading-overlay col-md-offset-5">
-                        <div class="loading-indicator"><i class="fa fa-download"></i> Загрузка...</div>
+                        <div class="loading-indicator"><i class="fa fa-download"></i> @CommonResources.Loading</div>
                     </div>
                 </div>
             </div>
@@ -47,17 +47,17 @@
                         <div class="btn-group btn-group-devided" data-toggle="buttons">
                             <!-- ko with: descriptionTab -->
                             <label data-bind="css: { 'active': visible }, click: $parent.tabclick" class="btn btn-circle btn-transparent grey-salsa btn-sm">
-                                <input type="radio" name="options" class="toggle" id="option1">Описание
+                                <input type="radio" name="options" class="toggle" id="option1">@CommonResources.Description
                             </label>
                             <!-- /ko -->
                             <!-- ko with: imageTab -->
                             <label data-bind="css: { 'active': visible }, click: $parent.tabclick" class="btn btn-circle btn-transparent grey-salsa btn-sm">
-                                <input type="radio" name="options" class="toggle" id="option2">Изображение
+                                <input type="radio" name="options" class="toggle" id="option2">@CommonResources.Image
                             </label>
                             <!-- /ko -->
                             <!-- ko with: informationTab -->
                             <label data-bind="css: { 'active': visible }, click: $parent.tabclick" class="btn btn-circle btn-transparent grey-salsa btn-sm">
-                                <input type="radio" name="options" class="toggle" id="option2">Информация
+                                <input type="radio" name="options" class="toggle" id="option2">@CommonResources.Information
                             </label>
                             <!-- /ko -->
                         </div>
@@ -68,7 +68,7 @@
                         <!-- ko with: descriptionTab -->
                         <div data-bind="visible: visible" class="tab-item" style="position: relative; padding-bottom: 60px">
                             <div style="width: 100%; height: 100%;  overflow-y: auto;" class="tab-item-content">
-                                <h4 class="form-section">Название категории</h4>
+                                <h4 class="form-section">@EntitiesResources.Category_Name</h4>
                                 <!-- ko with: name -->
                                 <div class="form-group">
                                     <input data-bind="value: value, valueUpdate: 'afterkeydown', attr: { placeholder: placeholder }, event : { keyup: change }" type="text" id="firstName" class="form-control" placeholder="Chee Kin">
@@ -76,7 +76,7 @@
                                     </span>
                                 </div>
                                 <!-- /ko -->
-                                <h4 class="form-section">Описание категории</h4>
+                                <h4 class="form-section">@EntitiesResources.Category_Description</h4>
                                 <!-- ko with: description -->
                                 @Html.Partial("Controls/Fields/TextAreaField")
                                 <!-- /ko -->
@@ -84,8 +84,8 @@
                             <div style="position: absolute; bottom: 0;right: 0; left: 0;height: 60px;" class="saving-controls">
                                 <div class="form">
                                     <div class="form-actions">
-                                        <button data-bind="click: save" type="submit" class="btn blue"><i class="fa fa-save"></i> Сохранить</button>
-                                        <button data-bind="click: reset" type="button" class="btn default"><i class="fa fa-reply"></i> Очистить</button>
+                                        <button data-bind="click: save" type="submit" class="btn blue"><i class="fa fa-save"></i> @CommonResources.Save</button>
+                                        <button data-bind="click: reset" type="button" class="btn default"><i class="fa fa-reply"></i> @CommonResources.Clear</button>
                                     </div>
                                 </div>
                             </div>
@@ -94,7 +94,7 @@
                         <!-- ko with: imageTab -->
                         <div data-bind="visible: visible" class="tab-item" style="position: relative; padding-bottom: 60px">
                             <div style="width: 100%; height: 100%;  overflow-y: auto;" class="tab-item-content">
-                                <h4 class="form-section">Полное изображение</h4>
+                                <h4 class="form-section">@EntitiesResources.Category_ImageFull</h4>
                                 <div>
                                     <!-- ko if: hasImage -->
                                     <img data-bind="attr: { src: imageurlFull }" style="width: 200px;" src="" alt="" />
@@ -103,7 +103,7 @@
                                     <img src="@Url.Content("~/Images/default_product.png")" style="width: 200px;" alt="" />
                                     <!-- /ko -->
                                 </div>
-                                <h4 class="form-section">Превью</h4>
+                                <h4 class="form-section">@EntitiesResources.Category_ImagePreview</h4>
                                 <div>
                                     <!-- ko if: hasImage -->
                                     <img data-bind="attr: { src: imageurlPreview }" style="width: 100px;" src="" alt="" />
@@ -117,8 +117,8 @@
                                 <div class="form">
                                     <div class="form-actions">
                                         <input class="fileupload-input" data-bind="fileUpload { options : { dataType: 'json', done: done }, fileuploadsubmit: beforeupload }" type="file" name="file" data-url="/Categories/UploadImage">
-                                        <button data-bind="click: upload" type="submit" class="btn green"><i class="fa fa-upload"></i> Загрузить</button>
-                                        <button data-bind="click: remove" type="button" class="btn red"><i class="fa fa-remove"></i> Удалить</button>
+                                        <button data-bind="click: upload" type="submit" class="btn green"><i class="fa fa-upload"></i> @CommonResources.Upload</button>
+                                        <button data-bind="click: remove" type="button" class="btn red"><i class="fa fa-remove"></i> @CommonResources.Delete</button>
                                     </div>
                                 </div>
                             </div>
@@ -131,7 +131,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="control-label col-md-2">Дата создания:</label>
+                                                <label class="control-label col-md-2">@CommonResources.Date_Create:</label>
                                                 <div class="col-md-10">
                                                     <p data-bind="text: creationDate" class="form-control-static"></p>
                                                 </div>
@@ -141,7 +141,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="control-label col-md-2">Дата изменения:</label>
+                                                <label class="control-label col-md-2">@CommonResources.Date_Modify:</label>
                                                 <div class="col-md-10">
                                                     <p data-bind="text: modificationDate" class="form-control-static"></p>
                                                 </div>
@@ -151,7 +151,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="control-label col-md-2">Количество товаров:</label>
+                                                <label class="control-label col-md-2">@CommonResources.Amount_Of_Items:</label>
                                                 <div class="col-md-10">
                                                     <p data-bind="text: productsAmount" class="form-control-static"></p>
                                                 </div>
@@ -161,7 +161,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="control-label col-md-2">Количество категорий:</label>
+                                                <label class="control-label col-md-2">@CommonResources.Amount_Of_Categories:</label>
                                                 <div class="col-md-10">
                                                     <p data-bind="text: categoriesAmount" class="form-control-static"></p>
                                                 </div>

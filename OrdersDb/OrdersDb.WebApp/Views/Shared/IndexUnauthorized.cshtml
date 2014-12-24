@@ -1,11 +1,12 @@
-﻿@{
-    ViewBag.Title = "Вход в систему";
+﻿@using OrdersDb.Resources
+@{
+    ViewBag.Title = CommonResources.Login;
     Layout = "~/Views/Shared/_LayoutUnauthorized.cshtml";
 }
 
 <!-- ko with: account -->
 <form class="login-form" method="post">
-    <h3 class="form-title">Login to your account</h3>
+    <h3 class="form-title">@CommonResources.Login_to_your_account</h3>
     <div data-bind="visible: validationSummaryVisible" style="display: none;" class="alert alert-danger ">
         <button class="close" data-close="alert"></button>
         <span data-bind="text: validationSummary"></span>
@@ -13,7 +14,7 @@
     <!-- ko with: fields -->
     <!-- ko with: Name -->
     <div data-bind="css: { 'has-error': hasErrors }" class="form-group">
-        <label class="control-label visible-ie8 visible-ie9">Username</label>
+        <label class="control-label visible-ie8 visible-ie9">@CommonResources.Username</label>
         <div class="input-icon">
             <i class="fa fa-user"></i>
             <input data-bind="value: value" class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="username" />
@@ -23,7 +24,7 @@
     <!-- /ko -->
     <!-- ko with: Password -->
     <div data-bind="css: { 'has-error': hasErrors }" class="form-group">
-        <label class="control-label visible-ie8 visible-ie9">Password</label>
+        <label class="control-label visible-ie8 visible-ie9">@CommonResources.Password</label>
         <div class="input-icon">
             <i class="fa fa-lock"></i>
             <input data-bind="value: value" class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password" />
@@ -34,10 +35,10 @@
     <!-- /ko -->
     <div style="border-bottom: none;" class="form-actions">
         <label style="margin-left: 22px" class="checkbox">
-            <input data-bind="value: rememberMe" type="checkbox" name="remember" value="1" /> Remember me
+            <input data-bind="value: rememberMe" type="checkbox" name="remember" value="1" /> @CommonResources.Remember_me
         </label>
         <button data-bind="click: login" type="button" class="btn green pull-right">
-            Login <i class="m-icon-swapright m-icon-white"></i>
+            @CommonResources.Login <i class="m-icon-swapright m-icon-white"></i>
         </button>
     </div>
 </form>

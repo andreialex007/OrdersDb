@@ -1,10 +1,11 @@
-﻿<h3><i class="fa fa-coffee"></i>&nbsp;&nbsp; Действия</h3>
+﻿@using OrdersDb.Resources
+<h3><i class="fa fa-coffee"></i>&nbsp;&nbsp; @CommonResources.Actions</h3>
 <br />
 <div class="row">
     <div class="col-md-12">
         <div class="form-group">
-            <a data-bind="click: add" data-access="add" class="btn btn-success" href="javascrip:;"><i class="fa fa-file"></i> Создать</a>
-            <a data-access="delete" data-bind="click: deleteItems, css: { 'disabled': !anyChecked() }" class="btn btn-danger" href="javascrip:;"><i class="fa fa-times"></i> Удалить</a>
+            <a data-bind="click: add" data-access="add" class="btn btn-success" href="javascrip:;"><i class="fa fa-file"></i> @CommonResources.Create</a>
+            <a data-access="delete" data-bind="click: deleteItems, css: { 'disabled': !anyChecked() }" class="btn btn-danger" href="javascrip:;"><i class="fa fa-times"></i> @CommonResources.Delete</a>
         </div>
     </div>
 </div>

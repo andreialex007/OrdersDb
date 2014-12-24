@@ -160,6 +160,10 @@
   <data name="OrderItem_BuyPrice" xml:space="preserve">
     <value>Order item buy price</value>
   </data>
+  <data name="OrderItem_Amount" xml:space="preserve">
+    <value>Order item amount</value>
+  </data>
+
 
   <!-- Role -->
   <data name="Role" xml:space="preserve">

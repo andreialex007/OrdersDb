@@ -1,7 +1,8 @@
 ﻿@using System.Diagnostics
+@using OrdersDb.Resources
 @using OrdersDb.WebApp.Code.Helpers
 @{
-    ViewBag.Title = "Система организации заказов";
+    ViewBag.Title = CommonResources.Orders_Creation_System;
     Layout = "~/Views/Shared/_Layout.cshtml";
     var pagesDirectories = new DirectoryInfo(Server.MapPath(@"~\Views\Shared\Pages\")).GetDirectories().Select(x => x.Name).ToList();
 }

@@ -12,6 +12,7 @@
 'OrderItem_Order' : 'Order item order',
 'OrderItem_SellPrice' : 'Order item sell price',
 'OrderItem_BuyPrice' : 'Order item buy price',
+'OrderItem_Amount' : 'Order item amount',
 'Role' : 'Role',
 'Roles' : 'Roles',
 'Role_Name' : 'Role name',

@@ -502,6 +502,15 @@ namespace OrdersDb.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Order item amount.
+        /// </summary>
+        public static string OrderItem_Amount {
+            get {
+                return ResourceManager.GetString("OrderItem_Amount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Order item buy price.
         /// </summary>
         public static string OrderItem_BuyPrice {

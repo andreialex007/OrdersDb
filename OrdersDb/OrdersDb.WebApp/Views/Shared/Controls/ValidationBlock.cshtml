@@ -1,7 +1,8 @@
-﻿<div data-bind="visible: hasErrors" class="row validation-block">
+﻿@using OrdersDb.Resources
+<div data-bind="visible: hasErrors" class="row validation-block">
     <div class="col-md-12 common-alert">
         <div class="alert alert-danger display-none" style="display: block;">
-            Ошибки заполнения формы
+            @CommonResources.There_Are_Several_Validation_Errors
         </div>
     </div>
     <div data-bind="visible: otherErrorsVisible" class="col-md-12 has-error extra-errors">

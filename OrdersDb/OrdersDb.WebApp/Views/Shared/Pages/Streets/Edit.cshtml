@@ -1,4 +1,5 @@
-﻿<div data-bind="visible: visible">
+﻿@using OrdersDb.Resources
+<div data-bind="visible: visible">
     <div class="search-area col-md-2 title-fix">
         @Html.Partial("Controls/EditActionsBlock")
     </div>
@@ -23,7 +24,7 @@
                 <!-- ko with: City -->
                 <div data-bind="css: { 'has-error': hasErrors }" class="form-group select-dropdown">
                     <!-- ko with: selectedField -->
-                    <label class="control-label">Город</label>
+                    <label class="control-label">@EntitiesResources.City</label>
                     <div class="result-block">
                         <div class="input-wrapper">
                             <input data-bind="value: value, attr: { 'placeholder': placeholder }" type="text" class="form-control" readonly="readonly" />

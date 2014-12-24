@@ -1,4 +1,5 @@
-﻿@using OrdersDb.WebApp.Code.Helpers
+﻿@using OrdersDb.Resources
+@using OrdersDb.WebApp.Code.Helpers
 <!DOCTYPE html>
 <!-- BEGIN HEAD -->
 <head>
@@ -44,10 +45,11 @@
     <!-- END LOGIN -->
     <!-- BEGIN COPYRIGHT -->
     <div class="copyright">
-        2014 &copy; Metronic. Admin Dashboard Template.
+        @DateTime.Now.Year
+        &copy;
+        @CommonResources.Orders_Creation_System
     </div>
     <!-- END COPYRIGHT -->
-
     @if (Html.IsDebug())
     {
         <script data-main="/Scripts/app.config.js" src="/Scripts/libs/require.js"></script>

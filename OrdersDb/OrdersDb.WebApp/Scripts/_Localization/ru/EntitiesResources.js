@@ -83,5 +83,6 @@
 'Employee_Residence' : 'Место жительства',
 'Position' : 'Должность',
 'Positions' : 'Должности',
-'Position_Name' : 'Название должности'
+'Position_Name' : 'Название должности',
+'OrderItem_Amount' : 'Количество'
  }

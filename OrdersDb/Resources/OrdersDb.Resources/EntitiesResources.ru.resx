@@ -382,6 +382,7 @@
   <data name="Position_Name" xml:space="preserve">
     <value>Название должности</value>
   </data>
-
-
+  <data name="OrderItem_Amount" xml:space="preserve">
+    <value>Количество</value>
+  </data>
 </root>

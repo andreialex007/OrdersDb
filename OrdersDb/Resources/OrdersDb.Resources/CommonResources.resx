@@ -132,4 +132,162 @@
   <data name="Production" xml:space="preserve">
     <value>Production</value>
   </data>
+  <data name="Username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Remember_me" xml:space="preserve">
+    <value>Remember me</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Login_to_your_account" xml:space="preserve">
+    <value>Login to your account</value>
+  </data>
+  <data name="Orders_Creation_System" xml:space="preserve">
+    <value>Orders creation system</value>
+  </data>
+  <data name="Page_Loading_Error" xml:space="preserve">
+    <value>Page Loading Error</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="User_Image" xml:space="preserve">
+    <value>User image</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="Edit_User_Profile" xml:space="preserve">
+    <value>Edit user profile</value>
+  </data>
+  <data name="Operations" xml:space="preserve">
+    <value>Operations</value>
+  </data>
+  <data name="Operations" xml:space="preserve">
+    <value>Operations</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Del" xml:space="preserve">
+    <value>Del</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Edit_Order_Item" xml:space="preserve">
+    <value>Edit order item</value>
+  </data>
+  <data name="Price_Of_Single_Product" xml:space="preserve">
+    <value>Price of single product</value>
+  </data>
+  <data name="Common_Order_Item_Price" xml:space="preserve">
+    <value>Common order item price</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Displayed" xml:space="preserve">
+    <value>Displayed</value>
+  </data>
+  <data name="Selected" xml:space="preserve">
+    <value>Selected</value>
+  </data>
+  <data name="There_Are_Several_Validation_Errors" xml:space="preserve">
+    <value>There are several validation errors</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Category_Search" xml:space="preserve">
+    <value>Category search</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="Date_Create" xml:space="preserve">
+    <value>Creation date</value>
+  </data>
+  <data name="Date_Modify" xml:space="preserve">
+    <value>Modification date</value>
+  </data>
+  <data name="Amount_Of_Categories" xml:space="preserve">
+    <value>Amount of categories</value>
+  </data>
+  <data name="Amount_Of_Items" xml:space="preserve">
+    <value>Amount of items</value>
+  </data>
+  <data name="Search_Results_Is_Empty" xml:space="preserve">
+    <value>Search results is empty</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Main_Data" xml:space="preserve">
+    <value>Main data</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="Flag_Of_Country" xml:space="preserve">
+    <value>Flag of country</value>
+  </data>
+  <data name="Upload_Flag" xml:space="preserve">
+    <value>Upload flag</value>
+  </data>
+  <data name="Delete_Selected" xml:space="preserve">
+    <value>Delete selected</value>
+  </data>
+  <data name="Delete_Selected" xml:space="preserve">
+    <value>Delete selected</value>
+  </data>
+  <data name="Clear_List" xml:space="preserve">
+    <value>Clear list</value>
+  </data>
+  <data name="Order_Data" xml:space="preserve">
+    <value>Order data</value>
+  </data>
+  <data name="OrderItems_Total" xml:space="preserve">
+    <value>Order items total</value>
+  </data>
+  <data name="OrderItems_Total" xml:space="preserve">
+    <value>Order items total</value>
+  </data>
+  <data name="Total_Buy_Price" xml:space="preserve">
+    <value>Common buy price</value>
+  </data>
+  <data name="Total_Sell_Price" xml:space="preserve">
+    <value>Common sell price</value>
+  </data>
+
+
 </root>
