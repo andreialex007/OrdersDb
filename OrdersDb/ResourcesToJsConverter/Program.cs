@@ -18,7 +18,6 @@ namespace ResourcesToJsConverter
         static void Main(string[] args)
         {
             Thread.Sleep(10000);
-            Debugger.Break();
 
             if (args.Length == 2)
             {
@@ -34,8 +33,6 @@ namespace ResourcesToJsConverter
 
         private static void ConvertResxFileToJsFile(string resxFile, string outputFolder)
         {
-            
-
             var fileName = Path.GetFileNameWithoutExtension(resxFile);
             var rsxr = new ResXResourceReader(resxFile);
             var stringBuilder = new StringBuilder();
@@ -46,7 +43,7 @@ namespace ResourcesToJsConverter
 
             var resultString = stringBuilder.ToString().TrimEnd(string.Format(",{0}", Environment.NewLine).ToCharArray());
             var variableName = fileName.Split(".".ToCharArray()).First();
-            var fileContent = " var " + variableName + " = { \r\n" + resultString + Environment.NewLine + " }";
+            var fileContent = " " + variableName + " = { \r\n" + resultString + Environment.NewLine + " }";
 
             var langFolderName = string.Empty;
             if (fileName.Contains("."))

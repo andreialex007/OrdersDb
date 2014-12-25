@@ -16,11 +16,11 @@
 
     function listPage(parent) {
         var self = new listPageBase(parent);
-        self.title("Список клиентов");
+        self.title("");
 
-        self.table.columns.push(new column("Name", "Название"));
+        self.table.columns.push(new column("Name", CommonResources.Name));
 
-        self.name = new textField("Название", "", "Введите как минимум 3 символа");
+        self.name = new textField(CommonResources.Name, "", CommonResources.Please_Enter_At_Least_ThreeSymbols);
 
         //Маппинг json данных в строку
         var toRowBase = self.toRow;

@@ -9,25 +9,25 @@
 ], function (ko, mapping, sammy, editPageBase, regionDropDown, textField, spinner, dropdown) {
     function cityPage(parent) {
         var self = new editPageBase(parent);
-        self.EDIT_TITLE("Редактирование клиента");
-        self.NEW_TITLE("Создание клиента");
+        self.EDIT_TITLE(CommonResources.Edit_Client);
+        self.NEW_TITLE(CommonResources.Create_Client);
 
         //Основные данные
-        self.fields.Name = new textField("Общее имя", "", "Введите общее имя (обязательно)");
-        self.fields.FullName = new textField("Полное имя", "", "Введите полное имя (обязательно)");
-        self.fields.INN = new textField("ИНН", "", "Введите ИНН (обязательно)");
-        self.fields.OGRN = new textField("ОГРН", "", "Введите ОГРН (обязательно)");
+        self.fields.Name = new textField(EntitiesResources.Client_Name, "", CommonResources.Please_Enter_The_Common_Name_required);
+        self.fields.FullName = new textField(EntitiesResources.Client_FullName, "", CommonResources.Please_Enter_The_Full_Name_required);
+        self.fields.INN = new textField(EntitiesResources.Client_INN, "", CommonResources.Please_Enter_The_INN_required);
+        self.fields.OGRN = new textField(EntitiesResources.Client_OGRN, "", CommonResources.Enter_The_OGRN);
 
         //Местонахождение
-        self.fields.Country = new dropdown("Страна", 0, [], "Выберите страну");
-        self.fields.Region = new dropdown("Регион", 0, [], "Выберите регион");
-        self.fields.City = new dropdown("Город", 0, [], "Выберите город");
-        self.fields.Street = new dropdown("Улица", 0, [], "Выберите улицу");
+        self.fields.Country = new dropdown(EntitiesResources.Country, 0, [], CommonResources.Enter_The_Country);
+        self.fields.Region = new dropdown(EntitiesResources.Region, 0, [], CommonResources.Enter_The_Region);
+        self.fields.City = new dropdown(EntitiesResources.City, 0, [], CommonResources.Enter_The_City);
+        self.fields.Street = new dropdown(EntitiesResources.Street, 0, [], CommonResources.Enter_The_Street);
 
         self.locationId = 0;
-        self.fields.Number = new textField("Номер дома", "");
-        self.fields.Building = new textField("Строение", "");
-        self.fields.PostalCode = new textField("Почтовый индекс", "");
+        self.fields.Number = new textField(EntitiesResources.House_Number, "");
+        self.fields.Building = new textField(EntitiesResources.House_Building, "");
+        self.fields.PostalCode = new textField(EntitiesResources.House_PostalCode, "");
 
         self.fields.Country.change = function () {
             var val = self.fields.Country.value();

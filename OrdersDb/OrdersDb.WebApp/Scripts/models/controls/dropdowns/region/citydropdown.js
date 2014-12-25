@@ -7,7 +7,7 @@
 
     function regionsDropdown(title, text, value, placeholder) {
         var self = new regionDropDown(title, text, value, placeholder);
-        self.cities = new dropdown("", "", [], "Выберите город");
+        self.cities = new dropdown("", "", [], CommonResources.Please_Choose_The_City);
 
         self.regions.change = function () {
             self.loadCities(self.regions.value());

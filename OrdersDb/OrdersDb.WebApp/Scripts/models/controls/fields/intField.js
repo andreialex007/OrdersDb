@@ -4,7 +4,7 @@
 ], function (ko, textField) {
 
     function intField(title, value) {
-        var self = new textField(title, value, "Введите число");
+        var self = new textField(title, value, CommonResources.Please_Enter_The_Number);
         return self;
     }
 

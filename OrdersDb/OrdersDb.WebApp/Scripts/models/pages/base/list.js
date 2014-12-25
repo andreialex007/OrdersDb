@@ -34,7 +34,7 @@
             self.table.onLoad();
             self.table.onDelete = function (row) {
 
-                if (!confirm("Вы действительно хотите удалить указанную запись?"))
+                if (!confirm(CommonResources.Are_You_Really_Want_ToDelete_Selected_Record))
                     return;
 
                 $.ajax({
@@ -77,13 +77,13 @@
                 contentType: "application/json; charset=utf-8",
                 data: JSON.stringify({ parameters: params, append: true }),
                 success: function (json) {
-                    console.time('someFunction');
+
                     var rows = [];
                     for (var i = 0; i < json.List.length; i++) {
                         rows.push(self.toRow(json.List[i]));
                     }
                     self.table.rows(self.table.rows().concat(rows));
-                    console.timeEnd('someFunction');
+
                     self.table.onScrollLoadCompleted();
                 }
             });
@@ -147,7 +147,7 @@
 
         self.deleteItems = function () {
 
-            if (!confirm("Вы действительно хотите удалить выбранные элементы?"))
+            if (!confirm(CommonResources.Are_You_Really_Want_ToDelete_Selected_Records))
                 return;
 
             var toDelete = $.grep(self.table.rows(), function (x) { return x.isChecked() == true; });

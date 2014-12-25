@@ -9,8 +9,8 @@
         self.selectedId = value;
         self.selectedField = new textField(title, text, placeholder);
 
-        self.countries = new dropdown("", "", [], "Выберите страну");
-        self.regions = new dropdown("", "", [], "Выберите регион");
+        self.countries = new dropdown("", "", [], CommonResources.Please_Choose_The_Country);
+        self.regions = new dropdown("", "", [], CommonResources.Please_Choose_The_Region);
 
         self.dropAreaVisible = ko.observable(false);
         self.clickDropDown = function (item, event) {

@@ -6,7 +6,7 @@
         self.value = ko.observable(value);
         self.valueThrottle = ko.computed(self.value).extend({ throttle: 700 });
         self.disabled = ko.observable(disabled || false);
-        self.placeholder = ko.observable(placeholder || "Введите текст");
+        self.placeholder = ko.observable(placeholder || CommonResources.Enter_The_Text);
         self.errorsText = ko.observable("");
         self.mask = mask;
         self.change = function () {

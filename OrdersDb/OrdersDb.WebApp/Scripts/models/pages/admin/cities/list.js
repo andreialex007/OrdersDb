@@ -16,15 +16,15 @@
 
     function listPage(parent) {
         var self = new listPageBase(parent);
-        self.title("Список городов");
+        self.title(CommonResources.List_Of_Cities);
 
         self.table.columns(self.table.columns().concat([
-            new column("Region.Name", "Регион", "200px"),
-            new column("Population", "Население", "150px")
+            new column("Region.Name", EntitiesResources.Region, "200px"),
+            new column("Population", CommonResources.Population, "150px")
         ]));
 
-        self.regionName = new textField("Название региона", "", "Введите как минимум 3 символа");
-        self.population = new rangeSpinnerControl("Население", 0, 15000000);
+        self.regionName = new textField(CommonResources.Name_Of_Region, "", CommonResources.Please_Enter_At_Least_ThreeSymbols);
+        self.population = new rangeSpinnerControl(CommonResources.Population, 0, 15000000);
 
         var toRowBase = self.toRow;
         self.toRow = function (el) {

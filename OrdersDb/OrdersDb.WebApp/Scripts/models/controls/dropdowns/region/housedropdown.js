@@ -7,7 +7,7 @@
 
     function citiesDropdown(title, text, value, placeholder) {
         var self = new citydropdown(title, text, value, placeholder);
-        self.streets = new dropdown("", "", [], "Выберите улицу");
+        self.streets = new dropdown("", "", [], CommonResources.Please_Choose_The_Street);
 
         self.cities.change = function () {
             self.loadstreets(self.cities.value());

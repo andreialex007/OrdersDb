@@ -23,7 +23,7 @@
         ]);
         $(self.table.columns()).first()[0].isSort(true);
 
-        self.id = new intListField("Идентификаторы");
+        self.id = new intListField(CommonResources.Identifers);
 
         self.toRow = function (el) {
             return new row(

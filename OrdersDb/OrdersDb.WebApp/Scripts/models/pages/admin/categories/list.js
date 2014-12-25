@@ -12,11 +12,10 @@
 
     function listPage(parent) {
         var self = new pageBase(parent);
-        self.title("Список категорий");
+        self.title(CommonResources.Categories_List);
 
         self.categoriesLoading = ko.observable(false);
         self.searchText = ko.observable("");
-
 
         self.tree = new tree();
         self.previouslyOpenedTabIndex = 0;

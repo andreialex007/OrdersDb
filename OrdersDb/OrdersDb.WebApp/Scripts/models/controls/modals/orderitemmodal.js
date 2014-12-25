@@ -8,15 +8,15 @@
     function orderItemModal(parent) {
         var self = new modalbase(parent);
 
-        self.EDIT_TITLE = "Редактирование товарной позиции";
-        self.NEW_TITLE = "Добавление товарной позиции";
+        self.EDIT_TITLE = CommonResources.Edit_Order_Item;
+        self.NEW_TITLE = CommonResources.New_Order_Item;
         self.title = ko.observable("");
 
         self.rowPosition = null;
         self.productItemId = 0;
-        self.fields = { };
-        self.fields.product = new dropdown("Товар", 0, [], "Выберите товар из выпадающего списка");
-        self.fields.amount = new spinner("Количество", 1, 1, 1, 2000);
+        self.fields = {};
+        self.fields.product = new dropdown(EntitiesResources.Product, 0, [], EntitiesResources.Choose_The_Product_From_DropDown);
+        self.fields.amount = new spinner(EntitiesResources.Amount, 1, 1, 1, 2000);
 
         self.updatePrices = function (value) {
             var productId = value;
@@ -48,7 +48,7 @@
             showBase();
         }
 
-        
+
         var hideBase = self.hide;
         self.hide = function () {
             self.fields.product.value("");

@@ -8,12 +8,12 @@
 ], function (ko, mapping, sammy, editPageBase, regionDropDown, textField, spinner) {
     function cityPage(parent) {
         var self = new editPageBase(parent);
-        self.EDIT_TITLE("Редактирование города");
-        self.NEW_TITLE("Создание города");
+        self.EDIT_TITLE(CommonResources.Edit_City);
+        self.NEW_TITLE(CommonResources.Modify_City);
 
-        self.fields.Name = new textField("Название", "", "Введите название города (обязательно)");
-        self.fields.Region = new regionDropDown("Регион", "", "", "Выберите регион из выпадающего списка");
-        self.fields.population = new spinner("Численность населения", 1000, 1000, 1000, 15000000);
+        self.fields.Name = new textField(CommonResources.Name, "", CommonResources.Please_Enter_The_City_Name_required);
+        self.fields.Region = new regionDropDown(CommonResources.Region, "", "", CommonResources.Choose_The_Region_From_DropDown);
+        self.fields.population = new spinner(CommonResources.Population, 1000, 1000, 1000, 15000000);
 
         self.fields.Region.loadCountries = function () {
             $.ajax({

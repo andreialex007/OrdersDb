@@ -1,4 +1,4 @@
-﻿ var EntitiesResources = { 
+﻿ EntitiesResources = { 
 'Order' : 'Заказ',
 'Orders' : 'Заказы',
 'Order_Code' : 'Код заказа',

@@ -88,6 +88,15 @@ namespace OrdersDb.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Amount.
+        /// </summary>
+        public static string Amount {
+            get {
+                return ResourceManager.GetString("Amount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Amount of categories.
         /// </summary>
         public static string Amount_Of_Categories {
@@ -106,6 +115,24 @@ namespace OrdersDb.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you really want to delete selected record?.
+        /// </summary>
+        public static string Are_You_Really_Want_ToDelete_Selected_Record {
+            get {
+                return ResourceManager.GetString("Are_You_Really_Want_ToDelete_Selected_Record", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you really want to delete selected records?.
+        /// </summary>
+        public static string Are_You_Really_Want_ToDelete_Selected_Records {
+            get {
+                return ResourceManager.GetString("Are_You_Really_Want_ToDelete_Selected_Records", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Cancel {
@@ -115,11 +142,38 @@ namespace OrdersDb.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Categories list.
+        /// </summary>
+        public static string Categories_List {
+            get {
+                return ResourceManager.GetString("Categories_List", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Category search.
         /// </summary>
         public static string Category_Search {
             get {
                 return ResourceManager.GetString("Category_Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose the product from dropdown.
+        /// </summary>
+        public static string Choose_The_Product_From_DropDown {
+            get {
+                return ResourceManager.GetString("Choose_The_Product_From_DropDown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose the region from dropdown.
+        /// </summary>
+        public static string Choose_The_Region_From_DropDown {
+            get {
+                return ResourceManager.GetString("Choose_The_Region_From_DropDown", resourceCulture);
             }
         }
         
@@ -156,6 +210,15 @@ namespace OrdersDb.Resources {
         public static string Create {
             get {
                 return ResourceManager.GetString("Create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create client.
+        /// </summary>
+        public static string Create_Client {
+            get {
+                return ResourceManager.GetString("Create_Client", resourceCulture);
             }
         }
         
@@ -232,6 +295,24 @@ namespace OrdersDb.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit city.
+        /// </summary>
+        public static string Edit_City {
+            get {
+                return ResourceManager.GetString("Edit_City", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit client.
+        /// </summary>
+        public static string Edit_Client {
+            get {
+                return ResourceManager.GetString("Edit_Client", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit order item.
         /// </summary>
         public static string Edit_Order_Item {
@@ -246,6 +327,15 @@ namespace OrdersDb.Resources {
         public static string Edit_User_Profile {
             get {
                 return ResourceManager.GetString("Edit_User_Profile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the text.
+        /// </summary>
+        public static string Enter_The_Text {
+            get {
+                return ResourceManager.GetString("Enter_The_Text", resourceCulture);
             }
         }
         
@@ -268,6 +358,15 @@ namespace OrdersDb.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Identifers.
+        /// </summary>
+        public static string Identifers {
+            get {
+                return ResourceManager.GetString("Identifers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Image.
         /// </summary>
         public static string Image {
@@ -282,6 +381,15 @@ namespace OrdersDb.Resources {
         public static string Information {
             get {
                 return ResourceManager.GetString("Information", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to List of cities.
+        /// </summary>
+        public static string List_Of_Cities {
+            get {
+                return ResourceManager.GetString("List_Of_Cities", resourceCulture);
             }
         }
         
@@ -313,6 +421,15 @@ namespace OrdersDb.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Login error.
+        /// </summary>
+        public static string Login_Error {
+            get {
+                return ResourceManager.GetString("Login_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login to your account.
         /// </summary>
         public static string Login_to_your_account {
@@ -327,6 +444,69 @@ namespace OrdersDb.Resources {
         public static string Main_Data {
             get {
                 return ResourceManager.GetString("Main_Data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Max.
+        /// </summary>
+        public static string Max {
+            get {
+                return ResourceManager.GetString("Max", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Min.
+        /// </summary>
+        public static string Min {
+            get {
+                return ResourceManager.GetString("Min", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name of region.
+        /// </summary>
+        public static string Name_Of_Region {
+            get {
+                return ResourceManager.GetString("Name_Of_Region", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New city.
+        /// </summary>
+        public static string New_City {
+            get {
+                return ResourceManager.GetString("New_City", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New order item.
+        /// </summary>
+        public static string New_Order_Item {
+            get {
+                return ResourceManager.GetString("New_Order_Item", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to List of numbers comma separated.
+        /// </summary>
+        public static string Numbers_List_CommaSeparated {
+            get {
+                return ResourceManager.GetString("Numbers_List_CommaSeparated", resourceCulture);
             }
         }
         
@@ -390,6 +570,87 @@ namespace OrdersDb.Resources {
         public static string Password {
             get {
                 return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please choose the city.
+        /// </summary>
+        public static string Please_Choose_The_City {
+            get {
+                return ResourceManager.GetString("Please_Choose_The_City", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please choose the country.
+        /// </summary>
+        public static string Please_Choose_The_Country {
+            get {
+                return ResourceManager.GetString("Please_Choose_The_Country", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please choose the region.
+        /// </summary>
+        public static string Please_Choose_The_Region {
+            get {
+                return ResourceManager.GetString("Please_Choose_The_Region", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please choose the street.
+        /// </summary>
+        public static string Please_Choose_The_Street {
+            get {
+                return ResourceManager.GetString("Please_Choose_The_Street", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter at least three symbols.
+        /// </summary>
+        public static string Please_Enter_At_Least_Three_Symbols {
+            get {
+                return ResourceManager.GetString("Please_Enter_At_Least_Three_Symbols", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter at least three symbols.
+        /// </summary>
+        public static string Please_Enter_At_Least_ThreeSymbols {
+            get {
+                return ResourceManager.GetString("Please_Enter_At_Least_ThreeSymbols", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter the city name (required).
+        /// </summary>
+        public static string Please_Enter_The_City_Name_required {
+            get {
+                return ResourceManager.GetString("Please_Enter_The_City_Name_required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter the number.
+        /// </summary>
+        public static string Please_Enter_The_Number {
+            get {
+                return ResourceManager.GetString("Please_Enter_The_Number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Population.
+        /// </summary>
+        public static string Population {
+            get {
+                return ResourceManager.GetString("Population", resourceCulture);
             }
         }
         

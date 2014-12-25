@@ -11,12 +11,12 @@
     function loginPage() {
         var self = new pageBase(parent);
         self.fields = {};
-        self.fields.Name = new textField("", "", "Username");
-        self.fields.Password = new textField("", "", "Password");
+        self.fields.Name = new textField("", "", CommonResources.Username);
+        self.fields.Password = new textField("", "", CommonResources.Password);
         self.fieldsArr = function () {
             return $.map(self.fields, function (el) { return el; });
         };
-        self.DEFAULT_VALIDATION_SUMMARY = "Login error.";
+        self.DEFAULT_VALIDATION_SUMMARY = CommonResources.Login_Error;
         self._validationSummary = ko.observable("");
         self.validationSummary = ko.computed({
             read: function () {

@@ -37,12 +37,10 @@
 
         self.name = "";
         self.load = function () {
-            //            console.log("page loaded");
             self.visible(true);
         };
 
         self.unload = function () {
-            //            console.log("page unloaded");
             self.visible(false);
         };
         return self;
