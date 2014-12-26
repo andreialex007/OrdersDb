@@ -9,14 +9,14 @@
 ], function (ko, mapping, sammy, editPageBase, regionDropDown, textField, spinner, dropdown) {
     function cityPage(parent) {
         var self = new editPageBase(parent);
-        self.EDIT_TITLE("Редактирование товара");
-        self.NEW_TITLE("Создание товара");
+        self.EDIT_TITLE(EntitiesResources.Edit_Product);
+        self.NEW_TITLE(EntitiesResources.Create_Product);
 
         //Основные данные
-        self.fields.Name = new textField("Название", "", "Введите название (обязательно)");
-        self.fields.Category = new dropdown("Категория", 0, [], "Выберите категорию");
-        self.fields.BuyPrice = new spinner("Цена закупки", 1, 1, 1, 1000000);
-        self.fields.SellPrice = new spinner("Цена продажи", 1, 1, 1, 1000000);
+        self.fields.Name = new textField(EntitiesResources.Product_Name, "", EntitiesResources.Product_Name + CommonResources._Required_);
+        self.fields.Category = new dropdown(EntitiesResources.Product_Category, 0, [], CommonResources.Select_a_Category);
+        self.fields.BuyPrice = new spinner(EntitiesResources.Product_BuyPrice, 1, 1, 1, 1000000);
+        self.fields.SellPrice = new spinner(EntitiesResources.Product_SellPrice, 1, 1, 1, 1000000);
         self.fields.IsService = ko.observable(false);
 
 
@@ -56,7 +56,7 @@
                     Id: self.fields.Category.value()
                 };
             }
-           
+
             return json;
         };
         return self;

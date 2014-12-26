@@ -375,4 +375,121 @@
   <data name="Edit_Client" xml:space="preserve">
     <value>Edit client</value>
   </data>
+  <data name="Edit_Country" xml:space="preserve">
+    <value>Edit country</value>
+  </data>
+  <data name="Create_Country" xml:space="preserve">
+    <value>Create country</value>
+  </data>
+  <data name="English_Country_Name_required" xml:space="preserve">
+    <value>English country name required</value>
+  </data>
+  <data name="Russian_Country_Name_required" xml:space="preserve">
+    <value>Russian country name required</value>
+  </data>
+  <data name="Country_Code_required" xml:space="preserve">
+    <value>Country_Code_Required</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Clients_List" xml:space="preserve">
+    <value>Clients list</value>
+  </data>
+  <data name="Countries_List" xml:space="preserve">
+    <value>Countries list</value>
+  </data>
+  <data name="Edit_Employee" xml:space="preserve">
+    <value>Edit employee</value>
+  </data>
+  <data name="Create_Employee" xml:space="preserve">
+    <value>Create employee</value>
+  </data>
+  <data name="Create_Employee" xml:space="preserve">
+    <value>Create employee</value>
+  </data>
+  <data name="_Required_" xml:space="preserve">
+    <value> (required)</value>
+  </data>
+  <data name="Please_Enter_The_Position_From_DropDown" xml:space="preserve">
+    <value>Please enter a position from dropdown</value>
+  </data>
+  <data name="Employees_List" xml:space="preserve">
+    <value>Employees list</value>
+  </data>
+  <data name="Edit_House" xml:space="preserve">
+    <value>Edit house</value>
+  </data>
+  <data name="Create_House" xml:space="preserve">
+    <value>Create house</value>
+  </data>
+  <data name="Enter_Building" xml:space="preserve">
+    <value>Enter building</value>
+  </data>
+  <data name="Enter_PostalCode" xml:space="preserve">
+    <value>Enter postal code</value>
+  </data>
+  <data name="Select_Street_From_Dropdown" xml:space="preserve">
+    <value>Select street from dropdown</value>
+  </data>
+  <data name="Houses_List" xml:space="preserve">
+    <value>Houses list</value>
+  </data>
+  <data name="Positions_List" xml:space="preserve">
+    <value>Positions list</value>
+  </data>
+  <data name="Edit_Position" xml:space="preserve">
+    <value>Edit position</value>
+  </data>
+  <data name="Create_Position" xml:space="preserve">
+    <value>Create position</value>
+  </data>
+  <data name="Edit_Product" xml:space="preserve">
+    <value>Edit product</value>
+  </data>
+  <data name="Create_Product" xml:space="preserve">
+    <value>Create product</value>
+  </data>
+  <data name="Select_a_Category" xml:space="preserve">
+    <value>Select a category</value>
+  </data>
+  <data name="Products_List" xml:space="preserve">
+    <value>Products list</value>
+  </data>
+  <data name="Edit_Region" xml:space="preserve">
+    <value>Edit region</value>
+  </data>
+  <data name="Create_Region" xml:space="preserve">
+    <value>Create region</value>
+  </data>
+  <data name="Regions_List" xml:space="preserve">
+    <value>Regions list</value>
+  </data>
+  <data name="Edit_Role" xml:space="preserve">
+    <value>Edit role</value>
+  </data>
+  <data name="New_Role" xml:space="preserve">
+    <value>New role</value>
+  </data>
+  <data name="Edit_Street" xml:space="preserve">
+    <value>Edit street</value>
+  </data>
+  <data name="New_Street" xml:space="preserve">
+    <value>New street</value>
+  </data>
+  <data name="Roles_list" xml:space="preserve">
+    <value>Roles list</value>
+  </data>
+  <data name="Select_a_City_From_Dropdown" xml:space="preserve">
+    <value>Select a city from dropdown</value>
+  </data>
+  <data name="Streets_List" xml:space="preserve">
+    <value>Streets list</value>
+  </data>
+  <data name="Edit_User" xml:space="preserve">
+    <value>Edit user</value>
+  </data>
+  <data name="New_User" xml:space="preserve">
+    <value>New user</value>
+  </data>
 </root>

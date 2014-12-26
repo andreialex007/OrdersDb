@@ -8,11 +8,11 @@
 ], function (ko, mapping, sammy, editPageBase, City, textField, spinner) {
     function cityPage(parent) {
         var self = new editPageBase(parent);
-        self.EDIT_TITLE("Редактирование улицы");
-        self.NEW_TITLE("Создание улицы");
+        self.EDIT_TITLE(CommonResources.Edit_Street);
+        self.NEW_TITLE(CommonResources.New_Street);
 
-        self.fields.Name = new textField("Название", "", "Введите название улицы (обязательно)");
-        self.fields.City = new City("Регион", "", "", "Выберите город из выпадающего списка");
+        self.fields.Name = new textField(EntitiesResources.Street_Name, "", EntitiesResources.Street_Name + CommonResources._Required_);
+        self.fields.City = new City(EntitiesResources.Street_City, "", "", EntitiesResources.Select_a_City_From_Dropdown);
 
         self.fields.City.loadCountries = function () {
             $.ajax({

@@ -8,8 +8,8 @@
 ], function (ko, mapping, sammy, editPageBase, regionDropDown, textField, spinner) {
     function cityPage(parent) {
         var self = new editPageBase(parent);
-        self.EDIT_TITLE("Редактирование роли");
-        self.NEW_TITLE("Создание роли");
+        self.EDIT_TITLE(CommonResources.Edit_Role);
+        self.NEW_TITLE(CommonResources.New_Role);
 
         self.ACCESS_TYPE_READ = 1;
         self.ACCESS_TYPE_ADD = 2;
@@ -27,11 +27,9 @@
             if (permission.AccessType() != self.ACCESS_TYPE_READ && permission.Checked() == false) {
                 permissionGroup.Permissions()[0].Checked(true);
             }
-
-            console.log('checkedItem');
         };
 
-        self.fields.Name = new textField("Имя роли", "", "Имя роли (обязательно)");
+        self.fields.Name = new textField(EntitiesResources.Role_Name, "", EntitiesResources.Role_Name + CommonResources._Required_);
 
         self.fromJSON = function (json) {
             self.fields.Name.value(json.roleDto.Name);
@@ -65,7 +63,6 @@
         };
 
         self.toJSON = function () {
-            debugger;
             var role = { Id: self.Id() };
             role.Name = self.fields.Name.value();
 

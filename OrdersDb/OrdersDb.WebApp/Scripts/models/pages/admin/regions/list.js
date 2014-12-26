@@ -16,13 +16,13 @@
 
     function listPage(parent) {
         var self = new listPageBase(parent);
-        self.title("Список регионов");
+        self.title(CommonResources.Regions_List);
 
         self.table.columns(self.table.columns().concat([
-            new column("Country.Name", "Страна", "200px")
+            new column("Country.Name", EntitiesResources.Region_Country, "200px")
         ]));
 
-        self.countryName = new textField("Название страны", "", "Введите как минимум 3 символа");
+        self.countryName = new textField(EntitiesResources.Region_Country, "", CommonResources.Please_Enter_At_Least_ThreeSymbols);
 
         var toRowBase = self.toRow;
         self.toRow = function (el) {

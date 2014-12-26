@@ -16,18 +16,18 @@
 
     function listPage(parent) {
         var self = new listPageBase(parent);
-        self.title("Список товаров");
+        self.title(CommonResources.Products_List);
 
         self.table.columns(self.table.columns().concat([
-            new column("Category.Name", "Категория продукта", "200px"),
-            new column("SellPrice", "Цена продажи", "150px"),
-            new column("BuyPrice", "Цена покупки", "150px"),
-            new column("IsService", "Является услугой", "150px")
+            new column("Category.Name", EntitiesResources.Product_Category, "200px"),
+            new column("SellPrice", EntitiesResources.Product_SellPrice, "150px"),
+            new column("BuyPrice", EntitiesResources.Product_BuyPrice, "150px"),
+            new column("IsService", EntitiesResources.Product_IsService, "150px")
         ]));
 
-        self.categoryName = new textField("Категория продукта", "", "Введите как минимум 3 символа");
-        self.sellPrice = new rangeSpinnerControl("Цена продажи", 0, 1500, 1);
-        self.buyPrice = new rangeSpinnerControl("Цена покупки", 0, 1500, 1);
+        self.categoryName = new textField(CommonResources.Product_Category, "", CommonResources.Please_Enter_At_Least_Three_Symbols);
+        self.sellPrice = new rangeSpinnerControl(CommonResources.Product_SellPrice, 0, 1500, 1);
+        self.buyPrice = new rangeSpinnerControl(CommonResources.Product_BuyPrice, 0, 1500, 1);
 
         var toRowBase = self.toRow;
         self.toRow = function (el) {

@@ -1,0 +1,66 @@
+﻿@using OrdersDb.Resources
+<div data-bind="visible: visible" class="modal base-modal">
+    <div class="modal-backdrop fade in"></div>
+    <div class="modal-dialog modal-full" style="height: 60%">
+        <div class="modal-content modal-inner">
+            <div class="modal-header">
+                <button type="button" data-bind="click: hide" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">@CommonResources.Edit_Order_Item</h4>
+            </div>
+            <!-- ko with: fields -->
+            <div class="modal-body form-horizontal">
+                <div class="col-md-12">
+                    <!-- ko with: product -->
+                    <div data-bind="css: { 'has-error': hasErrors }" class="form-group">
+                        <label class="control-label col-md-4">Товар:</label>
+                        <div class="col-md-8">
+                            <select data-bind="options: avaliableValues, optionsText: 'Name', optionsValue: 'Id', value: value, optionsCaption: placeholder, event: { change :change }"
+                                    class="form-control"></select>
+                            <span data-bind="text: errorsText" class="help-block hidden-if-no-error"></span>
+                        </div>
+                    </div>
+                    <!-- /ko -->
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label col-md-4">@EntitiesResources.OrderItem_Amount:</label>
+                            <div class="col-md-8">
+                                <!-- ko with: amount -->
+                                @Html.Partial("Controls/Spinner")
+                                <!-- /ko -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label col-md-4">@CommonResources.Price_Of_Single_Product:</label>
+                            <div class="col-md-8">
+                                <p data-bind="text: itemPrice" class="form-control-static"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label col-md-4">@CommonResources.Common_Order_Item_Price:</label>
+                            <div class="col-md-8">
+                                <p data-bind="text: totalPrice" class="form-control-static"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /ko -->
+            <div class="modal-footer">
+                <button type="button" class="btn blue" data-bind="click: save">@CommonResources.Save</button>
+                <button type="button" class="btn default" data-bind="click: hide">@CommonResources.Cancel</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>

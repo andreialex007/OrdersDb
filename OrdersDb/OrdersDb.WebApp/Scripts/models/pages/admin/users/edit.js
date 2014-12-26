@@ -8,12 +8,12 @@
 ], function (ko, mapping, sammy, editPageBase, regionDropDown, textField, spinner) {
     function cityPage(parent) {
         var self = new editPageBase(parent);
-        self.EDIT_TITLE("Редактирование пользователя");
-        self.NEW_TITLE("Создание пользователя");
+        self.EDIT_TITLE(CommonResources.Edit_User);
+        self.NEW_TITLE(CommonResources.New_User);
 
-        self.fields.Name = new textField("Имя", "", "Имя (обязательно)");
-        self.fields.Email = new textField("Email", "", "Email (обязательно)");
-        self.fields.Password = new textField("Пароль", "", "Пароль (обязательно)");
+        self.fields.Name = new textField(EntitiesResources.User_Name, "", EntitiesResources.User_Name + CommonResources._Required_);
+        self.fields.Email = new textField(EntitiesResources.User_Email, "", EntitiesResources.User_Email + CommonResources._Required_);
+        self.fields.Password = new textField(EntitiesResources.User_Password, "", EntitiesResources.User_Password + CommonResources._Required_);
         self.Roles = ko.observableArray([]);
         self.userImage = ko.observable("");
 

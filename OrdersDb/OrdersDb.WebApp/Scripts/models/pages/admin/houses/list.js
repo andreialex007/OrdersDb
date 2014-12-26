@@ -16,19 +16,19 @@
 
     function listPage(parent) {
         var self = new listPageBase(parent);
-        self.title("Список домов");
+        self.title(CommonResources.Houses_List);
 
         self.table.columns(self.table.columns().concat([
-            new column("Number", "Номер"),
-            new column("Building", "Корпус"),
-            new column("PostalCode", "Индекс"),
-            new column("Street.Name", "Улица")
+            new column("Number", EntitiesResources.House_Number),
+            new column("Building", EntitiesResources.House_Building),
+            new column("PostalCode", EntitiesResources.House_PostalCode),
+            new column("Street.Name", EntitiesResources.House_Street)
         ]));
 
-        self.number = new intListField("Номера домов");
-        self.building = new textField("Корпус");
-        self.postalCode = new textField("Почтовый индекс");
-        self.streetName = new textField("Название улицы");
+        self.number = new intListField(EntitiesResources.House_Number);
+        self.building = new textField(EntitiesResources.House_Building);
+        self.postalCode = new textField(EntitiesResources.House_PostalCode);
+        self.streetName = new textField(EntitiesResources.House_Street);
 
         var toRowBase = self.toRow;
         self.toRow = function (el) {

@@ -16,19 +16,19 @@
 
     function listPage(parent) {
         var self = new listPageBase(parent);
-        self.title("Список клиентов");
+        self.title(CommonResources.Clients_List);
 
         self.table.columns(self.table.columns().concat([
-            new column("FullName", "Полное имя"),
-            new column("INN", "ИНН", "200px"),
-            new column("OGRN", "ОГРН", "200px"),
-            new column("Location", "Адрес", "200px")
+            new column("FullName", EntitiesResources.Client_FullName),
+            new column("INN", EntitiesResources.Client_INN, "200px"),
+            new column("OGRN", EntitiesResources.Client_OGRN, "200px"),
+            new column("Location", CommonResources.Address, "200px")
         ]));
 
-        self.fullName = new textField("Полное название", "", "Введите как минимум 3 символа");
-        self.inn = new textField("ИНН", "", "Введите как минимум 3 символа");
-        self.ogrn = new textField("ОГРН", "", "Введите как минимум 3 символа");
-        self.location = new textField("Адрес", "", "Введите как минимум 3 символа");
+        self.fullName = new textField(EntitiesResources.Client_FullName, "", CommonResources.Please_Enter_At_Least_ThreeSymbols);
+        self.inn = new textField("ИНН", "", CommonResources.Please_Enter_At_Least_ThreeSymbols);
+        self.ogrn = new textField("ОГРН", "", CommonResources.Please_Enter_At_Least_ThreeSymbols);
+        self.location = new textField("Адрес", "", CommonResources.Please_Enter_At_Least_ThreeSymbols);
 
         var toRowBase = self.toRow;
         self.toRow = function (el) {

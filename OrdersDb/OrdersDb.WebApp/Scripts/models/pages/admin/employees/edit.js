@@ -10,17 +10,15 @@
     function editPage(parent) {
         var self = new editPageBase(parent);
 
-        self.EDIT_TITLE("Редактирование сотрудника");
-        self.NEW_TITLE("Создание сотрудника");
+        self.EDIT_TITLE(CommonResources.Edit_Employee);
+        self.NEW_TITLE(CommonResources.Create_Employee);
 
-        self.fields.FirstName = new textField("Имя", "", "Имя (обязательно)");
-        self.fields.LastName = new textField("Фамилия", "", "Фамилия (обязательно)");
-        self.fields.Patronymic = new textField("Отчество", "", "Отчество");
-        self.fields.Position = new dropdown("Профессия", 0, [], "Выберите профессию из выпадающего списка");
-        self.fields.Email = new textField("Email", "", "Email (обязательно)");
-        self.fields.SNILS = new textField("SNILS", "", "SNILS (обязательно)");
-
-
+        self.fields.FirstName = new textField(EntitiesResources.Employee_FirstName, "", EntitiesResources.Employee_FirstName + CommonResources._Required_);
+        self.fields.LastName = new textField(EntitiesResources.Employee_LastName, "", EntitiesResources.Employee_LastName + CommonResources._Required_);
+        self.fields.Patronymic = new textField(EntitiesResources.Employee_Patronymic, "", EntitiesResources.Employee_Patronymic + CommonResources._Required_);
+        self.fields.Position = new dropdown(EntitiesResources.Employee_Position, 0, [], CommonResources.Please_Enter_The_Position_From_DropDown);
+        self.fields.Email = new textField(EntitiesResources.Employee_Email, "", EntitiesResources.Employee_Email + CommonResources._Required_);
+        self.fields.SNILS = new textField(EntitiesResources.Employee_SNILS, "", EntitiesResources.Employee_SNILS + CommonResources._Required_);
 
         var loadBase = self.load;
         self.load = function (params) {

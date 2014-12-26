@@ -16,13 +16,13 @@
 
     function listPage(parent) {
         var self = new listPageBase(parent);
-        self.title("Список улиц");
+        self.title(CommonResources.Streets_List);
 
         self.table.columns(self.table.columns().concat([
-            new column("City.Name", "Город", "200px")
+            new column("City.Name", EntitiesResources.City_Name, "200px")
         ]));
 
-        self.cityName = new textField("Название города", "", "Введите как минимум 3 символа");
+        self.cityName = new textField(EntitiesResources.City_Name, "", CommonResources.Please_Enter_At_Least_ThreeSymbols);
 
         var toRowBase = self.toRow;
         self.toRow = function (el) {

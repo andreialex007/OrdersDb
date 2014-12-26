@@ -8,13 +8,13 @@
 ], function (ko, mapping, sammy, editPageBase, housedropdown, textField, spinner) {
     function StreetPage(parent) {
         var self = new editPageBase(parent);
-        self.EDIT_TITLE("Редактирование дома");
-        self.NEW_TITLE("Создание дома");
+        self.EDIT_TITLE(CommonResources.Edit_House);
+        self.NEW_TITLE(CommonResources.Create_House);
 
-        self.fields.Number = new spinner("Номер дома", "", 1, 1, 999999);
-        self.fields.Building = new textField("Строение", "", "Укажите здание");
-        self.fields.PostalCode = new textField("Индекс", "", "Укажите индекс");
-        self.fields.Street = new housedropdown("Улица", "", "", "Выберите улицу из выпадающего списка");
+        self.fields.Number = new spinner(EntitiesResources.House_Number, "", 1, 1, 999999);
+        self.fields.Building = new textField(EntitiesResources.House_Building, "", CommonResources.Enter_Building);
+        self.fields.PostalCode = new textField(EntitiesResources.House_PostalCode, "", CommonResources.Enter_PostalCode);
+        self.fields.Street = new housedropdown(EntitiesResources.House_Street, "", "", CommonResources.Select_Street_From_Dropdown);
 
         self.fields.Street.loadCountries = function () {
             $.ajax({

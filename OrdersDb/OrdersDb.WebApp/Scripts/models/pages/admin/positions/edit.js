@@ -8,10 +8,10 @@
 ], function (ko, mapping, sammy, editPageBase, regionDropDown, textField, spinner) {
     function cityPage(parent) {
         var self = new editPageBase(parent);
-        self.EDIT_TITLE("Редактирование должности");
-        self.NEW_TITLE("Создание должности");
+        self.EDIT_TITLE(CommonResources.Edit_Position);
+        self.NEW_TITLE(CommonResources.Create_Position);
 
-        self.fields.Name = new textField("Название", "", "Название должности (обязательно)");
+        self.fields.Name = new textField(EntitiesResources.Position_Name, "", EntitiesResources.Position_Name + CommonResources._Required_);
 
         self.fromJSON = function (json) {
             self.fields.Name.value(json.Name);

@@ -8,12 +8,12 @@
 ], function (ko, mapping, sammy, editPageBase, regionDropDown, textField, spinner) {
     function cityPage(parent) {
         var self = new editPageBase(parent);
-        self.EDIT_TITLE("Редактирование страны");
-        self.NEW_TITLE("Создание страны");
+        self.EDIT_TITLE(CommonResources.Edit_Country);
+        self.NEW_TITLE(CommonResources.Create_Country);
 
-        self.fields.Name = new textField("Название", "", "Название страны на английском (обязательно)");
-        self.fields.RussianName = new textField("Название на английском", "", "Название страны на русском (обязательно)");
-        self.fields.Code = new textField("Код", "", "Код страны (обязательно)");
+        self.fields.Name = new textField(EntitiesResources.Country_Name, "", CommonResources.English_Country_Name_required);
+        self.fields.RussianName = new textField(EntitiesResources.Country_RussianName, "", CommonResources.Russian_Country_Name_required);
+        self.fields.Code = new textField(EntitiesResources.Country_Code, "", CommonResources.Country_Code_required);
         self.flagImage = ko.observable("");
 
         self.flagSelected = function (item, event) {

@@ -16,15 +16,15 @@
 
     function listPage(parent) {
         var self = new listPageBase(parent);
-        self.title("Список стран");
+        self.title(CommonResources.Countries_List);
 
         self.table.columns(self.table.columns().concat([
-            new column("RussianName", "Название по русски", "200px"),
-            new column("Code", "Код", "200px")
+            new column("RussianName", EntitiesResources.Country_RussianName, "200px"),
+            new column("Code", EntitiesResources.Country_Code, "200px")
         ]));
 
-        self.russianName = new textField("Название по русски", "", "Введите как минимум 3 символа");
-        self.code = new textField("Код страны");
+        self.russianName = new textField(EntitiesResources.Country_RussianName, "", CommonResources.Please_Enter_At_Least_ThreeSymbols);
+        self.code = new textField(EntitiesResources.Country_Code);
 
         var toRowBase = self.toRow;
         self.toRow = function (el) {

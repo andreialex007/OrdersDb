@@ -15,23 +15,23 @@
 
     function listPage(parent) {
         var self = new listPageBase(parent);
-        self.title("Список стран");
+        self.title(CommonResources.Employees_List);
 
         self.table.columns(self.table.columns().concat([
-            new column("FirstName", "Имя"),
-            new column("LastName", "Фамилия"),
-            new column("Patronymic", "Отчество"),
-            new column("Email", "Email"),
-            new column("Position.Name", "Должность"),
-            new column("SNILS", "СНИЛС")
+            new column("FirstName", EntitiesResources.Employee_FirstName),
+            new column("LastName", EntitiesResources.Employee_LastName),
+            new column("Patronymic", EntitiesResources.Employee_Patronymic),
+            new column("Email", EntitiesResources.Employee_Email),
+            new column("Position.Name", EntitiesResources.Position_Name),
+            new column("SNILS", EntitiesResources.Employee_SNILS)
         ]));
 
-        self.firstName = new textField("Имя", "", "Введите как минимум 3 символа");
-        self.lastName = new textField("Фамилия", "", "Введите как минимум 3 символа");
-        self.patronymic = new textField("Отчество", "", "Введите как минимум 3 символа");
-        self.email = new textField("Email", "", "Введите email (минимум 3 символа)");
-        self.positionName = new textField("Название должности", "", "Введите как минимум 3 символа");
-        self.snils = new textField("СНИЛС", "", "Введите как минимум 3 символа");
+        self.firstName = new textField(EntitiesResources.Employee_FirstName, "", CommonResources.Please_Enter_At_Least_ThreeSymbols);
+        self.lastName = new textField(EntitiesResources.Employee_LastName, "", CommonResources.Please_Enter_At_Least_ThreeSymbols);
+        self.patronymic = new textField(EntitiesResources.Employee_Patronymic, "", CommonResources.Please_Enter_At_Least_ThreeSymbols);
+        self.email = new textField(EntitiesResources.Employee_Email, "", CommonResources.Please_Enter_At_Least_ThreeSymbols);
+        self.positionName = new textField(EntitiesResources.Position_Name, "", CommonResources.Please_Enter_At_Least_ThreeSymbols);
+        self.snils = new textField(EntitiesResources.Employee_SNILS, "", CommonResources.Please_Enter_At_Least_ThreeSymbols);
 
         var toRowBase = self.toRow;
         self.toRow = function (el) {

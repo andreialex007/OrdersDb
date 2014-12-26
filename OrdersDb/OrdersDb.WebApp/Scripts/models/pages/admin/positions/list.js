@@ -15,7 +15,7 @@
 
     function listPage(parent) {
         var self = new listPageBase(parent);
-        self.title("Список должностей");
+        self.title(CommonResources.Positions_List);
 
         self.init();
         return self;
