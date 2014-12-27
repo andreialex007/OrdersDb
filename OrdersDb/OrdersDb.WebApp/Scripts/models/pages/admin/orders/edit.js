@@ -14,21 +14,21 @@
 ], function (ko, mapping, sammy, editPageBase, regionDropDown, textField, spinner, table, column, row, cell, dropdown, orderItemModal) {
     function cityPage(parent) {
         var self = new editPageBase(parent);
-        self.EDIT_TITLE("Редактирование заказа");
-        self.NEW_TITLE("Создание заказа");
+        self.EDIT_TITLE(CommonResources.Edit_Order);
+        self.NEW_TITLE(CommonResources.Create_Order);
 
         self.CodeId = null;
-        self.fields.Code = new textField("Код заказа", "", "Код будет сгенерирован автоматически", "", true);
-        self.fields.Client = new dropdown("Заказчик", 0, [], "Выберите заказчика из выпадающего списка");
+        self.fields.Code = new textField(CommonResources.Code, "", CommonResources.Code_Will_be_generated_automatically, "", true);
+        self.fields.Client = new dropdown(EntitiesResources.Client, 0, [], CommonResources.Please_select_a_client_from_dropdown);
 
         self.table = new table([
             new column("Id", "#", "50px"),
-            new column("Product.Name", "Товар"),
-            new column("ProductBuyPrice", "Цена продажи товара", "100px"),
-            new column("ProductSellPrice", "Цена покупки товара", "100px"),
-            new column("Amount", "Количество", "100px"),
-            new column("BuyPrice", "Общая цена продажи", "100px"),
-            new column("SellPrice", "Общая цена покупки", "100px")
+            new column("Product.Name", EntitiesResources.Product_Name),
+            new column("ProductBuyPrice", EntitiesResources.Product_BuyPrice, "100px"),
+            new column("ProductSellPrice", EntitiesResources.Product_SellPrice, "100px"),
+            new column("Amount", CommonResources.Amount, "100px"),
+            new column("BuyPrice", CommonResources.Total_Buy_Price, "100px"),
+            new column("SellPrice", CommonResources.Total_Sell_Price, "100px")
         ]);
 
         self.orderItemModal = new orderItemModal(self);

@@ -265,13 +265,7 @@
     <value>House street</value>
   </data>
 
-  <!-- Region -->
-  <data name="Region" xml:space="preserve">
-    <value>Region</value>
-  </data>
-  <data name="Regions" xml:space="preserve">
-    <value>Regions</value>
-  </data>
+
   <!-- Region -->
   <data name="Region" xml:space="preserve">
     <value>Region</value>
@@ -411,7 +405,6 @@
   <data name="Position_Name" xml:space="preserve">
     <value>Position name</value>
   </data>
-
-
+  
 
 </root>

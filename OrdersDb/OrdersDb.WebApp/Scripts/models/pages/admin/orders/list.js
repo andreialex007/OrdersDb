@@ -16,20 +16,20 @@
 
     function listPage(parent) {
         var self = new listPageBase(parent);
-        self.title("Список городов");
+        self.title(CommonResources.Orders_List);
 
         self.table.columns(self.table.columns().concat([
-            new column("Code.Value", "Код", "100px"),
-            new column("Client.Name", "Заказчик"),
-            new column("BuyPrice", "Цена покупки", "100px"),
-            new column("SellPrice", "Цена покупки", "100px"),
-            new column("Total", "Всего", "100px")
+            new column("Code.Value", CommonResources.Code, "100px"),
+            new column("Client.Name", EntitiesResources.Client_Name),
+            new column("BuyPrice", EntitiesResources.Order_BuyPrice, "100px"),
+            new column("SellPrice", EntitiesResources.Order_SellPrice, "100px"),
+            new column("Total", CommonResources.Total, "100px")
         ]));
 
-        self.Code = new textField("Код закза", "", "Введите как минимум 3 символа");
-        self.Client = new textField("Заказчик", "", "Введите как минимум 3 символа");
-        self.BuyPrice = new rangeSpinnerControl("Цена покупки", 0, 100000, 1);
-        self.SellPrice = new rangeSpinnerControl("Цена продажи", 0, 100000, 1);
+        self.Code = new textField(CommonResources.Code, "", CommonResources.Please_Enter_At_Least_ThreeSymbols);
+        self.Client = new textField(EntitiesResources.Client_Name, "", CommonResources.Please_Enter_At_Least_ThreeSymbols);
+        self.BuyPrice = new rangeSpinnerControl(EntitiesResources.Order_BuyPrice, 0, 100000, 1);
+        self.SellPrice = new rangeSpinnerControl(EntitiesResources.Order_SellPrice, 0, 100000, 1);
 
         var toRowBase = self.toRow;
         self.toRow = function (el) {

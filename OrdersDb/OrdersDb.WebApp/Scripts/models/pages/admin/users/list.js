@@ -18,10 +18,10 @@
         self.title("Список пользователей");
 
         self.table.columns(self.table.columns().concat([
-            new column("Email", "Email", "200px")
+            new column("Email", EntitiesResources.User_Email, "200px")
         ]));
 
-        self.email = new textField("Email", "", "Введите как минимум " + self.SEARCH_MIN_LENGTH + " символа");
+        self.email = new textField(EntitiesResources.User_Email, "", CommonResources.Please_Enter_At_Least_ThreeSymbols);
 
         var toRowBase = self.toRow;
         self.toRow = function (el) {

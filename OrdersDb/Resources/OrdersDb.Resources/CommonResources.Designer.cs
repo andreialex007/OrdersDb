@@ -223,6 +223,24 @@ namespace OrdersDb.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Code.
+        /// </summary>
+        public static string Code {
+            get {
+                return ResourceManager.GetString("Code", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Code will be generated automatically.
+        /// </summary>
+        public static string Code_Will_be_generated_automatically {
+            get {
+                return ResourceManager.GetString("Code_Will_be_generated_automatically", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Common order item price.
         /// </summary>
         public static string Common_Order_Item_Price {
@@ -291,6 +309,15 @@ namespace OrdersDb.Resources {
         public static string Create_House {
             get {
                 return ResourceManager.GetString("Create_House", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create order.
+        /// </summary>
+        public static string Create_Order {
+            get {
+                return ResourceManager.GetString("Create_Order", resourceCulture);
             }
         }
         
@@ -435,6 +462,15 @@ namespace OrdersDb.Resources {
         public static string Edit_House {
             get {
                 return ResourceManager.GetString("Edit_House", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit order.
+        /// </summary>
+        public static string Edit_Order {
+            get {
+                return ResourceManager.GetString("Edit_Order", resourceCulture);
             }
         }
         
@@ -808,6 +844,15 @@ namespace OrdersDb.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Orders list.
+        /// </summary>
+        public static string Orders_List {
+            get {
+                return ResourceManager.GetString("Orders_List", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Page Loading Error.
         /// </summary>
         public static string Page_Loading_Error {
@@ -903,6 +948,15 @@ namespace OrdersDb.Resources {
         public static string Please_Enter_The_Position_From_DropDown {
             get {
                 return ResourceManager.GetString("Please_Enter_The_Position_From_DropDown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please select a client from dropdown.
+        /// </summary>
+        public static string Please_select_a_client_from_dropdown {
+            get {
+                return ResourceManager.GetString("Please_select_a_client_from_dropdown", resourceCulture);
             }
         }
         

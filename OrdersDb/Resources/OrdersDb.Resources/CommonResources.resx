@@ -153,9 +153,6 @@
   <data name="Page_Loading_Error" xml:space="preserve">
     <value>Page Loading Error</value>
   </data>
-  <data name="Save" xml:space="preserve">
-    <value>Save</value>
-  </data>
   <data name="Actions" xml:space="preserve">
     <value>Actions</value>
   </data>
@@ -167,9 +164,6 @@
   </data>
   <data name="Edit_User_Profile" xml:space="preserve">
     <value>Edit user profile</value>
-  </data>
-  <data name="Operations" xml:space="preserve">
-    <value>Operations</value>
   </data>
   <data name="Operations" xml:space="preserve">
     <value>Operations</value>
@@ -270,17 +264,11 @@
   <data name="Delete_Selected" xml:space="preserve">
     <value>Delete selected</value>
   </data>
-  <data name="Delete_Selected" xml:space="preserve">
-    <value>Delete selected</value>
-  </data>
   <data name="Clear_List" xml:space="preserve">
     <value>Clear list</value>
   </data>
   <data name="Order_Data" xml:space="preserve">
     <value>Order data</value>
-  </data>
-  <data name="OrderItems_Total" xml:space="preserve">
-    <value>Order items total</value>
   </data>
   <data name="OrderItems_Total" xml:space="preserve">
     <value>Order items total</value>
@@ -405,9 +393,6 @@
   <data name="Create_Employee" xml:space="preserve">
     <value>Create employee</value>
   </data>
-  <data name="Create_Employee" xml:space="preserve">
-    <value>Create employee</value>
-  </data>
   <data name="_Required_" xml:space="preserve">
     <value> (required)</value>
   </data>
@@ -492,4 +477,23 @@
   <data name="New_User" xml:space="preserve">
     <value>New user</value>
   </data>
+  <data name="Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="Orders_List" xml:space="preserve">
+    <value>Orders list</value>
+  </data>
+  <data name="Edit_Order" xml:space="preserve">
+    <value>Edit order</value>
+  </data>
+  <data name="Create_Order" xml:space="preserve">
+    <value>Create order</value>
+  </data>
+  <data name="Code_Will_be_generated_automatically" xml:space="preserve">
+    <value>Code will be generated automatically</value>
+  </data>
+  <data name="Please_select_a_client_from_dropdown" xml:space="preserve">
+    <value>Please select a client from dropdown</value>
+  </data>
+
 </root>

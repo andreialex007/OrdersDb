@@ -114,250 +114,238 @@
     <value>Администрирование</value>
   </data>
   <data name="Production" xml:space="preserve">
-    <value>Production</value>
+    <value>Производство</value>
   </data>
   <data name="Username" xml:space="preserve">
-    <value>Username</value>
+    <value>Имя пользователя</value>
   </data>
   <data name="Password" xml:space="preserve">
-    <value>Password</value>
+    <value>Пароль</value>
   </data>
   <data name="Remember_me" xml:space="preserve">
-    <value>Remember me</value>
+    <value>Запомнить меня</value>
   </data>
   <data name="Login" xml:space="preserve">
-    <value>Login</value>
+    <value>Логин</value>
   </data>
   <data name="Login_to_your_account" xml:space="preserve">
-    <value>Login to your account</value>
+    <value>Доступ к вашему аккаунту</value>
   </data>
   <data name="Orders_Creation_System" xml:space="preserve">
-    <value>Orders creation system</value>
+    <value>Система создания заказов</value>
   </data>
   <data name="Page_Loading_Error" xml:space="preserve">
-    <value>Page Loading Error</value>
+    <value>Ошибка загрузки страницы</value>
   </data>
   <data name="Save" xml:space="preserve">
-    <value>Save</value>
+    <value>Сохранить</value>
   </data>
   <data name="Actions" xml:space="preserve">
-    <value>Actions</value>
+    <value>Действия</value>
   </data>
   <data name="User_Image" xml:space="preserve">
-    <value>User image</value>
+    <value>Изображение пользователя</value>
   </data>
   <data name="Upload" xml:space="preserve">
-    <value>Upload</value>
+    <value>Загрузить</value>
   </data>
   <data name="Edit_User_Profile" xml:space="preserve">
-    <value>Edit user profile</value>
+    <value>Редактирование профиля пользователя</value>
   </data>
   <data name="Operations" xml:space="preserve">
-    <value>Operations</value>
-  </data>
-  <data name="Operations" xml:space="preserve">
-    <value>Operations</value>
+    <value>Операции</value>
   </data>
   <data name="Edit" xml:space="preserve">
-    <value>Edit</value>
+    <value>Изм</value>
   </data>
   <data name="Del" xml:space="preserve">
-    <value>Del</value>
+    <value>Удал</value>
   </data>
   <data name="Loading" xml:space="preserve">
-    <value>Loading...</value>
+    <value>Загрузка...</value>
   </data>
   <data name="Create" xml:space="preserve">
-    <value>Create</value>
+    <value>Создать</value>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>Delete</value>
+    <value>Удалить</value>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="Save" xml:space="preserve">
-    <value>Save</value>
+    <value>Отменить</value>
   </data>
   <data name="Edit_Order_Item" xml:space="preserve">
-    <value>Edit order item</value>
+    <value>Редактирование элемента заказа</value>
   </data>
   <data name="New_Order_Item" xml:space="preserve">
-    <value>New order item</value>
+    <value>Создать элемент заказа</value>
   </data>
   <data name="Price_Of_Single_Product" xml:space="preserve">
-    <value>Price of single product</value>
+    <value>Цена одного продукта</value>
   </data>
   <data name="Common_Order_Item_Price" xml:space="preserve">
-    <value>Common order item price</value>
+    <value>Общая цена позиции в заказе</value>
   </data>
   <data name="Total" xml:space="preserve">
-    <value>Total</value>
+    <value>Всего</value>
   </data>
   <data name="Displayed" xml:space="preserve">
-    <value>Displayed</value>
+    <value>Отображено</value>
   </data>
   <data name="Selected" xml:space="preserve">
-    <value>Selected</value>
+    <value>Выбрано</value>
   </data>
   <data name="There_Are_Several_Validation_Errors" xml:space="preserve">
-    <value>There are several validation errors</value>
+    <value>Обнаружены ошибки валидации</value>
   </data>
   <data name="Add" xml:space="preserve">
-    <value>Add</value>
+    <value>Добавить</value>
   </data>
   <data name="Category_Search" xml:space="preserve">
-    <value>Category search</value>
+    <value>Поиск категории</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Description</value>
+    <value>Описание</value>
   </data>
   <data name="Image" xml:space="preserve">
-    <value>Image</value>
+    <value>Изображение</value>
   </data>
   <data name="Information" xml:space="preserve">
-    <value>Information</value>
+    <value>Информация</value>
   </data>
   <data name="Clear" xml:space="preserve">
-    <value>Clear</value>
+    <value>Очистить</value>
   </data>
   <data name="Date_Create" xml:space="preserve">
-    <value>Creation date</value>
+    <value>Дата создания</value>
   </data>
   <data name="Date_Modify" xml:space="preserve">
-    <value>Modification date</value>
+    <value>Дата изменения</value>
   </data>
   <data name="Amount_Of_Categories" xml:space="preserve">
-    <value>Amount of categories</value>
+    <value>Количество категорий</value>
   </data>
   <data name="Amount_Of_Items" xml:space="preserve">
-    <value>Amount of items</value>
+    <value>Количество элементов</value>
   </data>
   <data name="Search_Results_Is_Empty" xml:space="preserve">
-    <value>Search results is empty</value>
+    <value>Результаты поиска пусты</value>
   </data>
   <data name="Search" xml:space="preserve">
-    <value>Search</value>
+    <value>Поиск</value>
   </data>
   <data name="Main_Data" xml:space="preserve">
-    <value>Main data</value>
+    <value>Основные данные</value>
   </data>
   <data name="Location" xml:space="preserve">
-    <value>Location</value>
+    <value>Местонахождение</value>
   </data>
   <data name="Flag_Of_Country" xml:space="preserve">
-    <value>Flag of country</value>
+    <value>Флаг страны</value>
   </data>
   <data name="Upload_Flag" xml:space="preserve">
-    <value>Upload flag</value>
+    <value>Загрузить флаг</value>
   </data>
   <data name="Delete_Selected" xml:space="preserve">
-    <value>Delete selected</value>
-  </data>
-  <data name="Delete_Selected" xml:space="preserve">
-    <value>Delete selected</value>
+    <value>Удалить выбранные</value>
   </data>
   <data name="Clear_List" xml:space="preserve">
-    <value>Clear list</value>
+    <value>Очистить список</value>
   </data>
   <data name="Order_Data" xml:space="preserve">
-    <value>Order data</value>
+    <value>Данные заказа</value>
   </data>
   <data name="OrderItems_Total" xml:space="preserve">
-    <value>Order items total</value>
-  </data>
-  <data name="OrderItems_Total" xml:space="preserve">
-    <value>Order items total</value>
+    <value>Всего элементов заказа</value>
   </data>
   <data name="Total_Buy_Price" xml:space="preserve">
-    <value>Common buy price</value>
+    <value>Общая цена покупки</value>
   </data>
   <data name="Total_Sell_Price" xml:space="preserve">
-    <value>Common sell price</value>
+    <value>Общая цена продажи</value>
   </data>
   <data name="Please_Choose_The_City" xml:space="preserve">
-    <value>Please choose the city</value>
+    <value>Пожалуйста выберите город</value>
   </data>
   <data name="Please_Choose_The_Country" xml:space="preserve">
-    <value>Please choose the country</value>
+    <value>Пожалуйста выберите страну</value>
   </data>
   <data name="Please_Choose_The_Region" xml:space="preserve">
-    <value>Please choose the region</value>
+    <value>Пожалуйста выберите регион</value>
   </data>
   <data name="Please_Choose_The_Street" xml:space="preserve">
-    <value>Please choose the street</value>
+    <value>Пожалуйста выберите улицу</value>
   </data>
   <data name="Please_Enter_The_Number" xml:space="preserve">
-    <value>Please enter the number</value>
+    <value>Пожалуйста введите номер дома</value>
   </data>
   <data name="Numbers_List_CommaSeparated" xml:space="preserve">
-    <value>List of numbers comma separated</value>
+    <value>Список номеров, разделенных запятой</value>
   </data>
   <data name="Min" xml:space="preserve">
-    <value>Min</value>
+    <value>Мин</value>
   </data>
   <data name="Max" xml:space="preserve">
-    <value>Max</value>
+    <value>Макс</value>
   </data>
   <data name="Enter_The_Text" xml:space="preserve">
-    <value>Enter the text</value>
+    <value>Введите текст</value>
   </data>
   <data name="Choose_The_Product_From_DropDown" xml:space="preserve">
-    <value>Choose the product from dropdown</value>
+    <value>Пожалуйста выберите товар из выпадающего списка</value>
   </data>
   <data name="Amount" xml:space="preserve">
-    <value>Amount</value>
+    <value>Количество</value>
   </data>
   <data name="Login_Error" xml:space="preserve">
-    <value>Login error</value>
+    <value>Ошибка входа</value>
   </data>
   <data name="Identifers" xml:space="preserve">
-    <value>Identifers</value>
+    <value>Идентификаторы</value>
   </data>
   <data name="Are_You_Really_Want_ToDelete_Selected_Record" xml:space="preserve">
-    <value>Are you really want to delete selected record?</value>
+    <value>Вы действительно хотите удалить выбранную запись?</value>
   </data>
   <data name="Are_You_Really_Want_ToDelete_Selected_Records" xml:space="preserve">
-    <value>Are you really want to delete selected records?</value>
+    <value>Вы действительно желаете удалить выбранные записи?</value>
   </data>
   <data name="Name" xml:space="preserve">
-    <value>Name</value>
+    <value>Название</value>
   </data>
   <data name="Please_Enter_At_Least_ThreeSymbols" xml:space="preserve">
-    <value>Please enter at least three symbols</value>
+    <value>Введите как минимум три символа</value>
   </data>
   <data name="Categories_List" xml:space="preserve">
-    <value>Categories list</value>
+    <value>Список категорий</value>
   </data>
   <data name="Edit_City" xml:space="preserve">
-    <value>Edit city</value>
+    <value>Редактирование города</value>
   </data>
   <data name="New_City" xml:space="preserve">
-    <value>New city</value>
+    <value>Новый город</value>
   </data>
   <data name="Choose_The_Region_From_DropDown" xml:space="preserve">
-    <value>Choose the region from dropdown</value>
+    <value>Пожалуйста выберите регион из выпадающего списка</value>
   </data>
   <data name="Please_Enter_The_City_Name_required" xml:space="preserve">
-    <value>Please enter the city name (required)</value>
+    <value>Пожалуйста введите имя города (обязательно)</value>
   </data>
   <data name="Population" xml:space="preserve">
-    <value>Population</value>
+    <value>Население</value>
   </data>
   <data name="Name_Of_Region" xml:space="preserve">
-    <value>Name of region</value>
+    <value>Название региона</value>
   </data>
   <data name="Please_Enter_At_Least_Three_Symbols" xml:space="preserve">
-    <value>Please enter at least three symbols</value>
+    <value>Пожалуйста введите как минимум три символа</value>
   </data>
   <data name="List_Of_Cities" xml:space="preserve">
-    <value>List of cities</value>
+    <value>Список городов</value>
   </data>
   <data name="Create_Client" xml:space="preserve">
-    <value>Create client</value>
+    <value>Создание клиента</value>
   </data>
   <data name="Edit_Client" xml:space="preserve">
-    <value>Edit client</value>
+    <value>Редактирование клиента</value>
   </data>
   <data name="Common_Name" xml:space="preserve">
     <value>Общее имя</value>
@@ -389,4 +377,140 @@
   <data name="Enter_The_Street" xml:space="preserve">
     <value>Выберите улицу</value>
   </data>
+  <data name="Code" xml:space="preserve">
+    <value>Код</value>
+  </data>
+  <data name="Edit_Country" xml:space="preserve">
+    <value>Редактирование страны</value>
+  </data>
+  <data name="Create_Country" xml:space="preserve">
+    <value>Создание страны</value>
+  </data>
+  <data name="English_Country_Name_required" xml:space="preserve">
+    <value>Введите название страны на английском языке (обязательно)</value>
+  </data>
+  <data name="Russian_Country_Name_required" xml:space="preserve">
+    <value>Введите название страны на русском языке (обязательно)</value>
+  </data>
+  <data name="Country_Code_required" xml:space="preserve">
+    <value>Код страны (обязательно)</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="Clients_List" xml:space="preserve">
+    <value>Список клиентов</value>
+  </data>
+  <data name="Countries_List" xml:space="preserve">
+    <value>Список стран</value>
+  </data>
+  <data name="Edit_Employee" xml:space="preserve">
+    <value>Редактирование сотрудника</value>
+  </data>
+  <data name="Create_Employee" xml:space="preserve">
+    <value>Создание сотрудника</value>
+  </data>
+  <data name="_Required_" xml:space="preserve">
+    <value> (обязательно)</value>
+  </data>
+  <data name="Please_Enter_The_Position_From_DropDown" xml:space="preserve">
+    <value>Пожалуйста выберите должность из выпадающего списка</value>
+  </data>
+  <data name="Employees_List" xml:space="preserve">
+    <value>Список работников</value>
+  </data>
+  <data name="Edit_House" xml:space="preserve">
+    <value>Редактирование дома</value>
+  </data>
+  <data name="Create_House" xml:space="preserve">
+    <value>Создание дома</value>
+  </data>
+  <data name="Enter_Building" xml:space="preserve">
+    <value>Введите корпус</value>
+  </data>
+  <data name="Enter_PostalCode" xml:space="preserve">
+    <value>Введите индекс</value>
+  </data>
+  <data name="Select_Street_From_Dropdown" xml:space="preserve">
+    <value>Выберите улицу из выпадающего списка</value>
+  </data>
+  <data name="Houses_List" xml:space="preserve">
+    <value>Список домов</value>
+  </data>
+  <data name="Positions_List" xml:space="preserve">
+    <value>Список должностей</value>
+  </data>
+  <data name="Edit_Position" xml:space="preserve">
+    <value>Редактирование должности</value>
+  </data>
+  <data name="Create_Position" xml:space="preserve">
+    <value>Создание должности</value>
+  </data>
+  <data name="Edit_Product" xml:space="preserve">
+    <value>Редактирование товара</value>
+  </data>
+  <data name="Create_Product" xml:space="preserve">
+    <value>Создание товара</value>
+  </data>
+  <data name="Select_a_Category" xml:space="preserve">
+    <value>Выберите категорию</value>
+  </data>
+  <data name="Products_List" xml:space="preserve">
+    <value>Список товаров</value>
+  </data>
+  <data name="Edit_Region" xml:space="preserve">
+    <value>Редактирование региона</value>
+  </data>
+  <data name="Create_Region" xml:space="preserve">
+    <value>Создание региона</value>
+  </data>
+  <data name="Regions_List" xml:space="preserve">
+    <value>Список регионов</value>
+  </data>
+  <data name="Edit_Role" xml:space="preserve">
+    <value>Редактирование региона</value>
+  </data>
+  <data name="New_Role" xml:space="preserve">
+    <value>Новая роль</value>
+  </data>
+  <data name="Edit_Street" xml:space="preserve">
+    <value>Редактирование улицы</value>
+  </data>
+  <data name="New_Street" xml:space="preserve">
+    <value>Новая улица</value>
+  </data>
+  <data name="Roles_list" xml:space="preserve">
+    <value>Список ролей</value>
+  </data>
+  <data name="Select_a_City_From_Dropdown" xml:space="preserve">
+    <value>Пожалуйста выберите город из выпадающего списка</value>
+  </data>
+  <data name="Streets_List" xml:space="preserve">
+    <value>Спиок улиц</value>
+  </data>
+  <data name="Edit_User" xml:space="preserve">
+    <value>Редактирование пользователя</value>
+  </data>
+  <data name="New_User" xml:space="preserve">
+    <value>Новый пользователь</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Код</value>
+  </data>
+  <data name="Orders_List" xml:space="preserve">
+    <value>Список заказов</value>
+  </data>
+  <data name="Edit_Order" xml:space="preserve">
+    <value>Редактирование заказа</value>
+  </data>
+  <data name="Create_Order" xml:space="preserve">
+    <value>Создание заказа</value>
+  </data>
+  <data name="Code_Will_be_generated_automatically" xml:space="preserve">
+    <value>Код будет сгенерирован автоматически</value>
+  </data>
+  <data name="Please_select_a_client_from_dropdown" xml:space="preserve">
+    <value>Пожалуйста выберите заказчика из выпадающего списка</value>
+  </data>
+
 </root>

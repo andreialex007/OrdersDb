@@ -11,7 +11,6 @@
 'Login_to_your_account' : 'Login to your account',
 'Orders_Creation_System' : 'Orders creation system',
 'Page_Loading_Error' : 'Page Loading Error',
-'Save' : 'Save',
 'Actions' : 'Actions',
 'User_Image' : 'User image',
 'Upload' : 'Upload',
@@ -23,6 +22,7 @@
 'Create' : 'Create',
 'Delete' : 'Delete',
 'Cancel' : 'Cancel',
+'Save' : 'Save',
 'Edit_Order_Item' : 'Edit order item',
 'New_Order_Item' : 'New order item',
 'Price_Of_Single_Product' : 'Price of single product',
@@ -118,5 +118,11 @@
 'Select_a_City_From_Dropdown' : 'Select a city from dropdown',
 'Streets_List' : 'Streets list',
 'Edit_User' : 'Edit user',
-'New_User' : 'New user'
+'New_User' : 'New user',
+'Code' : 'Code',
+'Orders_List' : 'Orders list',
+'Edit_Order' : 'Edit order',
+'Create_Order' : 'Create order',
+'Code_Will_be_generated_automatically' : 'Code will be generated automatically',
+'Please_select_a_client_from_dropdown' : 'Please select a client from dropdown'
  }

@@ -78,8 +78,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EntitiesResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>EntitiesResources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>EntitiesResources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ValidationResources.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
