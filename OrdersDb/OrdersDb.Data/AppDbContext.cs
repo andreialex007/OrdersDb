@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Data;
 using System.Data.Entity;
-using System.Data.Entity.Core.Objects;
-using System.Data.Entity.Infrastructure;
-using System.Data.Entity.ModelConfiguration;
-using System.Data.Entity.Validation;
-using Mono.CSharp;
 using OrdersDb.Domain.Services.Accounts.Role;
 using OrdersDb.Domain.Services.Accounts.User;
 using OrdersDb.Domain.Services.Geography.City;
@@ -68,29 +62,6 @@ namespace OrdersDb.Data
 
 
             modelBuilder.Properties<DateTime>().Configure(c => c.HasColumnType("datetime2"));
-
-//            modelBuilder.Entity<Code>().HasOptional(x => x.Order).WithMany();
-
-
-            //            modelBuilder.Entity<Order>()
-            //                
-            //                .HasOptional(x => x.Code)
-            //                .WithOptionalDependent();
-
-            //            modelBuilder.Entity<Order>()
-            //                .HasRequired(a => a.Code)
-            //                .WithRequiredDependent();
-
-            //            modelBuilder.Entity<Order>()
-            //                .HasRequired(a => a.Code)
-            //                .WithMany()
-            //                .HasForeignKey(u => u.CodeId);
-
-            //            modelBuilder.Entity<Code>()
-            //            .HasOptional(f => f.Order)
-            //            .WithRequired(s => s.Code)
-            //            .Map(p => p.MapKey("CodeId"));
-
             base.OnModelCreating(modelBuilder);
         }
 

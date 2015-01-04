@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersDb.Domain", "OrdersDb.Domain\OrdersDb.Domain.csproj", "{6E421705-137E-41FF-A121-7E4184193278}"
 EndProject
@@ -18,6 +18,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{46A2BDAD-C38B-4B2B-88C1-BE4C6FFDEF45}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersDb.Resources", "Resources\OrdersDb.Resources\OrdersDb.Resources.csproj", "{D9DE9397-FD80-4BC4-B1D1-8603107355EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildGenerator", "Utils\BuildGenerator\BuildGenerator.csproj", "{B03959DC-BB82-4FA6-809A-8DFE8957CF3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourcesToJsConverter", "ResourcesToJsConverter\ResourcesToJsConverter.csproj", "{A54E89D2-4E1E-4053-856B-60D2D3AF0AA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{D9DE9397-FD80-4BC4-B1D1-8603107355EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9DE9397-FD80-4BC4-B1D1-8603107355EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9DE9397-FD80-4BC4-B1D1-8603107355EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B03959DC-BB82-4FA6-809A-8DFE8957CF3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B03959DC-BB82-4FA6-809A-8DFE8957CF3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B03959DC-BB82-4FA6-809A-8DFE8957CF3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B03959DC-BB82-4FA6-809A-8DFE8957CF3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A54E89D2-4E1E-4053-856B-60D2D3AF0AA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A54E89D2-4E1E-4053-856B-60D2D3AF0AA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A54E89D2-4E1E-4053-856B-60D2D3AF0AA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A54E89D2-4E1E-4053-856B-60D2D3AF0AA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,5 +64,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E02C1CE1-119D-49CD-BE1A-3699FC2D8DB5} = {9036EB8E-2EBC-4027-8618-C32E6EB06B7C}
 		{D9DE9397-FD80-4BC4-B1D1-8603107355EE} = {46A2BDAD-C38B-4B2B-88C1-BE4C6FFDEF45}
+		{B03959DC-BB82-4FA6-809A-8DFE8957CF3D} = {43D91E07-841B-473A-8245-6826993AF03E}
+		{A54E89D2-4E1E-4053-856B-60D2D3AF0AA5} = {43D91E07-841B-473A-8245-6826993AF03E}
 	EndGlobalSection
 EndGlobal
