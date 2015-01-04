@@ -17,18 +17,21 @@ namespace OrdersDb.Domain.Services.Orders.OrderItem
         /// <summary>
         /// Количество продуктов в элементе заказа
         /// </summary>
+        [Display(Name = "OrderItem_Amount", ResourceType = typeof(EntitiesResources))]
         public int Amount { get; set; }
 
         /// <summary>
         /// Идентификатор услуги
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
+        [Display(Name = "OrderItem_Product", ResourceType = typeof(EntitiesResources))]
         public int ProductId { get; set; }
 
         /// <summary>
         /// Продукт в данном элементе заказа
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
+        [Display(Name = "OrderItem_Product", ResourceType = typeof(EntitiesResources))]
         public Product Product { get; set; }
 
         /// <summary>

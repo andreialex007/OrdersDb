@@ -23,6 +23,7 @@ namespace OrdersDb.Domain.Services.Accounts.Role
         /// Название роли
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
+        [Display(Name = "Role_Name", ResourceType = typeof(EntitiesResources))]
         public string Name { get; set; }
 
         /// <summary>

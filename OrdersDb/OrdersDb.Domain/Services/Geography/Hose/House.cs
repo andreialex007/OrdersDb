@@ -24,6 +24,7 @@ namespace OrdersDb.Domain.Services.Geography.Hose
         /// </summary>
         [Min(1, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "ValueMustBeSpecified")]
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
+        [Display(Name = "House_Number", ResourceType = typeof(EntitiesResources))]
         public int Number { get; set; }
 
         /// <summary>
@@ -41,12 +42,14 @@ namespace OrdersDb.Domain.Services.Geography.Hose
         /// </summary>
         [Min(1, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "ValueMustBeSpecified")]
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
+        [Display(Name = "House_Street", ResourceType = typeof(EntitiesResources))]
         public int StreetId { get; set; }
 
         /// <summary>
         /// Улица на которой находится дом
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
+        [Display(Name = "House_Street", ResourceType = typeof(EntitiesResources))]
         public Street.Street Street { get; set; }
 
         /// <summary>

@@ -20,6 +20,7 @@ namespace OrdersDb.Domain.Services.Geography.Street
         /// Название улицы
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
+        [Display(Name = "Street_Name", ResourceType = typeof(EntitiesResources))]
         public string Name { get; set; }
 
         /// <summary>
@@ -27,12 +28,14 @@ namespace OrdersDb.Domain.Services.Geography.Street
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         [Min(1, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "ValueMustBeSpecified")]
+        [Display(Name = "Street_City", ResourceType = typeof(EntitiesResources))]
         public int CityId { get; set; }
 
         /// <summary>
         /// город в котором находится улица
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
+        [Display(Name = "Street_City", ResourceType = typeof(EntitiesResources))]
         public City.City City { get; set; }
 
         /// <summary>

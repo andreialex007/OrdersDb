@@ -23,18 +23,21 @@ namespace OrdersDb.Domain.Services.Production.Product
         /// Название продукта
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
+        [Display(Name = "Product_Name", ResourceType = typeof(EntitiesResources))]
         public string Name { get; set; }
 
         /// <summary>
         /// Цена закупки
         /// </summary>
         [Min(1, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "ValueMustBeSpecified")]
+        [Display(Name = "Product_BuyPrice", ResourceType = typeof(EntitiesResources))]
         public decimal BuyPrice { get; set; }
 
         /// <summary>
         /// Цена продажи
         /// </summary>
         [Min(1, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "ValueMustBeSpecified")]
+        [Display(Name = "Product_SellPrice", ResourceType = typeof(EntitiesResources))]
         public decimal SellPrice { get; set; }
 
         /// <summary>
@@ -46,6 +49,7 @@ namespace OrdersDb.Domain.Services.Production.Product
         /// Категория к которой принадлежит данный продукт
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
+        [Display(Name = "Product_Category", ResourceType = typeof(EntitiesResources))]
         public Category.Category Category { get; set; }
 
         /// <summary>

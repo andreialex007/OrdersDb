@@ -28,6 +28,7 @@ namespace OrdersDb.Domain.Services.Accounts.User
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         [StringLength(50, MinimumLength = 6)]
+        [Display(Name = "User_Name", ResourceType = typeof(EntitiesResources))]
         public string Name { get; set; }
 
         /// <summary>
@@ -35,6 +36,7 @@ namespace OrdersDb.Domain.Services.Accounts.User
         /// </summary>
         [Email(ErrorMessageResourceType = typeof(ValidationResources),ErrorMessageResourceName = "EmailAddress")]
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
+        [Display(Name = "User_Email", ResourceType = typeof(EntitiesResources))]
         public string Email { get; set; }
 
         /// <summary>
@@ -42,6 +44,7 @@ namespace OrdersDb.Domain.Services.Accounts.User
         /// </summary>
         [StringLength(50, MinimumLength = 6)]
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
+        [Display(Name = "User_Email", ResourceType = typeof(EntitiesResources))]
         public string Password { get; set; }
 
         /// <summary>

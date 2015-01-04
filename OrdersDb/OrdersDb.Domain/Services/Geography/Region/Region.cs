@@ -34,12 +34,14 @@ namespace OrdersDb.Domain.Services.Geography.Region
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         [Min(1, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "ValueMustBeSpecified")]
+        [Display(Name = "Region_Country", ResourceType = typeof(EntitiesResources))]
         public int CountryId { get; set; }
 
         /// <summary>
         /// Страна в которой находится регион
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
+        [Display(Name = "Region_Country", ResourceType = typeof(EntitiesResources))]
         public Country.Country Country { get; set; }
     }
 }

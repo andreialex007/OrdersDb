@@ -23,6 +23,7 @@ namespace OrdersDb.Domain.Services.Production.Category
         /// Имя категории
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
+        [Display(Name = "Category_Name", ResourceType = typeof(EntitiesResources))]
         public string Name { get; set; }
 
         /// <summary>

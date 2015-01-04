@@ -14,18 +14,21 @@ namespace OrdersDb.Domain.Services.Staff.Employee
         /// Имя 
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
+        [Display(Name = "Employee_FirstName", ResourceType = typeof(EntitiesResources))]
         public string FirstName { get; set; }
 
         /// <summary>
         /// Фамилия
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
+        [Display(Name = "Employee_LastName", ResourceType = typeof(EntitiesResources))]
         public string LastName { get; set; }
 
         /// <summary>
         /// Отчество
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
+        [Display(Name = "Employee_Patronymic", ResourceType = typeof(EntitiesResources))]
         public string Patronymic { get; set; }
 
         /// <summary>
@@ -37,6 +40,7 @@ namespace OrdersDb.Domain.Services.Staff.Employee
         /// Должность пользователя
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
+        [Display(Name = "Employee_Position", ResourceType = typeof(EntitiesResources))]
         public Position.Position Position { get; set; }
 
         /// <summary>
@@ -49,11 +53,13 @@ namespace OrdersDb.Domain.Services.Staff.Employee
         /// </summary>
         [Email]
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
+        [Display(Name = "Employee_Email", ResourceType = typeof(EntitiesResources))]
         public string Email { get; set; }
 
         /// <summary>
         /// Место проживания
         /// </summary>
+        [Display(Name = "Employee_Residence", ResourceType = typeof(EntitiesResources))]
         public House Residence { get; set; }
     }
 }

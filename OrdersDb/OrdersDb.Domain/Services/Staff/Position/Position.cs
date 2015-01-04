@@ -15,6 +15,7 @@ namespace OrdersDb.Domain.Services.Staff.Position
         /// Название должности
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
+        [Display(Name = "Position_Name", ResourceType = typeof(EntitiesResources))]
         public string Name { get; set; }
     }
 }

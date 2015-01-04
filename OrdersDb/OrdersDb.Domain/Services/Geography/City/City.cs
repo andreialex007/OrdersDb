@@ -22,6 +22,7 @@ namespace OrdersDb.Domain.Services.Geography.City
         /// Имя города
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
+        [Display(Name = "City_Name", ResourceType = typeof(EntitiesResources))]
         public string Name { get; set; }
 
         /// <summary>
@@ -33,12 +34,14 @@ namespace OrdersDb.Domain.Services.Geography.City
         /// Регион в котором находится данный город
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
+        [Display(Name = "City_Region", ResourceType = typeof(EntitiesResources))]
         public Region.Region Region { get; set; }
 
         /// <summary>
         /// Численность населения
         /// </summary>
         [Min(1000, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Min")]
+        [Display(Name = "City_Population", ResourceType = typeof(EntitiesResources))]
         public int Population { get; set; }
 
         /// <summary>

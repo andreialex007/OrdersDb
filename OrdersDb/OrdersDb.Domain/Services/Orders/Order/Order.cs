@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -21,12 +22,14 @@ namespace OrdersDb.Domain.Services.Orders.Order
         }
 
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
+        [Display(Name = "Order_Code", ResourceType = typeof(EntitiesResources))]
         public int CodeId { get; set; }
 
         /// <summary>
         /// Уникальный код заказа в базе
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
+        [Display(Name = "Order_Code", ResourceType = typeof(EntitiesResources))]
         public Code Code { get; set; }
 
         /// <summary>
@@ -44,12 +47,14 @@ namespace OrdersDb.Domain.Services.Orders.Order
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
         [Min(1, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "ValueMustBeSpecified")]
+        [Display(Name = "Order_Client", ResourceType = typeof(EntitiesResources))]
         public int ClientId { get; set; }
 
         /// <summary>
         /// Клиент который купил данный заказ
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationResources), ErrorMessageResourceName = "Required")]
+        [Display(Name = "Order_Client", ResourceType = typeof(EntitiesResources))]
         public Client Client { get; set; }
 
         /// <summary>
