@@ -39,12 +39,12 @@ namespace OrdersDb.WebApp
             //THEME STYLES
             var themeStyles = new[]
                           {
-                              "~/Metronic/global/css/components.css",
+//                              "~/Metronic/global/css/components.css",
+                              "~/Metronic/global/css/components-rounded.css",
                               "~/Metronic/global/css/plugins.css",
-                              "~/Metronic/global/css/plugins.css",
-                              "~/Metronic/admin/layout/css/layout.css",
-                              "~/Metronic/admin/layout/css/themes/default.css",
-                              "~/Metronic/admin/layout/css/custom.css"
+                              "~/Metronic/admin/layout4/css/layout.css",
+                              "~/Metronic/admin/layout4/css/themes/default.css",
+                              "~/Metronic/admin/layout4/css/custom.css"
                           };
 
 

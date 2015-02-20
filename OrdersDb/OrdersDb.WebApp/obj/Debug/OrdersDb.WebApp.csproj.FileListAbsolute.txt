@@ -104,3 +104,6 @@ D:\NewOdersDb\OrdersDb\OrdersDb\OrdersDb.WebApp\bin\HtmlAgilityPack.xml
 D:\NewOdersDb\OrdersDb\OrdersDb\OrdersDb.WebApp\obj\Debug\OrdersDb.WebApp.csprojResolveAssemblyReference.cache
 D:\NewOdersDb\OrdersDb\OrdersDb\OrdersDb.WebApp\obj\Debug\OrdersDb.WebApp.dll
 D:\NewOdersDb\OrdersDb\OrdersDb\OrdersDb.WebApp\obj\Debug\OrdersDb.WebApp.pdb
+D:\NewOdersDb\OrdersDb\OrdersDb\OrdersDb.WebApp\bin\OrdersDb.Resources.dll
+D:\NewOdersDb\OrdersDb\OrdersDb\OrdersDb.WebApp\bin\OrdersDb.Resources.pdb
+D:\NewOdersDb\OrdersDb\OrdersDb\OrdersDb.WebApp\bin\ru\OrdersDb.Resources.resources.dll

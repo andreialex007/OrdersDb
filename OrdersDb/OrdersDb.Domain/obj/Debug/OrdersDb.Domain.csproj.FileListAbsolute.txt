@@ -48,3 +48,7 @@ D:\NewOdersDb\OrdersDb\OrdersDb\OrdersDb.Domain\bin\Debug\StructureMap.Web.pdb
 D:\NewOdersDb\OrdersDb\OrdersDb\OrdersDb.Domain\bin\Debug\StructureMap.Web.xml
 D:\NewOdersDb\OrdersDb\OrdersDb\OrdersDb.Domain\obj\Debug\OrdersDb.Domain.dll
 D:\NewOdersDb\OrdersDb\OrdersDb\OrdersDb.Domain\obj\Debug\OrdersDb.Domain.pdb
+D:\NewOdersDb\OrdersDb\OrdersDb\OrdersDb.Domain\bin\Debug\OrdersDb.Resources.dll
+D:\NewOdersDb\OrdersDb\OrdersDb\OrdersDb.Domain\bin\Debug\OrdersDb.Resources.pdb
+D:\NewOdersDb\OrdersDb\OrdersDb\OrdersDb.Domain\bin\Debug\ru\OrdersDb.Resources.resources.dll
+D:\NewOdersDb\OrdersDb\OrdersDb\OrdersDb.Domain\obj\Debug\OrdersDb.Domain.csprojResolveAssemblyReference.cache

@@ -23,7 +23,7 @@ namespace OrdersDb.Data
         public AppDbContext()
         {
             //TODO заглушку убрать нужно
-            Database.Connection.ConnectionString = @"Data Source=ANDREI-PC\MSSQLSERVER2012;Initial Catalog=OrdersDb;Integrated Security=True";
+            Database.Connection.ConnectionString = @"Data Source=NOTEBOOK-PC;Initial Catalog=OrdersDb;Integrated Security=True";
             Database.SetInitializer(new AppDbInitializer());
 
             Configuration.ValidateOnSaveEnabled = false;

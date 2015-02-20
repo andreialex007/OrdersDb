@@ -247,4 +247,7 @@ select option {
 .change-language a span {
   text-transform: uppercase;
 }
+body {
+  overflow-y: hidden;
+}
 /*# sourceMappingURL=common.css.map */
